@@ -40,14 +40,16 @@ const Layout = ({ children, meta }: LayoutProps) => {
           site_name: "Web3 Tools",
         }}
         twitter={{
-          handle: '@_lens.ink',
+          handle: "@_lens.ink",
           site: meta.twitter,
           cardType: "summary_large_image",
         }}
       />
       <div className="bg-gradient-to-br from-red-200 via-red-100 to-green-100 dark:from-black dark:via-black dark:to-gray-800 relative w-full min-h-screen flex flex-col items-center">
         <NavBar></NavBar>
-        {children}
+        <div className="max-w-5xl w-full py-10 min-h-[80vh]">
+          {children}
+        </div>
         <Footer></Footer>
       </div>
     </>

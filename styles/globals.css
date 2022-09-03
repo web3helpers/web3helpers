@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+  transform-style: preserve-3d;
+  transition: ease-in-out 150ms
+}
+.card::before {
+  transform: translateZ(-1px);
+}
+
+.transition-ease {
+  transition: ease-in-out 150ms
+}

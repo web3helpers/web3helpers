@@ -6,3 +6,7 @@ export interface Meta {
   title?: string;
   twitter?: string;
 }
+
+export interface Web3ToolsApp {
+  name: string;
+}
