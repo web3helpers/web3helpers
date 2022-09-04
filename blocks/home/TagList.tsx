@@ -1,12 +1,12 @@
 import Tag from "../../components/Tag";
+import { chains } from "utils/";
 
 const TagList = () => {
-  const tags = ["Evm", "Filecoin", "Solana"];
   return (
     <>
       <div className="flex flex-col gap-4 w-full">
-        {tags.map((t) => (
-          <Tag name={t} className="" key="t"></Tag>
+        {chains.map((c) => (
+          <Tag name={c.name} icons={c.icons} color={c.color} key={c.name} withEllipsis={c.name === 'Evm'}></Tag>
         ))}
       </div>
     </>

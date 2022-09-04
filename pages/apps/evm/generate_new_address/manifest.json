@@ -1,0 +1,5 @@
+{
+  "name": "Generate new address",
+  "chain": "Evm",
+  "description": "Generate new ethereum address"
+}

@@ -19,6 +19,12 @@
       "@/assets/*": ["assets/*"]
     }
   },
+  "ts-node": {
+    "compilerOptions": {
+      "target": "ES2018",
+      "module": "commonjs"
+    }
+  },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

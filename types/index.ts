@@ -7,6 +7,14 @@ export interface Meta {
   twitter?: string;
 }
 
+export interface Chain {
+  name: string;
+  color: string;
+  icons: string[];
+}
+
 export interface Web3ToolsApp {
   name: string;
+  path: string;
+  chain: Chain;
 }

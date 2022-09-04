@@ -1,34 +1,32 @@
 import Layout from "blocks/layout";
 import { NextPage } from "next";
-import AppStep from "../../../components/AppStep";
+import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import AppTitle from "blocks/apps/AppTitle";
 import { EvmAddress, generateAddress } from "./utils";
 import { useState } from "react";
+import AppResult from "components/apps/AppResult";
+import { chain, name } from "./manifest.json";
+import { chains } from "utils";
 
 const Index: NextPage = () => {
   const meta = {};
   const [address, setAddresss] = useState<EvmAddress | undefined>(undefined);
+  const color = chains.find((c) => c.name === chain)?.color ?? "primary";
 
   return (
     <Layout meta={meta}>
       <div className="flex flex-col gap-4">
-        <AppTitle name="Generate new address"></AppTitle>
+        <AppTitle name={name}></AppTitle>
         <AppStep step={1}>
           <div>
             <Button
               onClick={() => setAddresss(generateAddress())}
-              className="bg-solana mb-4"
+              className={`bg-${color}mb-4`}
             >
               Generate
             </Button>
-            {address && (
-              <ul className="text-xl">
-                <li>Address: {address.address}</li>
-                <li>Mnemonic: {address.mnemonic}</li>
-                <li>Private Key: {address.privateKey}</li>
-              </ul>
-            )}
+            {address && <AppResult data={address}></AppResult>}
           </div>
         </AppStep>
       </div>

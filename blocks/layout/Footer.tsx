@@ -10,7 +10,11 @@ const Footer = () => {
         />
         Twitter
       </a>
-      <a href="" className="bg-[#24292F] text-white rounded-md p-3">
+      <a
+        href="https://github.com/stonega/web3tools"
+        target="_blank"
+        className="bg-[#24292F] text-white rounded-md p-3" rel="noreferrer"
+      >
         <SvgIcon name="GitHub" className="inline w-4 h-4 fill-white mr-2" />
         GitHub
       </a>

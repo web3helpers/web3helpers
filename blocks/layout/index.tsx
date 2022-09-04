@@ -47,7 +47,7 @@ const Layout = ({ children, meta }: LayoutProps) => {
       />
       <div className="bg-gradient-to-br from-red-200 via-red-100 to-green-100 dark:from-black dark:via-black dark:to-gray-800 relative w-full min-h-screen flex flex-col items-center">
         <NavBar></NavBar>
-        <div className="max-w-5xl w-full py-10 min-h-[80vh]">
+        <div className="max-w-5xl w-full px-4 md:px-0 py-10 min-h-[80vh]">
           {children}
         </div>
         <Footer></Footer>
