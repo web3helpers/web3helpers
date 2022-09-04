@@ -18,7 +18,7 @@ const AppResult = ({ data, className }: AppResultProps) => {
   });
   return (
     <>
-      <ul className="p-2 border-2 border-black rounded-md">
+      <ul className="p-4 border-2 border-black rounded-md">
         {_data.map((d) => (
           <animated.li
             key={d.key}

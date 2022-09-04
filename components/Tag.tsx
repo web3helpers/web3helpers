@@ -1,5 +1,6 @@
-import { IncomingMessage } from "http";
 import SvgIcon from "./icons/SvgIcon";
+import classNames from "classnames";
+import { generateCustomClassName } from "utils";
 
 interface TagProps {
   name: string;
@@ -15,10 +16,14 @@ const Tag = ({
   color,
   withEllipsis = false,
 }: TagProps) => {
+  const customClassName = generateCustomClassName(
+    ["hover:bg", "border", "text"],
+    color
+  );
+  const basicClassName =
+    "transition-ease px-4 flex justify-between items-center  gap-2 hover:text-black hover:border-black w-auto py-2 text-xl font-bold text-center border-4 rounded-md";
   return (
-    <button
-      className={`transition-ease px-4 flex justify-between items-center  gap-2 hover:text-black hover:border-black hover:bg-${color} w-auto py-2 text-xl font-bold text-center border-4 border-${color} rounded-md text-${color} ${className}`}
-    >
+    <button className={classNames(customClassName, basicClassName, className)}>
       <span>{name}</span>
       <span className="flex gap-2 items-center">
         {icons &&

@@ -18,11 +18,11 @@ const Index: NextPage = () => {
     <Layout meta={meta}>
       <div className="flex flex-col gap-4">
         <AppTitle name={name}></AppTitle>
-        <AppStep step={1}>
+        <AppStep step={1} color={color}>
           <div>
             <Button
               onClick={() => setAddresss(generateAddress())}
-              className={`bg-${color}mb-4`}
+              className="bg-evm border-evm mb-4"
             >
               Generate
             </Button>

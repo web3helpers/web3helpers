@@ -1,1 +1,11 @@
-[{"name":"Generate new address","chain":{"name":"Evm","color":"evm","icons":["Ethereum","Polygon"]},"path":"/apps/evm/generate_new_address"}]
+[
+  {
+    "name": "Generate new address",
+    "chain": {
+      "name": "Evm",
+      "color": "evm",
+      "icons": ["Ethereum", "Polygon"]
+    },
+    "path": "/apps/evm/generate_new_address"
+  }
+]
