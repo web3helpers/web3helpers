@@ -6,13 +6,11 @@ import AppTitle from "blocks/apps/AppTitle";
 import { EvmAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { chain, name } from "./manifest.json";
-import { chains } from "utils";
+import { name } from "./manifest.json";
 
 const Index: NextPage = () => {
   const meta = {};
   const [address, setAddresss] = useState<EvmAddress | undefined>(undefined);
-  const color = chains.find((c) => c.name === chain)?.color ?? "primary";
 
   return (
     <Layout meta={meta}>

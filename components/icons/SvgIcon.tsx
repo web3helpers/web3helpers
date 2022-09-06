@@ -4,10 +4,11 @@ import Twitter from "assets/twitter.svg";
 import TwitterFill from "assets/twitter-fill.svg";
 import GitHub from "assets/github.svg";
 import Bitcoin from "assets/bitcoin.svg";
-import Ethereum from 'assets/ethereum.svg'
-import Solana from 'assets/solana.svg'
-import Filecoin from 'assets/filecoin.svg'
-import Polygin from 'assets/polygon.svg'
+import Ethereum from "assets/ethereum.svg";
+import Solana from "assets/solana.svg";
+import Filecoin from "assets/filecoin.svg";
+import Polygin from "assets/polygon.svg";
+import Polkadot from "assets/polkadot.svg";
 
 const SvgIcon = ({ name, className }: { name: string; className?: string }) => {
   switch (name) {
@@ -31,6 +32,8 @@ const SvgIcon = ({ name, className }: { name: string; className?: string }) => {
       return <Solana className={className} />;
     case "Filecoin":
       return <Filecoin className={className} />;
+    case "Polkadot":
+      return <Polkadot className={className} />;
     default:
       return null;
   }

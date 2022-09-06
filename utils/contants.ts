@@ -17,8 +17,8 @@ export const chains: Chain[] = [
     icons: ["Filecoin"],
   },
   {
-    name: "Bitcoin",
-    color: "#F7A300",
-    icons: ["Bitcoin"],
+    name: "Substrate",
+    color: "#24CC85",
+    icons: ["Polkadot"],
   },
 ];
