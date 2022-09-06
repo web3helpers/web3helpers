@@ -1,5 +1,5 @@
+import { css } from "@emotion/css";
 import classNames from "classnames";
-import { generateCustomClassName } from "utils";
 
 interface AppStepProps {
   step: number;
@@ -7,7 +7,9 @@ interface AppStepProps {
   color: string;
 }
 const AppStep = ({ step, children, color }: AppStepProps) => {
-  const customClassName = generateCustomClassName(["bg"], color);
+  const customClassName = css`{
+    background: ${color}
+  }`;
   const basicClassName =
     "rounded-full text-xl text-center w-10 h-10 border-2 border-black flex flex-col justify-center";
   return (

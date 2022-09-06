@@ -3,17 +3,22 @@ import { Chain } from "types";
 export const chains: Chain[] = [
   {
     name: "Evm",
-    color: "evm",
+    color: "#F7A300",
     icons: ["Ethereum", "Polygon"],
   },
   {
     name: "Solana",
-    color: "solana",
+    color: "#933FFD",
     icons: ["Solana"],
   },
   {
     name: "Filecoin",
-    color: "filecoin",
+    color: "#008BF7",
     icons: ["Filecoin"],
+  },
+  {
+    name: "Bitcoin",
+    color: "#F7A300",
+    icons: ["Bitcoin"],
   },
 ];
