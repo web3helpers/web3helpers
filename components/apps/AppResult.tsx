@@ -7,8 +7,6 @@ interface AppResultProps {
 }
 
 const AppResult = ({ data, className }: AppResultProps) => {
-  const _data = Object.entries(data).map(([key, value]) => ({ key, value }));
-
   const style = useSpring({
     from: { opacity: 0, y: -20 },
     to: {
@@ -16,6 +14,8 @@ const AppResult = ({ data, className }: AppResultProps) => {
       y: 0,
     },
   });
+  if (!data) return null;
+  const _data = Object.entries(data).map(([key, value]) => ({ key, value }));
   return (
     <>
       <ul className="p-4 border-2 border-black rounded-md">
