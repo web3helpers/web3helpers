@@ -1,0 +1,6 @@
+{
+  "id": 3,
+  "name": "Decode raw transaction",
+  "chain": "Evm",
+  "description": "Decode raw transaction"
+}

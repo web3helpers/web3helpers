@@ -1,0 +1,6 @@
+{
+  "id": 2,
+  "name": "Sign ethereum message",
+  "chain": "Evm",
+  "description": "Sign ethereum message"
+}

@@ -1,11 +1,1 @@
-[
-  {
-    "name": "Generate ethereum address",
-    "chain": {
-      "name": "Evm",
-      "color": "#F7A300",
-      "icons": ["Ethereum", "Polygon"]
-    },
-    "path": "/apps/evm/generate_new_address"
-  }
-]
+[{"name":"Decode raw transaction","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/decode-raw-transaction"},{"name":"Generate ethereum address","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/generate-new-address"},{"name":"Sign ethereum message","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/sign-ethereum-message"}]

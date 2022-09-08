@@ -6,14 +6,24 @@ type ButtonSize = "sm" | "md" | "lg";
 interface ButtonProps {
   size?: ButtonSize;
   children: React.ReactNode;
-  className: string;
+  className?: string;
+  disabled?: boolean;
   href?: string;
+  type?: "button" | "submit" | "reset";
   onClick?: (event?: React.MouseEvent<HTMLElement, MouseEvent>) => any;
   ref?: RefObject<any> | ((instance: any) => void) | null | undefined;
 }
 
 const Button = forwardRef(function Button(
-  { size = "md", children, className, onClick, href }: ButtonProps,
+  {
+    size = "md",
+    children,
+    type,
+    disabled,
+    className,
+    onClick,
+    href,
+  }: ButtonProps,
   buttonRef
 ) {
   let sizeClassName: string = "";
@@ -32,6 +42,8 @@ const Button = forwardRef(function Button(
     "ransition-ease hover:text-black hover:border-black w-auto font-bold text-center border-4 rounded-md active:border-transparent active:outline ative:outline-2 active:outline-offset-2";
   const props = {
     onClick,
+    type,
+    disabled,
     ref: buttonRef as React.RefObject<any>,
   };
   if (href)
