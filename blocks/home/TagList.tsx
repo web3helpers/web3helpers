@@ -1,24 +1,41 @@
+import { css } from "@emotion/css";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
+import classNames from "classnames";
 import Tag from "components/Tag";
+import { Chain } from "types";
 import { chains, generateCustomClassName } from "utils/";
 
-const TagList = () => {
+interface TagListProps {
+  onChange(chain: string): void;
+}
+const TagList = ({ onChange }: TagListProps) => {
   return (
     <>
       <ToggleGroup.Root
         type="single"
         defaultValue="evm"
         aria-label="Chain"
+        onValueChange={(chain) => onChange(chain)}
         className="flex flex-col gap-4 w-full"
       >
         {chains.map((c) => {
-          const customClassName = generateCustomClassName(
-            ["hover:bg", "active:bg"],
-            c.color
-          );
+          const customClassName = css`
+            &:hover {
+              background: ${c.color};
+            }
+            &[data-state="on"] {
+              background: ${c.color};
+              div {
+                color: #000;
+                border-radius: 0.375rem;
+                border: 4px solid #000;
+              }
+            }
+          `;
+          const basicClassName = "rounded-md";
           return (
             <ToggleGroup.Item
-              className={customClassName}
+              className={classNames(basicClassName, customClassName)}
               value={c.name}
               key={c.name}
               aria-label={c.name}

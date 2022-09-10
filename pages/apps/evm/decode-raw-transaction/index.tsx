@@ -22,11 +22,15 @@ const Index: NextPage = () => {
       .matches(/^0x[0-9a-fA-F]*$/, "Invalid raw transaction")
       .required("Required"),
   });
-  const submit = (values: { rawTransaction: string }) => {
+  const submit = (values: { rawTransaction: string }, { setSubmitting }) => {
     try {
+      setSubmitting(true);
       const decoded = decode(values.rawTransaction);
       setResult(decoded);
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      setSubmitting(false);
+    }
   };
   return (
     <>
@@ -48,6 +52,7 @@ const Index: NextPage = () => {
                       name="rawTransaction"
                       rows="5"
                       className="border-2 w-full p-2 border-black rounded-md bg-white"
+                      placeholder="Start with 0x"
                     ></Field>
                     <ErrorMessage name="rawTransaction">
                       {(msg) => <div className="text-error">{msg}</div>}
@@ -55,7 +60,7 @@ const Index: NextPage = () => {
                   </label>
                 </AppStep>
                 <AppStep step={2} className="bg-evm">
-                  <div>
+                  <div className="w-full">
                     <Button
                       type="submit"
                       disabled={isSubmitting}

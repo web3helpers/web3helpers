@@ -18,3 +18,8 @@ export interface Web3ToolsApp {
   path: string;
   chain: Chain;
 }
+
+export interface Condition {
+  chain?: string;
+  search?: string;
+}

@@ -1,28 +1,45 @@
 import type { NextPage } from "next";
-import { Chain, Meta } from "types";
+import { Condition, Meta } from "types";
 import Layout from "blocks/layout";
 import TagList from "blocks/home/TagList";
 import AppList from "blocks/home/AppList";
 import SearchBar from "blocks/home/SearchBar";
-import { useState } from "react";
+import { useReducer } from "react";
 
+function reducer(
+  state: Condition,
+  action: { type: "search" | "chain"; value: string }
+): Condition {
+  switch (action.type) {
+    case "search":
+      return { ...state, search: action.value };
+    case "chain":
+      return { ...state, chain: action.value };
+    default:
+      throw new Error();
+  }
+}
 const Home: NextPage = () => {
   const meta: Meta = {};
-  const [chain, setChain] = useState<Chain>();
+  const [state, dispatch] = useReducer(reducer, {});
 
   return (
     <>
       <Layout meta={meta}>
         <div className="grid grid-cols-1 md:grid-cols-[12rem_1fr] gap-12">
           <section className="hidden md:block">
-            <TagList></TagList>
+            <TagList
+              onChange={(value) => dispatch({ type: "chain", value })}
+            ></TagList>
           </section>
           <section className="flex flex-col gap-12">
             <SearchBar></SearchBar>
             <section className="block md:hidden">
-              <TagList></TagList>
+              <TagList
+                onChange={(value) => dispatch({ type: "chain", value })}
+              ></TagList>
             </section>
-            <AppList></AppList>
+            <AppList condition={state}></AppList>
           </section>
         </div>
       </Layout>

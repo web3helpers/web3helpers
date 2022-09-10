@@ -18,7 +18,7 @@ const AppCard = ({ app }: AppCardProps) => {
     }
   `;
   const basicClassName =
-    "card p-4 relative bg-transparent rounded-md text-bold text-xl border-black border-2 hover:bg-[${app.chain.color}] before:content-[''] before:absolute before:border-2 before:rounded-md before:box-content before:w-full before:h-full before:left-1 before:bottom-1";
+    "card p-4 relative bg-transparent rounded-md text-bold text-xl first-letter:text-2xl border-black border-2 hover:bg-[${app.chain.color}] before:content-[''] before:absolute before:border-2 before:rounded-md before:box-content before:w-full before:h-full before:left-1 before:bottom-1";
   return (
     <>
       <Link href={app.path}>

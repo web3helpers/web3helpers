@@ -1,0 +1,6 @@
+{
+  "id": 6,
+  "name": "New solana address",
+  "chain": "solana",
+  "description": "Generate new solana address"
+}

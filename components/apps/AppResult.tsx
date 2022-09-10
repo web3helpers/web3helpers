@@ -23,7 +23,7 @@ const AppResult = ({ data, className }: AppResultProps) => {
           <animated.li
             key={d.key}
             style={style}
-            className="grid grid-cols-[8rem_1fr] gap-4 my-2"
+            className="grid grid-cols-[minmax(8rem,auto)_1fr] gap-4 my-2"
           >
             <span className="text-2xl font-bold">{d.key}</span>
             <span className="text-xl break-all">{d.value}</span>
