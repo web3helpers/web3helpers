@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
+    "@radix-ui/react-dialog": "^1.0.0",
+    "@radix-ui/react-toast": "^1.0.0",
     "@radix-ui/react-toggle-group": "^1.0.0",
     "@react-spring/web": "^9.5.2",
     "@solana/web3.js": "^1.60.0",
@@ -25,6 +27,7 @@
     "next-themes": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hotkeys-hook": "^3.4.7",
     "wagmi": "^0.6.4",
     "yup": "^0.32.11"
   },
