@@ -19,12 +19,14 @@ const Index: NextPage = () => {
   };
   const schema = object({
     rawTransaction: string()
-      .matches(/^0x[0-9a-fA-F]*$/, "Not started with 0x")
+      .matches(/^0x[0-9a-fA-F]*$/, "Invalid raw transaction")
       .required("Required"),
   });
   const submit = (values: { rawTransaction: string }) => {
-    const decoded = decode(values.rawTransaction);
-    setResult(decoded);
+    try {
+      const decoded = decode(values.rawTransaction);
+      setResult(decoded);
+    } catch (error) {}
   };
   return (
     <>
@@ -36,7 +38,7 @@ const Index: NextPage = () => {
             validationSchema={schema}
             onSubmit={submit}
           >
-            {({ errors, isSubmitting }) => (
+            {({ isSubmitting }) => (
               <Form className="flex flex-col gap-4">
                 <AppStep step={1} className="bg-evm">
                   <label className="w-full">
@@ -47,7 +49,9 @@ const Index: NextPage = () => {
                       rows="5"
                       className="border-2 w-full p-2 border-black rounded-md bg-white"
                     ></Field>
-                    <ErrorMessage name="rawTransaction"></ErrorMessage>
+                    <ErrorMessage name="rawTransaction">
+                      {(msg) => <div className="text-error">{msg}</div>}
+                    </ErrorMessage>
                   </label>
                 </AppStep>
                 <AppStep step={2} className="bg-evm">

@@ -3,7 +3,7 @@ import { animated, useSpring } from "@react-spring/web";
 interface AppResultProps {
   type?: string;
   className?: string;
-  data: { [key: string]: string };
+  data?: { [key: string]: string };
 }
 
 const AppResult = ({ data, className }: AppResultProps) => {
@@ -18,7 +18,7 @@ const AppResult = ({ data, className }: AppResultProps) => {
   const _data = Object.entries(data).map(([key, value]) => ({ key, value }));
   return (
     <>
-      <ul className="p-4 border-2 border-black rounded-md">
+      <ul className="p-4 border-2 w-full border-black rounded-md">
         {_data.map((d) => (
           <animated.li
             key={d.key}
