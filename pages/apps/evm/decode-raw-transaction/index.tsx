@@ -9,6 +9,7 @@ import { name } from "./manifest.json";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { decode } from "./utils";
+import { object, string } from "yup";
 
 const Index: NextPage = () => {
   const meta: Meta = {};
@@ -16,9 +17,12 @@ const Index: NextPage = () => {
   const initialValues = {
     rawTransaction: "",
   };
+  const schema = object({
+    rawTransaction: string()
+      .matches(/^0x[0-9a-fA-F]*$/, "Not started with 0x")
+      .required("Required"),
+  });
   const submit = (values: { rawTransaction: string }) => {
-    console.log(values);
-
     const decoded = decode(values.rawTransaction);
     setResult(decoded);
   };
@@ -29,13 +33,10 @@ const Index: NextPage = () => {
           <AppTitle name={name}></AppTitle>
           <Formik
             initialValues={initialValues}
-            validate={(values) => {
-              const errors = {};
-              return errors;
-            }}
+            validationSchema={schema}
             onSubmit={submit}
           >
-            {({ isSubmitting }) => (
+            {({ errors, isSubmitting }) => (
               <Form className="flex flex-col gap-4">
                 <AppStep step={1} className="bg-evm">
                   <label className="w-full">
@@ -46,6 +47,7 @@ const Index: NextPage = () => {
                       rows="5"
                       className="border-2 w-full p-2 border-black rounded-md bg-white"
                     ></Field>
+                    <ErrorMessage name="rawTransaction"></ErrorMessage>
                   </label>
                 </AppStep>
                 <AppStep step={2} className="bg-evm">
