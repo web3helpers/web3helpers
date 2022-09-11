@@ -18,7 +18,7 @@ import { Meta } from "types";
 import { object, string } from "yup";
 import { name } from "./manifest.json";
 import { methods } from "./methods";
-import beautify from "json-beautify";
+import beautify from "json-beautify-fix";
 
 type FormValues = {
   method: string;
