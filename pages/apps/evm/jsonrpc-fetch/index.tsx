@@ -50,7 +50,7 @@ const DataField = (props: any) => {
 const Index: NextPage = () => {
   const url = `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`;
   const meta: Meta = {};
-  const [result, setResult] = useState<{ [key: string]: string } | undefined>();
+  const [result, setResult] = useState<string | undefined>();
   const provider = new ethers.providers.JsonRpcProvider(url);
   const schema = object({
     method: string().required("Required"),
@@ -63,7 +63,7 @@ const Index: NextPage = () => {
   const submit = async ({ method, data }: { method: string; data: string }) => {
     try {
       const result = await provider.send(method, JSON.parse(data));
-      setResult({ result });
+      setResult(result);
     } catch (error) {
       console.log(error);
     }

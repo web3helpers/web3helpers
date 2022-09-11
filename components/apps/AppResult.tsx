@@ -30,21 +30,16 @@ const AppResult = ({ data }: AppResultProps) => {
 
   if (!data) return null;
 
-  if (typeof data === "string") {
-    return (
-      <div className="relative p-4 border-2 w-full border-black rounded-md">
-        <span className="text-xl font-mono break-all">
-          <HexValue value={data}></HexValue>
-        </span>
-      </div>
-    );
-  }
   const _data = Object.entries(data).map(([key, value]) => ({ key, value }));
   const formatData = beautify(data, null, 2, 40);
 
   return (
-    <div className="relative p-4 border-2 w-full border-black rounded-md">
-      {jsonFormat ? (
+    <div className="relative p-4 pt-10 border-2 w-full border-black rounded-md">
+      {typeof data === "string" ? (
+        <span className="text-xl font-mono break-all">
+          <HexValue value={data}></HexValue>
+        </span>
+      ) : jsonFormat ? (
         <div className="whitespace-pre text-xl font-mono">{formatData}</div>
       ) : (
         <ul>
@@ -65,13 +60,17 @@ const AppResult = ({ data }: AppResultProps) => {
       <div className="absolute right-2 top-2 flex gap-2">
         <button
           className="bg-gray-400 px-2 py-1 rounded-lg hover:bg-gray-500"
-          onClick={() => setJsonFormat(!jsonFormat)}
+          onClick={(e) => {
+            e.preventDefault();
+            setJsonFormat(!jsonFormat);
+          }}
         >
           {jsonFormat ? "normal" : "json"}
         </button>
         <button
           className="bg-gray-400 px-2 py-1 rounded-lg hover:bg-gray-500 transition-all ease-in-out delay-150"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             copy(formatData);
             setCopied(true);
           }}

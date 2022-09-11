@@ -26,8 +26,8 @@ const Index: NextPage = () => {
     value: "",
   };
   const schema = object({
-    type: string().required("required"),
-    value: string().required("reuqired"),
+    type: string().required("Required"),
+    value: string().required("Reuqired"),
   });
 
   const submit = useCallback(

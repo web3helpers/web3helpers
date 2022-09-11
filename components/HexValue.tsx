@@ -18,7 +18,10 @@ const HexValue = ({ value }: HexValueProp) => {
       {isHex && (
         <button
           className="bg-white/50 px-2 rounded-lg hover:bg-gray-500 inline ml-2"
-          onClick={() => setConverted(!converted)}
+          onClick={(e) => {
+            e.preventDefault();
+            setConverted(!converted);
+          }}
         >
           {converted ? "hex" : "dec"}
         </button>
