@@ -2,8 +2,8 @@
 import { getAvatar, shortAddress } from "utils";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { XCircle } from "lucide-react";
-import LoadingIcon from "./icons/LoadingIcon";
-import SvgIcon from "./icons/SvgIcon";
+import LoadingIcon from "../icons/LoadingIcon";
+import SvgIcon from "../icons/SvgIcon";
 
 export interface WalletPanelProps {
   show: boolean;

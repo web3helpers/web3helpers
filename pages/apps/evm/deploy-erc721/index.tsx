@@ -26,26 +26,28 @@ const Index: NextPage = () => {
   const initialValues = {
     symbol: "W3H",
     name: "Web3helpers",
-    amount: 1000,
+    amount: 100,
   };
   const schema = object({
     symbol: string().required("Required"),
     name: string().required("Required"),
     amount: number()
       .integer("Must be interger")
-      .positive("Must be positive number")
+      .positive("Must be postive number")
       .required("Required"),
   });
   const submit = async ({ symbol, name, amount }: typeof initialValues) => {
+    console.log("ee");
     if (!address) return;
-    const erc20ContractFactory = new ContractFactory(abi, bytecode, signer!);
-    const erc20Contract = await erc20ContractFactory.deploy(
+
+    const erc721ContractFactory = new ContractFactory(abi, bytecode, signer!);
+    const erc721Contract = await erc721ContractFactory.deploy(
       [{ holder: address, amount }],
       name,
       symbol
     );
-    const contractAddress = erc20Contract.address;
-    const result = await erc20Contract.deployTransaction.wait();
+    const contractAddress = erc721Contract.address;
+    const result = await erc721Contract.deployTransaction.wait();
     setResult({ address: contractAddress, hash: result.blockHash });
   };
   return (
