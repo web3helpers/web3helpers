@@ -1,0 +1,6 @@
+{
+  "id": 7,
+  "name": "New substrate address",
+  "chain": "substrate",
+  "description": "Generate new substrate address"
+}

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
+    "@polkadot/keyring": "^10.1.7",
     "@radix-ui/react-dialog": "^1.0.0",
     "@radix-ui/react-toast": "^1.0.0",
     "@radix-ui/react-toggle-group": "^1.0.0",

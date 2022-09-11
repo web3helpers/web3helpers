@@ -19,6 +19,24 @@ import { object, string } from "yup";
 import { name } from "./manifest.json";
 import { methods } from "./methods";
 import beautify from "json-beautify-fix";
+import { networks } from "components/evm/NetworkSelector";
+
+const NetworkSelector = (props: any) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <>
+      <select {...props} {...field}>
+        {networks.map((n) => (
+          <option value={n.id} key={n.id}>
+            {n.name}
+          </option>
+        ))}
+      </select>
+      {!!meta.touched && !!meta.error && <div>{meta.error}</div>}
+    </>
+  );
+};
 
 type FormValues = {
   method: string;
@@ -48,20 +66,30 @@ const DataField = (props: any) => {
 };
 
 const Index: NextPage = () => {
-  const url = `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`;
   const meta: Meta = {};
   const [result, setResult] = useState<string | undefined>();
-  const provider = new ethers.providers.JsonRpcProvider(url);
   const schema = object({
+    network: string().required("Required"),
     method: string().required("Required"),
     data: string().required("Required"),
   });
   const initialValues = {
+    network: "0x1",
     method: "eth_blockNumber",
     data: "[]",
   };
-  const submit = async ({ method, data }: { method: string; data: string }) => {
+  const submit = async ({
+    method,
+    data,
+    network,
+  }: {
+    method: string;
+    data: string;
+    network: string;
+  }) => {
     try {
+      const url = networks.find((n) => n.id === network)?.url;
+      const provider = new ethers.providers.JsonRpcProvider(url);
       const result = await provider.send(method, JSON.parse(data));
       setResult(result);
     } catch (error) {
@@ -85,6 +113,15 @@ const Index: NextPage = () => {
                 <AppStep step={1} className="bg-evm">
                   <label>
                     <span className="block text-2xl mb-4">Jsonrpc method</span>
+                    <NetworkSelector name="network" className="select" />
+                    <ErrorMessage name="network">
+                      {(msg) => <div className="text-error">{msg}</div>}
+                    </ErrorMessage>
+                  </label>
+                </AppStep>
+                <AppStep step={2} className="bg-evm">
+                  <label>
+                    <span className="block text-2xl mb-4">Jsonrpc method</span>
                     <Field as="select" name="method" className="select">
                       {methods.map((m) => (
                         <option
@@ -101,7 +138,7 @@ const Index: NextPage = () => {
                     </ErrorMessage>
                   </label>
                 </AppStep>
-                <AppStep step={2} className="bg-evm">
+                <AppStep step={3} className="bg-evm">
                   <label className="w-full">
                     <span className="block text-2xl mb-4">Data</span>
                     <DataField
@@ -115,7 +152,7 @@ const Index: NextPage = () => {
                     </ErrorMessage>
                   </label>
                 </AppStep>
-                <AppStep step={3} className="bg-evm">
+                <AppStep step={4} className="bg-evm">
                   <div className="w-full">
                     <Button
                       type="submit"

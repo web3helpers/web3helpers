@@ -93,7 +93,9 @@ const Index: NextPage = () => {
                     >
                       Submit
                     </Button>
-                    <AppResult data={result} className="w-full"></AppResult>
+                    {result && (
+                      <AppResult data={result} className="w-full"></AppResult>
+                    )}
                   </div>
                 </AppStep>
               </Form>

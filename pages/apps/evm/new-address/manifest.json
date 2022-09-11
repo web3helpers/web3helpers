@@ -1,6 +1,6 @@
 {
   "id": 1,
-  "name": "Generate ethereum address",
+  "name": "New ethereum address",
   "chain": "Evm",
   "description": "Generate ethereum address"
 }
