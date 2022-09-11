@@ -33,11 +33,7 @@ const Index: NextPage = () => {
                 <AppStep step={1} className="bg-evm">
                   <label>
                     <span className="block text-lg mb-4">Sign Type</span>
-                    <Field
-                      as="select"
-                      name="type"
-                      className="border-2 w-40 h-12 border-black rounded-md bg-white"
-                    >
+                    <Field as="select" name="type" className="select">
                       <option value="message">Message</option>
                       <option value="typedData">Typed Data</option>
                     </Field>
@@ -47,7 +43,7 @@ const Index: NextPage = () => {
                   <label className="w-full">
                     <span className="block text-lg mb-4">Unsigned Message</span>
                     <Field
-                      className="p-2 border-2 border-black rounded-md w-full"
+                      className="textarea"
                       as="textarea"
                       rows="10"
                       type="value"

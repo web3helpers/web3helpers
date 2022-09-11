@@ -85,11 +85,7 @@ const Index: NextPage = () => {
                 <AppStep step={1} className="bg-evm">
                   <label>
                     <span className="block text-2xl mb-4">Jsonrpc method</span>
-                    <Field
-                      as="select"
-                      name="method"
-                      className="border-2 px-2 h-12 border-black rounded-md bg-white"
-                    >
+                    <Field as="select" name="method" className="select">
                       {methods.map((m) => (
                         <option
                           value={m.method}
@@ -112,7 +108,7 @@ const Index: NextPage = () => {
                       as="textarea"
                       name="data"
                       rows="5"
-                      className="border-2 w-full p-2 border-black rounded-md bg-white"
+                      className="textarea"
                     ></DataField>
                     <ErrorMessage name="data">
                       {(msg) => <div className="text-error">{msg}</div>}

@@ -4,12 +4,21 @@
 
 .card {
   transform-style: preserve-3d;
-  transition: ease-in-out 150ms
+  transition: ease-in-out 150ms;
 }
 .card::before {
   transform: translateZ(-1px);
 }
 
 .transition-ease {
-  transition: ease-in-out 150ms
+  transition: ease-in-out 150ms;
+}
+
+@layer components {
+  .textarea {
+    @apply border-2 w-full p-2 border-black rounded-md bg-white;
+  }
+  .select {
+    @apply border-2 px-2 h-12 border-black rounded-md bg-white;
+  }
 }

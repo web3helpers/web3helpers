@@ -51,7 +51,7 @@ const Index: NextPage = () => {
                       as="textarea"
                       name="rawTransaction"
                       rows="5"
-                      className="border-2 w-full p-2 border-black rounded-md bg-white"
+                      className="textarea"
                       placeholder="Start with 0x"
                     ></Field>
                     <ErrorMessage name="rawTransaction">
