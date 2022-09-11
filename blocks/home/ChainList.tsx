@@ -2,13 +2,12 @@ import { css } from "@emotion/css";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import classNames from "classnames";
 import Tag from "components/Tag";
-import { Chain } from "types";
-import { chains, generateCustomClassName } from "utils/";
+import { chains } from "utils/";
 
-interface TagListProps {
+interface ChainListProps {
   onChange(chain: string): void;
 }
-const TagList = ({ onChange }: TagListProps) => {
+const ChainList = ({ onChange }: ChainListProps) => {
   return (
     <>
       <ToggleGroup.Root
@@ -16,7 +15,7 @@ const TagList = ({ onChange }: TagListProps) => {
         defaultValue="evm"
         aria-label="Chain"
         onValueChange={(chain) => onChange(chain)}
-        className="flex flex-col gap-4 w-full"
+        className="grid grid-cols-2 md:grid-cols-1 gap-4 w-full"
       >
         {chains.map((c) => {
           const customClassName = css`
@@ -56,4 +55,4 @@ const TagList = ({ onChange }: TagListProps) => {
   );
 };
 
-export default TagList;
+export default ChainList;

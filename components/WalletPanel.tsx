@@ -31,7 +31,7 @@ const WalletPanel = () => {
             connect({ connector });
           }}
         >
-          <SvgIcon name={connector.name} className="w-10 h-10" />
+          <SvgIcon name={connector.name} className="w-8 h-8" />
           {isLoading && connector.id === pendingConnector?.id && (
             <LoadingIcon className="ml-2"></LoadingIcon>
           )}

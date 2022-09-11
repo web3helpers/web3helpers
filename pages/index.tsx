@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Condition, Meta } from "types";
 import Layout from "blocks/layout";
-import TagList from "blocks/home/TagList";
+import TagList from "blocks/home/ChainList";
 import AppList from "blocks/home/AppList";
 import SearchBar from "blocks/home/SearchBar";
 import { useReducer } from "react";
