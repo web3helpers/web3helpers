@@ -6840,6 +6840,11 @@ v8-compile-cache-lib@^3.0.1:
   resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
   integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
 
+vercel-toast-center@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vercel-toast-center/-/vercel-toast-center-0.1.0.tgz#2bb3423484a31b157aed9f489e5a7bc869cb6f81"
+  integrity sha512-3ocnmdtUOLe5UsOdYWZjub7szkMOkW9re0AXzLNjka3qWWwi30N1Hr9uBRTAkAL27sMJf0cEMFsWNBNBgLcg8w==
+
 "vite@^2.9.12 || ^3.0.0-0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.0.tgz#3138b279072941d57e76bcf7f66f272fc6a17fe2"

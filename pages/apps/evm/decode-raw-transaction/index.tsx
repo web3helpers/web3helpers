@@ -8,6 +8,7 @@ import { Meta } from "types";
 import { name } from "./manifest.json";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
+import { createToast } from "vercel-toast-center";
 import { decode } from "./utils";
 import { object, string } from "yup";
 
@@ -28,6 +29,12 @@ const Index: NextPage = () => {
       const decoded = decode(values.rawTransaction);
       setResult(decoded);
     } catch (error) {
+      if (error instanceof Error) {
+        createToast(error.message, {
+          timeout: 4000,
+          type: "error",
+        });
+      }
     } finally {
       setSubmitting(false);
     }

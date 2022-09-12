@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "vercel-toast-center/css";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
