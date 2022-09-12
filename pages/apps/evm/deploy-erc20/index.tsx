@@ -106,6 +106,7 @@ const Index: NextPage = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
+                      loading={isSubmitting}
                       className="bg-evm border-evm mb-4"
                     >
                       Submit

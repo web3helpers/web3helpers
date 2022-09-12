@@ -1,6 +1,7 @@
 import { forwardRef, RefObject } from "react";
 import classNames from "classnames";
 import Link from "next/link";
+import LoadingIcon from "components/icons/LoadingIcon";
 
 type ButtonSize = "sm" | "md" | "lg";
 interface ButtonProps {
@@ -8,6 +9,7 @@ interface ButtonProps {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
+  loading?: boolean;
   href?: string;
   type?: "button" | "submit" | "reset";
   onClick?: (event?: React.MouseEvent<HTMLElement, MouseEvent>) => any;
@@ -23,6 +25,7 @@ const Button = forwardRef(function Button(
     className,
     onClick,
     href,
+    loading = false,
   }: ButtonProps,
   buttonRef
 ) {
@@ -39,7 +42,7 @@ const Button = forwardRef(function Button(
       break;
   }
   const basicClassName =
-    "ransition-ease hover:text-black hover:border-black w-auto font-bold text-center border-4 rounded-md active:border-transparent active:outline ative:outline-2 active:outline-offset-2";
+    "relative ransition-ease hover:text-black hover:border-black w-auto font-bold text-center border-4 rounded-md active:border-transparent active:outline ative:outline-2 active:outline-offset-2";
   const props = {
     onClick,
     type,
@@ -62,7 +65,8 @@ const Button = forwardRef(function Button(
       {...props}
       className={classNames(className, basicClassName, sizeClassName)}
     >
-      {children}
+      <div className={loading ? "invisible" : "visible"}>{children}</div>
+      {loading && <LoadingIcon className="absolute inset-0 w-6 h-6 m-auto"/>}
     </button>
   );
 });
