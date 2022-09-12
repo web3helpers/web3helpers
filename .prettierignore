@@ -1,2 +1,4 @@
 .next
 .node_module
+.eslintrc
+.lintstagedrc.js
