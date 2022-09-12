@@ -34,10 +34,7 @@ const SearchDialog = ({ children }: SearchDialogProps) => {
                 onChange={handleChange}
                 className="w-full px-4 py-6 rounded-lg text-2xl border-0 focus-visible:!border-b-4 focus-visible:!border-t-0 border-black"
               />
-              <Search
-                size={30}
-                className="absolute right-2 top-[calc(50%-15px)]"
-              ></Search>
+              <Search size={30} className="absolute right-2 top-[calc(50%-15px)]"></Search>
             </div>
             <div className="flex flex-wrap gap-6 mt-8">
               {result.map((a) => (

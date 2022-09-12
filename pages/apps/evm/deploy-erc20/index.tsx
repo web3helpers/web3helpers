@@ -19,14 +19,12 @@ const Index: NextPage = () => {
   const { address } = useAccount();
   const { data: signer } = useSigner();
 
-  const [result, setResult] = useState<
-    { address: string; hash: string } | undefined
-  >(undefined);
+  const [result, setResult] = useState<{ address: string; hash: string } | undefined>(undefined);
   const meta: Meta = {};
   const initialValues = {
     symbol: "W3H",
     name: "Web3helpers",
-    amount: 1000,
+    amount: 1000
   };
   const schema = object({
     symbol: string().required("Required"),
@@ -34,7 +32,7 @@ const Index: NextPage = () => {
     amount: number()
       .integer("Must be interger")
       .positive("Must be positive number")
-      .required("Required"),
+      .required("Required")
   });
   const submit = async ({ symbol, name, amount }: typeof initialValues) => {
     if (!address) return;
@@ -62,11 +60,7 @@ const Index: NextPage = () => {
               <NetworkSelector className="select" />
             </label>
           </AppStep>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={schema}
-            onSubmit={submit}
-          >
+          <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
             {({ isSubmitting }) => (
               <Form className="flex flex-col gap-4">
                 <AppStep step={3} className="bg-evm">
@@ -90,12 +84,7 @@ const Index: NextPage = () => {
                 <AppStep step={5} className="bg-evm">
                   <label>
                     <span className="block text-lg mb-4">Mint amount</span>
-                    <Field
-                      as="input"
-                      type="number"
-                      name="amount"
-                      className="select"
-                    ></Field>
+                    <Field as="input" type="number" name="amount" className="select"></Field>
                     <ErrorMessage name="amount">
                       {(msg) => <div className="text-error">{msg}</div>}
                     </ErrorMessage>
@@ -111,9 +100,7 @@ const Index: NextPage = () => {
                     >
                       Submit
                     </Button>
-                    {result && (
-                      <AppResult data={result} className="w-full"></AppResult>
-                    )}
+                    {result && <AppResult data={result} className="w-full"></AppResult>}
                   </div>
                 </AppStep>
               </Form>

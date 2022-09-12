@@ -8,12 +8,12 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./blocks/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
       fontFamily: {
-        serif: ["M PLUS 2", ...defaultTheme.fontFamily.sans],
+        serif: ["M PLUS 2", ...defaultTheme.fontFamily.sans]
       },
       colors: {
         transparent: "transparent",
@@ -23,8 +23,8 @@ module.exports = {
         solana: "#933FFD",
         bitcoin: "#F7A300",
         error: colors.red[700]
-      },
-    },
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

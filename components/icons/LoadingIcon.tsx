@@ -1,9 +1,7 @@
 const LoadingIcon = ({ className }: { className?: string }) => {
   return (
     <svg
-      className={`inline w-4 h-4 text-lensDark animate-spin ${
-        className ?? ""
-      }`}
+      className={`inline w-4 h-4 text-lensDark animate-spin ${className ?? ""}`}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 100 101"

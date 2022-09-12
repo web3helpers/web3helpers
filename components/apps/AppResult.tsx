@@ -17,8 +17,8 @@ const AppResult = ({ data }: AppResultProps) => {
     from: { opacity: 0, y: -20 },
     to: {
       opacity: 1,
-      y: 0,
-    },
+      y: 0
+    }
   });
   useEffect(() => {
     let timer: NodeJS.Timeout;

@@ -10,7 +10,7 @@ const Toast = forwardRef(function Toast(props: MyToastProps, forwardedRef) {
   const [count, setCount] = useState<number>(0);
 
   useImperativeHandle(forwardedRef, () => ({
-    publish: () => setCount((count) => count + 1),
+    publish: () => setCount((count) => count + 1)
   }));
 
   return (

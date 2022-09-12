@@ -4,14 +4,7 @@ import AppResult from "components/apps/AppResult";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import { ethers } from "ethers";
-import {
-  ErrorMessage,
-  Field,
-  Form,
-  Formik,
-  useField,
-  useFormikContext,
-} from "formik";
+import { ErrorMessage, Field, Form, Formik, useField, useFormikContext } from "formik";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { Meta } from "types";
@@ -46,7 +39,7 @@ const DataField = (props: any) => {
   const {
     values: { method },
     touched,
-    setFieldValue,
+    setFieldValue
   } = useFormikContext<FormValues>();
   const [field, meta] = useField(props);
 
@@ -71,17 +64,17 @@ const Index: NextPage = () => {
   const schema = object({
     network: string().required("Required"),
     method: string().required("Required"),
-    data: string().required("Required"),
+    data: string().required("Required")
   });
   const initialValues = {
     network: "0x1",
     method: "eth_blockNumber",
-    data: "[]",
+    data: "[]"
   };
   const submit = async ({
     method,
     data,
-    network,
+    network
   }: {
     method: string;
     data: string;
@@ -124,11 +117,7 @@ const Index: NextPage = () => {
                     <span className="block text-2xl mb-4">Jsonrpc method</span>
                     <Field as="select" name="method" className="select">
                       {methods.map((m) => (
-                        <option
-                          value={m.method}
-                          key={m.method}
-                          className="mb-2"
-                        >
+                        <option value={m.method} key={m.method} className="mb-2">
                           {m.method}
                         </option>
                       ))}
@@ -141,12 +130,7 @@ const Index: NextPage = () => {
                 <AppStep step={3} className="bg-evm">
                   <label className="w-full">
                     <span className="block text-2xl mb-4">Data</span>
-                    <DataField
-                      as="textarea"
-                      name="data"
-                      rows="5"
-                      className="textarea"
-                    ></DataField>
+                    <DataField as="textarea" name="data" rows="5" className="textarea"></DataField>
                     <ErrorMessage name="data">
                       {(msg) => <div className="text-error">{msg}</div>}
                     </ErrorMessage>

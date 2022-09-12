@@ -4,21 +4,21 @@ export const chains: Chain[] = [
   {
     name: "Evm",
     color: "#F7A300",
-    icons: ["Ethereum", "Polygon"],
+    icons: ["Ethereum", "Polygon"]
   },
   {
     name: "Solana",
     color: "#933FFD",
-    icons: ["Solana"],
+    icons: ["Solana"]
   },
   {
     name: "Filecoin",
     color: "#008BF7",
-    icons: ["Filecoin"],
+    icons: ["Filecoin"]
   },
   {
     name: "Substrate",
     color: "#24CC85",
-    icons: ["Polkadot"],
-  },
+    icons: ["Polkadot"]
+  }
 ];

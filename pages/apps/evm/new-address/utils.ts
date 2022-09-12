@@ -10,6 +10,6 @@ export function generateAddress(): EvmAddress {
   return {
     address: wallet.address,
     privateKey: wallet.privateKey,
-    mnemonic: wallet.mnemonic.phrase,
+    mnemonic: wallet.mnemonic.phrase
   };
 }

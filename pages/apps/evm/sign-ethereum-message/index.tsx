@@ -23,11 +23,11 @@ const Index: NextPage = () => {
   const meta = {};
   const initialValues: SignMessage = {
     type: "message",
-    value: "",
+    value: ""
   };
   const schema = object({
     type: string().required("Required"),
-    value: string().required("Reuqired"),
+    value: string().required("Reuqired")
   });
 
   const submit = useCallback(
@@ -50,11 +50,7 @@ const Index: NextPage = () => {
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
           <AppTitle name={name}></AppTitle>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={schema}
-            onSubmit={submit}
-          >
+          <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
             {({ isSubmitting }) => (
               <Form className="flex flex-col gap-4">
                 <AppStep step={1} className="bg-evm">
@@ -72,13 +68,7 @@ const Index: NextPage = () => {
                 <AppStep step={3} className="bg-evm">
                   <label className="w-full">
                     <span className="block text-lg mb-4">Unsigned Message</span>
-                    <Field
-                      className="textarea"
-                      as="textarea"
-                      rows="10"
-                      type="value"
-                      name="value"
-                    />
+                    <Field className="textarea" as="textarea" rows="10" type="value" name="value" />
                     <ErrorMessage name="value">
                       {(msg) => <div className="text-error">{msg}</div>}
                     </ErrorMessage>
@@ -93,9 +83,7 @@ const Index: NextPage = () => {
                     >
                       Submit
                     </Button>
-                    {result && (
-                      <AppResult data={result} className="w-full"></AppResult>
-                    )}
+                    {result && <AppResult data={result} className="w-full"></AppResult>}
                   </div>
                 </AppStep>
               </Form>

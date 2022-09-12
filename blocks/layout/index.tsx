@@ -34,22 +34,20 @@ const Layout = ({ children, meta }: LayoutProps) => {
             {
               url: meta.ogImage ?? "",
               alt: "Web3 Tools",
-              type: "image/jpeg",
-            },
+              type: "image/jpeg"
+            }
           ],
-          site_name: "Web3 Tools",
+          site_name: "Web3 Tools"
         }}
         twitter={{
           handle: "@_lens.ink",
           site: meta.twitter,
-          cardType: "summary_large_image",
+          cardType: "summary_large_image"
         }}
       />
       <div className="bg-gradient-to-br from-red-200 via-red-100 to-green-100 dark:from-black dark:via-black dark:to-gray-800 relative w-full min-h-screen flex flex-col items-center">
         <NavBar></NavBar>
-        <div className="max-w-6xl w-full px-4 md:px-0 py-10 min-h-[80vh]">
-          {children}
-        </div>
+        <div className="max-w-6xl w-full px-4 md:px-0 py-10 min-h-[80vh]">{children}</div>
         <Footer></Footer>
       </div>
     </>

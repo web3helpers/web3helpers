@@ -12,9 +12,7 @@ const AppStep = ({ step, children, className }: AppStepProps) => {
   return (
     <>
       <div className="flex justify-start items-start gap-4">
-        <span className={classNames(basicClassName, className)}>
-          {step}
-        </span>
+        <span className={classNames(basicClassName, className)}>{step}</span>
         {children}
       </div>
     </>

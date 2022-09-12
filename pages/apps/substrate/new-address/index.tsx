@@ -16,16 +16,14 @@ type GenerateAddressType = {
 };
 const Index: NextPage = () => {
   const meta = {};
-  const [address, setAddresss] = useState<SubstrateAddress | undefined>(
-    undefined
-  );
+  const [address, setAddresss] = useState<SubstrateAddress | undefined>(undefined);
   const initialValues: GenerateAddressType = {
     type: "sr25519",
-    format: 2,
+    format: 2
   };
   const schema = object({
     type: string().required(),
-    format: number().required(),
+    format: number().required()
   });
 
   const submit = (
@@ -43,11 +41,7 @@ const Index: NextPage = () => {
     <Layout meta={meta}>
       <div className="flex flex-col gap-4">
         <AppTitle name={name}></AppTitle>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={schema}
-          onSubmit={submit}
-        >
+        <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
           {({ isSubmitting }) => (
             <Form className="flex flex-col gap-4">
               <AppStep step={1} className="bg-evm">
@@ -71,11 +65,7 @@ const Index: NextPage = () => {
               </AppStep>
               <AppStep step={3} className="bg-evm">
                 <div>
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-evm border-evm mb-4"
-                  >
+                  <Button type="submit" disabled={isSubmitting} className="bg-evm border-evm mb-4">
                     Generate
                   </Button>
                   {address && <AppResult data={address}></AppResult>}

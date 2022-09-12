@@ -3,17 +3,10 @@ import "vercel-toast-center/css";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import {
-  configureChains,
-  createClient,
-  defaultChains,
-  WagmiConfig,
-} from "wagmi";
+import { configureChains, createClient, defaultChains, WagmiConfig } from "wagmi";
 import { ThemeProvider } from "next-themes";
 
-const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
-  publicProvider(),
-]);
+const { chains, provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
 
 const client = createClient({
   autoConnect: true,
@@ -22,12 +15,12 @@ const client = createClient({
     new WalletConnectConnector({
       chains,
       options: {
-        qrcode: true,
-      },
-    }),
+        qrcode: true
+      }
+    })
   ],
   provider,
-  webSocketProvider,
+  webSocketProvider
 });
 
 import type { AppProps } from "next/app";

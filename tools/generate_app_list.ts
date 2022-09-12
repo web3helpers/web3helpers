@@ -21,16 +21,14 @@ const readApps = async () => {
       if (!data) {
         throw new Error(`Manifest not fount in ${appPath}`);
       }
-      const chain = chains.find(
-        (c) => c.name.toLowerCase() === file.toLowerCase()
-      );
+      const chain = chains.find((c) => c.name.toLowerCase() === file.toLowerCase());
       if (!chain) {
         throw new Error(`Chain not fount in ${appPath}`);
       }
       const app = {
         name: data.name,
         chain,
-        path: `/apps/${file}/${appDir}`,
+        path: `/apps/${file}/${appDir}`
       };
       appList.push(app);
     }

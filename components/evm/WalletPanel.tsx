@@ -13,8 +13,7 @@ const WalletPanel = () => {
   const { address } = useAccount();
   const { disconnect } = useDisconnect();
 
-  const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect();
+  const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
 
   const disconnectWallet = () => {
     disconnect();
@@ -49,9 +48,7 @@ const WalletPanel = () => {
             className="w-8 h-8 rounded-full object-cover"
           />
           <div>
-            <span className="h-[40] font-mono text-lg text-black">
-              {shortAddress(address)}
-            </span>
+            <span className="h-[40] font-mono text-lg text-black">{shortAddress(address)}</span>
           </div>
           <button onClick={() => disconnectWallet()} className="ml-2">
             <XCircle color="black"></XCircle>

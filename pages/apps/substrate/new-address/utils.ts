@@ -15,6 +15,6 @@ export function generateAddress(
 
   return {
     address: pair.address,
-    mnemonic: mnemonic,
+    mnemonic: mnemonic
   };
 }

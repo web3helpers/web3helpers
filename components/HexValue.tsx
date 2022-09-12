@@ -8,9 +8,7 @@ const HexValue = ({ value }: HexValueProp) => {
   const [converted, setConverted] = useState(false);
   if (!value) return null;
   const isHex = RegExp(/^0x[0-9a-fA-F]+$/).test(value!);
-  const convertedValue = isHex
-    ? ethers.BigNumber.from(value).toString()
-    : value;
+  const convertedValue = isHex ? ethers.BigNumber.from(value).toString() : value;
 
   return (
     <>

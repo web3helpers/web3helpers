@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && prettier --write --list-different .",
     "test": "vitest watch",
     "generate_app_list": "ts-node tools/generate_app_list.ts"
   },
@@ -46,6 +46,7 @@
     "eslint-config-prettier": "^8.5.0",
     "jsdom": "^20.0.0",
     "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8",
     "ts-node": "^10.9.1",
     "typescript": "4.8.2",

@@ -16,12 +16,12 @@ const Index: NextPage = () => {
   const meta: Meta = {};
   const [result, setResult] = useState<any>(null);
   const initialValues = {
-    rawTransaction: "",
+    rawTransaction: ""
   };
   const schema = object({
     rawTransaction: string()
       .matches(/^0x[0-9a-fA-F]*$/, "Invalid raw transaction")
-      .required("Required"),
+      .required("Required")
   });
   const submit = (values: { rawTransaction: string }, { setSubmitting }) => {
     try {
@@ -32,7 +32,7 @@ const Index: NextPage = () => {
       if (error instanceof Error) {
         createToast(error.message, {
           timeout: 4000,
-          type: "error",
+          type: "error"
         });
       }
     } finally {
@@ -44,11 +44,7 @@ const Index: NextPage = () => {
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
           <AppTitle name={name}></AppTitle>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={schema}
-            onSubmit={submit}
-          >
+          <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
             {({ isSubmitting }) => (
               <Form className="flex flex-col gap-4">
                 <AppStep step={1} className="bg-evm">

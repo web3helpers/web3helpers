@@ -17,16 +17,7 @@ interface ButtonProps {
 }
 
 const Button = forwardRef(function Button(
-  {
-    size = "md",
-    children,
-    type,
-    disabled,
-    className,
-    onClick,
-    href,
-    loading = false,
-  }: ButtonProps,
+  { size = "md", children, type, disabled, className, onClick, href, loading = false }: ButtonProps,
   buttonRef
 ) {
   let sizeClassName: string = "";
@@ -47,26 +38,20 @@ const Button = forwardRef(function Button(
     onClick,
     type,
     disabled,
-    ref: buttonRef as React.RefObject<any>,
+    ref: buttonRef as React.RefObject<any>
   };
   if (href)
     return (
       <Link href={href}>
-        <a
-          {...props}
-          className={classNames(basicClassName, sizeClassName, className)}
-        >
+        <a {...props} className={classNames(basicClassName, sizeClassName, className)}>
           {children}
         </a>
       </Link>
     );
   return (
-    <button
-      {...props}
-      className={classNames(className, basicClassName, sizeClassName)}
-    >
+    <button {...props} className={classNames(className, basicClassName, sizeClassName)}>
       <div className={loading ? "invisible" : "visible"}>{children}</div>
-      {loading && <LoadingIcon className="absolute inset-0 w-6 h-6 m-auto"/>}
+      {loading && <LoadingIcon className="absolute inset-0 w-6 h-6 m-auto" />}
     </button>
   );
 });

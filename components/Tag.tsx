@@ -9,13 +9,7 @@ interface TagProps {
   color: string;
   withEllipsis?: boolean;
 }
-const Tag = ({
-  name,
-  className = "",
-  icons,
-  color,
-  withEllipsis = false,
-}: TagProps) => {
+const Tag = ({ name, className = "", icons, color, withEllipsis = false }: TagProps) => {
   const customClassName = css`
     color: ${color};
     border-color: ${color};
@@ -33,8 +27,7 @@ const Tag = ({
     >
       <span>{name}</span>
       <span className="flex gap-2 items-center">
-        {icons &&
-          icons.map((i) => <SvgIcon className="w-5 h-5" key={i} name={i} />)}
+        {icons && icons.map((i) => <SvgIcon className="w-5 h-5" key={i} name={i} />)}
         {withEllipsis && "..."}
       </span>
     </div>
