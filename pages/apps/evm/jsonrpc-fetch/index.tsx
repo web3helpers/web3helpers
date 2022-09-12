@@ -67,7 +67,7 @@ const Index: NextPage = () => {
     data: string().required("Required")
   });
   const initialValues = {
-    network: "0x1",
+    network: 0x4,
     method: "eth_blockNumber",
     data: "[]"
   };
@@ -78,7 +78,7 @@ const Index: NextPage = () => {
   }: {
     method: string;
     data: string;
-    network: string;
+    network: number;
   }) => {
     try {
       const url = networks.find((n) => n.id === network)?.url;
