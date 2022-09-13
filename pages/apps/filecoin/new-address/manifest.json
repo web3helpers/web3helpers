@@ -1,0 +1,6 @@
+{
+  "id": 8,
+  "name": "New filecoin address",
+  "chain": "filecoin",
+  "description": "Generate new filecoin address"
+}

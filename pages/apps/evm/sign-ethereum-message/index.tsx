@@ -5,7 +5,7 @@ import { NextPage } from "next";
 import { name } from "./manifest.json";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Button from "components/buttons/Button";
-import WalletPanel from "components/WalletPanel";
+import WalletPanel from "components/evm/WalletPanel";
 import { object, string } from "yup";
 import { useAccount, useSignMessage, useSignTypedData } from "wagmi";
 import { useCallback, useState } from "react";
