@@ -20,6 +20,7 @@
     "@radix-ui/react-toggle-group": "^1.0.0",
     "@react-spring/web": "^9.5.2",
     "@solana/web3.js": "^1.60.0",
+    "@talismn/connect-wallets": "^1.2.1",
     "@zondax/filecoin-signing-tools": "^1.1.2",
     "bls-eth-wasm": "^1.0.5",
     "classnames": "^2.3.1",

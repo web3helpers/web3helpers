@@ -4,21 +4,16 @@ import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { XCircle } from "lucide-react";
 import LoadingIcon from "../icons/LoadingIcon";
 import SvgIcon from "../icons/SvgIcon";
-
 export interface WalletPanelProps {
   show: boolean;
 }
-
 const WalletPanel = () => {
   const { address } = useAccount();
   const { disconnect } = useDisconnect();
-
   const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
-
   const disconnectWallet = () => {
     disconnect();
   };
-
   const walletConnect = connectors.map(
     (connector) =>
       connector.ready && (
