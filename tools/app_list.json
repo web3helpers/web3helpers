@@ -1,1 +1,68 @@
-[{"name":"Decode raw transaction","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/decode-raw-transaction"},{"name":"Deploy erc20 contract","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/deploy-erc20"},{"name":"Deploy erc721 contract","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/deploy-erc721"},{"name":"Jsonrpc fetcher","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/jsonrpc-fetch"},{"name":"New ethereum address","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/new-address"},{"name":"Sign ethereum message","chain":{"name":"Evm","color":"#F7A300","icons":["Ethereum","Polygon"]},"path":"/apps/evm/sign-ethereum-message"},{"name":"New filecoin address","chain":{"name":"Filecoin","color":"#008BF7","icons":["Filecoin"]},"path":"/apps/filecoin/new-address"},{"name":"New solana address","chain":{"name":"Solana","color":"#933FFD","icons":["Solana"]},"path":"/apps/solana/new-address"},{"name":"New substrate address","chain":{"name":"Substrate","color":"#24CC85","icons":["Polkadot"]},"path":"/apps/substrate/new-address"},{"name":"Sign substate message","chain":{"name":"Substrate","color":"#24CC85","icons":["Polkadot"]},"path":"/apps/substrate/sign-message"}]
+[
+  {
+    "name": "New ethereum address",
+    "id": 1,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/new-address"
+  },
+  {
+    "name": "Sign ethereum message",
+    "id": 2,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/sign-ethereum-message"
+  },
+  {
+    "name": "Decode raw transaction",
+    "id": 3,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/decode-raw-transaction"
+  },
+  {
+    "name": "Jsonrpc fetcher",
+    "id": 4,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/jsonrpc-fetch"
+  },
+  {
+    "name": "New solana address",
+    "id": 5,
+    "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
+    "path": "/apps/solana/new-address"
+  },
+  {
+    "name": "Deploy erc20 contract",
+    "id": 6,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/deploy-erc20"
+  },
+  {
+    "name": "New substrate address",
+    "id": 7,
+    "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
+    "path": "/apps/substrate/new-address"
+  },
+  {
+    "name": "Deploy erc721 contract",
+    "id": 8,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/deploy-erc721"
+  },
+  {
+    "name": "New filecoin address",
+    "id": 9,
+    "chain": { "name": "Filecoin", "color": "#008BF7", "icons": ["Filecoin"] },
+    "path": "/apps/filecoin/new-address"
+  },
+  {
+    "name": "NFT query",
+    "id": 10,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "path": "/apps/evm/nft-query"
+  },
+  {
+    "name": "Sign substrate message",
+    "id": 11,
+    "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
+    "path": "/apps/substrate/sign-message"
+  }
+]

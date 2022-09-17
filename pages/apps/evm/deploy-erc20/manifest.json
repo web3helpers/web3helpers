@@ -1,5 +1,5 @@
 {
-  "id": 7,
+  "id": 6,
   "name": "Deploy erc20 contract",
   "chain": "evm",
   "decription": "Deploy erc20 contract"

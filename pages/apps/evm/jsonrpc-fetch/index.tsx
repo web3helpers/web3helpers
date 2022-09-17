@@ -81,7 +81,9 @@ const Index: NextPage = () => {
     network: number;
   }) => {
     try {
-      const url = networks.find((n) => n.id === network)?.url;
+      const url = networks.find((n) => n.id == network)?.url;
+      console.log(url);
+      
       const provider = new ethers.providers.JsonRpcProvider(url);
       const result = await provider.send(method, JSON.parse(data));
       setResult(result);
@@ -105,7 +107,7 @@ const Index: NextPage = () => {
               <Form className="flex flex-col gap-4">
                 <AppStep step={1} className="bg-evm">
                   <label>
-                    <span className="block text-2xl mb-4">Jsonrpc method</span>
+                    <span className="block text-2xl mb-4">Network</span>
                     <NetworkSelector name="network" className="select" />
                     <ErrorMessage name="network">
                       {(msg) => <div className="text-error">{msg}</div>}

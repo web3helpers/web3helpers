@@ -35,7 +35,6 @@ const Index: NextPage = () => {
       .required("Required")
   });
   const submit = async ({ symbol, name, amount }: typeof initialValues) => {
-    console.log("ee");
     if (!address) return;
 
     const erc721ContractFactory = new ContractFactory(abi, bytecode, signer!);
@@ -101,6 +100,7 @@ const Index: NextPage = () => {
                     >
                       Submit
                     </Button>
+                    {isSubmitting && <span className="block mb-2">May take 1~2 mins</span>}
                     {result && <AppResult data={result} className="w-full"></AppResult>}
                   </div>
                 </AppStep>

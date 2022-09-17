@@ -17,6 +17,7 @@ export interface Web3ToolsApp {
   name: string;
   path: string;
   chain: Chain;
+  id: number;
 }
 
 export interface Condition {

@@ -2,12 +2,13 @@
 
 import path from "path";
 import fs from "fs";
+import prettier from "prettier";
 import { Web3ToolsApp } from "types";
 import { chains } from "../utils";
 
 const sourceDirPath = path.join(__dirname, "../pages/apps/");
 const targetPath = path.join(__dirname, "./app_list.json");
-const appList: Web3ToolsApp[] = [];
+let appList: Web3ToolsApp[] = [];
 
 const readApps = async () => {
   const files = await fs.promises.readdir(sourceDirPath);
@@ -27,13 +28,20 @@ const readApps = async () => {
       }
       const app = {
         name: data.name,
+        id: data.id,
         chain,
         path: `/apps/${file}/${appDir}`
       };
       appList.push(app);
+      appList = appList.sort((a, b) => a.id - b.id);
     }
   }
-  fs.writeFile(targetPath, JSON.stringify(appList), () => {});
+  const config = path.join(__dirname, "../.prettierrc");
+  const text = fs.readFileSync(config, "utf8");
+  prettier.resolveConfig(text).then((options) => {
+    const formatted = prettier.format(JSON.stringify(appList), { ...options, parser: "json" });
+    fs.writeFile(targetPath, formatted, () => {});
+  });
 };
 
 readApps().catch((err) => console.log(err));

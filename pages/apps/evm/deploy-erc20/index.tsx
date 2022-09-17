@@ -100,6 +100,7 @@ const Index: NextPage = () => {
                     >
                       Submit
                     </Button>
+                    {isSubmitting && <span className="block mb-2">May take 1~2 mins</span>}
                     {result && <AppResult data={result} className="w-full"></AppResult>}
                   </div>
                 </AppStep>
