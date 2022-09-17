@@ -10,7 +10,7 @@ import { Meta } from "types";
 import { object, string, number } from "yup";
 import { useState } from "react";
 import NetworkSelector from "components/evm/NetworkSelector";
-import { name } from "./manifest.json";
+import { name, id } from "./manifest.json";
 import { ContractFactory } from "ethers";
 import { useAccount, useSigner } from "wagmi";
 import { abi, bytecode } from "./abi.json";
@@ -50,7 +50,7 @@ const Index: NextPage = () => {
     <>
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
-          <AppTitle name={name}></AppTitle>
+          <AppTitle name={name} id={id}></AppTitle>
           <AppStep step={1} className="bg-evm">
             <WalletPanel></WalletPanel>
           </AppStep>

@@ -3,29 +3,27 @@ import { NextPage } from "next";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import AppTitle from "blocks/apps/AppTitle";
-import { FilecoinAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { name, id } from "./manifest.json";
 import { object, string } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 
-type GenerateAddressType = {
-  type: "bls" | "ecdsa";
+type FormModel = {
+  input: string;
 };
 const Index: NextPage = () => {
   const meta = {};
-  const [address, setAddresss] = useState<FilecoinAddress | undefined>(undefined);
-  const initialValues: GenerateAddressType = {
-    type: "ecdsa"
+  const [result, setResult] = useState(undefined);
+  const initialValues: FormModel = {
+    input: ""
   };
   const schema = object({
     type: string().required()
   });
 
-  const submit = async ({ type }: GenerateAddressType) => {
-    const result = await generateAddress(type);
-    setAddresss(result);
+  const submit = async ({ input }: FormModel) => {
+    setResult(undefined);
   };
 
   return (
@@ -37,12 +35,9 @@ const Index: NextPage = () => {
             <Form className="flex flex-col gap-4">
               <AppStep step={1} className="bg-evm">
                 <label>
-                  <span className="block text-lg mb-4">Address Type</span>
-                  <Field as="select" name="type" className="select">
-                    <option value="bls">bls</option>
-                    <option value="ecdsa">ecdsa</option>
-                  </Field>
-                  <ErrorMessage name="type">
+                  <span className="block text-2lg mb-4">Input</span>
+                  <Field as="input" name="input" className="input"></Field>
+                  <ErrorMessage name="input">
                     {(msg) => <div className="text-error">{msg}</div>}
                   </ErrorMessage>
                 </label>
@@ -57,7 +52,7 @@ const Index: NextPage = () => {
                   >
                     Generate
                   </Button>
-                  {address && <AppResult data={address}></AppResult>}
+                  {result && <AppResult data={result}></AppResult>}
                 </div>
               </AppStep>
             </Form>

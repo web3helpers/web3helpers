@@ -6,10 +6,8 @@ import Button from "components/buttons/Button";
 import NetworkSelector from "components/evm/NetworkSelector";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { NextPage } from "next";
-import result from "postcss/lib/result";
-import { name } from "./manifest.json";
+import { name, id } from "./manifest.json";
 import { Meta } from "types";
-import schema from "yup/lib/schema";
 import { useState } from "react";
 import { object, string, number } from "yup";
 import { ethAddressRegex } from "utils/regex";
@@ -22,7 +20,7 @@ type NftQueryModel = {
 const Index: NextPage = () => {
   const meta: Meta = {};
   const [result, setResult] = useState([]);
-  
+
   const initialValues: NftQueryModel = {
     address: "",
     type: "address",
@@ -37,7 +35,7 @@ const Index: NextPage = () => {
   return (
     <Layout meta={meta}>
       <div className="flex flex-col gap-4">
-        <AppTitle name={name}></AppTitle>
+        <AppTitle name={name} id={id}></AppTitle>
 
         <Formik
           initialValues={initialValues}
@@ -75,7 +73,7 @@ const Index: NextPage = () => {
               <AppStep step={3} className="bg-evm">
                 <label className="w-full">
                   <span className="block text-2xl mb-4">Address</span>
-                  <Field className="textarea" as="input" rows="10" type="value" name="address" />
+                  <Field className="input" as="input" type="value" name="address" />
                   <ErrorMessage name="address">
                     {(msg) => <div className="text-error">{msg}</div>}
                   </ErrorMessage>

@@ -18,6 +18,9 @@
   .textarea {
     @apply border-2 w-full p-2 border-black rounded-md bg-white font-mono;
   }
+  .input {
+    @apply border-2 w-[30rem] max-w-full p-2 border-black rounded-md bg-white font-mono;
+  }
   .select {
     @apply border-2 px-2 h-12 border-black rounded-md bg-white;
   }

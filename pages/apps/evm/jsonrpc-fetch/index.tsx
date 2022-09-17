@@ -9,7 +9,7 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { Meta } from "types";
 import { object, string } from "yup";
-import { name } from "./manifest.json";
+import { name, id } from "./manifest.json";
 import { methods } from "./methods";
 import beautify from "json-beautify-fix";
 import { networks } from "components/evm/NetworkSelector";
@@ -95,7 +95,7 @@ const Index: NextPage = () => {
     <>
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
-          <AppTitle name={name}></AppTitle>
+          <AppTitle name={name} id={id}></AppTitle>
 
           <Formik
             initialValues={initialValues}

@@ -5,6 +5,7 @@ import fs from "fs";
 import prettier from "prettier";
 import { Web3ToolsApp } from "types";
 import { chains } from "../utils";
+import { red } from "kolorist";
 
 const sourceDirPath = path.join(__dirname, "../pages/apps/");
 const targetPath = path.join(__dirname, "./app_list.json");
@@ -20,11 +21,11 @@ const readApps = async () => {
       const manifestPath = path.join(appPath, "manifest.json");
       const data = await import(manifestPath);
       if (!data) {
-        throw new Error(`Manifest not fount in ${appPath}`);
+        throw new Error(red("✖") + `Manifest not fount in ${appPath}`);
       }
       const chain = chains.find((c) => c.name.toLowerCase() === file.toLowerCase());
       if (!chain) {
-        throw new Error(`Chain not fount in ${appPath}`);
+        throw new Error(red("✖") + `Chain not fount in ${appPath}`);
       }
       const app = {
         name: data.name,

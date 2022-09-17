@@ -6,7 +6,7 @@ import AppTitle from "blocks/apps/AppTitle";
 import { SubstrateAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { name } from "./manifest.json";
+import { name, id } from "./manifest.json";
 import { object, string, number } from "yup";
 import { Formik, Form, Field, FormikHelpers } from "formik";
 
@@ -40,7 +40,7 @@ const Index: NextPage = () => {
   return (
     <Layout meta={meta}>
       <div className="flex flex-col gap-4">
-        <AppTitle name={name}></AppTitle>
+        <AppTitle name={name} id={id}></AppTitle>
         <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
           {({ isSubmitting }) => (
             <Form className="flex flex-col gap-4">

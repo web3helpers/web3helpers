@@ -20,4 +20,5 @@ Easy to access web3.0 develop helpers.
 
     [Use](https://web3tools-nu-vercel.app/apps/evm/jssonrpc-fetch) | [Code](pages/apps/evm/jsonrpc-fetch/)
 
-5. 
+5. New solana address.
+    [Use](https://web3tools-nu.vercel.app/apps/solana/new-address) | [Code](pages/apps/evm/new-address/)

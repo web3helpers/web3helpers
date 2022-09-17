@@ -5,7 +5,7 @@ import Layout from "blocks/layout";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { NextPage } from "next";
 import { Meta } from "types";
-import { name } from "./manifest.json";
+import { name, id } from "./manifest.json";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { createToast } from "vercel-toast-center";
@@ -43,7 +43,7 @@ const Index: NextPage = () => {
     <>
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
-          <AppTitle name={name}></AppTitle>
+          <AppTitle name={name} id={id}></AppTitle>
           <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
             {({ isSubmitting }) => (
               <Form className="flex flex-col gap-4">

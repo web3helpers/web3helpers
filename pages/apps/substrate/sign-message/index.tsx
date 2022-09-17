@@ -2,7 +2,7 @@ import AppTitle from "blocks/apps/AppTitle";
 import AppStep from "components/apps/AppStep";
 import Layout from "blocks/layout";
 import { NextPage } from "next";
-import { name } from "./manifest.json";
+import { name, id } from "./manifest.json";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Button from "components/buttons/Button";
 import WalletPanel from "components/substrate/WalletPanel";
@@ -31,7 +31,7 @@ const Index: NextPage = () => {
     <>
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
-          <AppTitle name={name}></AppTitle>
+          <AppTitle name={name} id={id}></AppTitle>
           <AppStep step={1} className="bg-evm">
             <WalletPanel></WalletPanel>
           </AppStep>
