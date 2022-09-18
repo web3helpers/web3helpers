@@ -19,7 +19,7 @@
     "@radix-ui/react-dialog": "1.0.0",
     "@radix-ui/react-toast": "1.0.0",
     "@radix-ui/react-toggle-group": "1.0.0",
-    "@react-spring/web": "9.5.2",
+    "@react-spring/web": "9.5.4",
     "@solana/web3.js": "1.60.0",
     "@talismn/connect-wallets": "1.2.1",
     "@zondax/filecoin-signing-tools": "1.1.2",
