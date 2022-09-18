@@ -37,7 +37,7 @@
     "react-dom": "18.2.0",
     "react-hotkeys-hook": "3.4.7",
     "vercel-toast-center": "0.1.0",
-    "wagmi": "0.6.4",
+    "wagmi": "0.6.6",
     "yup": "0.32.11"
   },
   "devDependencies": {
