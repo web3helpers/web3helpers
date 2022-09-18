@@ -13,13 +13,13 @@ const Layout = ({ children, meta }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>{meta?.title}</title>
+        <title>{meta?.title ?? 'Web3.0 Helpers'}</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="theme-color" content="#00501e" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={meta?.description} />
 
-        <link rel="icon" href="/favicon.png" />
         <link rel="shortcut icon" type="image/x-icon" href={meta?.logo} />
         <link rel="apple-touch-icon" sizes="180x180" href={meta?.logo} />
       </Head>
@@ -33,11 +33,11 @@ const Layout = ({ children, meta }: LayoutProps) => {
           images: [
             {
               url: meta.ogImage ?? "",
-              alt: "Web3 Tools",
+              alt: "Web3.0 Helpers",
               type: "image/jpeg"
             }
           ],
-          site_name: "Web3 Tools"
+          site_name: "Web3.0 Helperss"
         }}
         twitter={{
           handle: "@_lens.ink",
