@@ -6677,12 +6677,12 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-strip-literal@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/strip-literal/-/strip-literal-0.4.0.tgz#0f90e86daecc1eb23c61c62d25238ffad4524634"
-  integrity sha512-ql/sBDoJOybTKSIOWrrh8kgUEMjXMwRAkZTD0EwiwxQH/6tTPkZvMIEjp0CRlpi6V5FMiJyvxeRkEi1KrGISoA==
+strip-literal@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/strip-literal/-/strip-literal-0.4.1.tgz#fb9316ad35071c4229ed67aad1a0467e5a9b0c1a"
+  integrity sha512-z+F/xmDM8GOdvA5UoZXFxEnxdvMOZ+XEBIwjfLfc8hMSuHpGxjXAUCfuEo+t1GOHSb8+qgI/IBRpxXVMaABYWA==
   dependencies:
-    acorn "^8.7.1"
+    acorn "^8.8.0"
 
 styled-jsx@5.0.4:
   version "5.0.4"
@@ -6800,15 +6800,15 @@ tiny-warning@^1.0.2:
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
 
-tinybench@^2.1.3:
+tinybench@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/tinybench/-/tinybench-2.1.5.tgz#6864341415ff0f912ed160cfd90b7f833ece674c"
   integrity sha512-ak+PZZEuH3mw6CCFOgf5S90YH0MARnZNhxjhjguAmoJimEMAJuNip/rJRd6/wyylHItomVpKTzZk9zrhTrQCoQ==
 
-tinypool@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/tinypool/-/tinypool-0.2.4.tgz#4d2598c4689d1a2ce267ddf3360a9c6b3925a20c"
-  integrity sha512-Vs3rhkUH6Qq1t5bqtb816oT+HeJTXfwt2cbPH17sWHIYKTotQIFPk3tf2fgqRrVyMDVOc1EnPgzIxfIulXVzwQ==
+tinypool@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/tinypool/-/tinypool-0.3.0.tgz#c405d8b743509fc28ea4ca358433190be654f819"
+  integrity sha512-NX5KeqHOBZU6Bc0xj9Vr5Szbb1j8tUHIeD18s41aDJaPeC5QTdEhK0SpdpUrZlj2nv5cctNcSjaKNanXlfcVEQ==
 
 tinyspy@^1.0.2:
   version "1.0.2"
@@ -7095,10 +7095,10 @@ vercel-toast-center@0.1.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@0.23.1:
-  version "0.23.1"
-  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.23.1.tgz#da3f79a88a6570e4d8c1fe8cf5e2d997be2dc3bd"
-  integrity sha512-kn9pG+h6VA3yj/xRvwgLKEd33rOlzMqJEg3tl5HSm3WUPlkY1Lr1FK8RN1uIqVKvFxmz6HGU3EQW+xW2kazRkQ==
+vitest@0.23.4:
+  version "0.23.4"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.23.4.tgz#7ebea620f203f4df09a27ca17819dc9da61f88ef"
+  integrity sha512-iukBNWqQAv8EKDBUNntspLp9SfpaVFbmzmM0sNcnTxASQZMzRw3PsM6DMlsHiI+I6GeO5/sYDg3ecpC+SNFLrQ==
   dependencies:
     "@types/chai" "^4.3.3"
     "@types/chai-subset" "^1.3.3"
@@ -7106,9 +7106,9 @@ vitest@0.23.1:
     chai "^4.3.6"
     debug "^4.3.4"
     local-pkg "^0.4.2"
-    strip-literal "^0.4.0"
-    tinybench "^2.1.3"
-    tinypool "^0.2.4"
+    strip-literal "^0.4.1"
+    tinybench "^2.1.5"
+    tinypool "^0.3.0"
     tinyspy "^1.0.2"
     vite "^2.9.12 || ^3.0.0-0"
 
