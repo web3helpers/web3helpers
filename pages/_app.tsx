@@ -5,6 +5,7 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { configureChains, createClient, defaultChains, WagmiConfig } from "wagmi";
 import { ThemeProvider } from "next-themes";
+import { WalletConfig } from "@web3helpers/substrate-wallet";
 
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
 
@@ -28,9 +29,11 @@ import type { AppProps } from "next/app";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
-      <WagmiConfig client={client}>
-        <Component {...pageProps} />
-      </WagmiConfig>
+      <WalletConfig config={{ dappName: "WebHelpers" }}>
+        <WagmiConfig client={client}>
+          <Component {...pageProps} />
+        </WagmiConfig>
+      </WalletConfig>
     </ThemeProvider>
   );
 }

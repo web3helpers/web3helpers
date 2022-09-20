@@ -9,6 +9,7 @@ import WalletPanel from "components/substrate/WalletPanel";
 import { object, string } from "yup";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
+import { useSigner } from "@web3helpers/substrate-wallet";
 
 type SignMessage = {
   value: string;
@@ -18,13 +19,16 @@ const Index: NextPage = () => {
   const initialValues: SignMessage = {
     value: ""
   };
-  const [result, setResult] = useState();
+  const [result, setResult] = useState<string | undefined>();
+  const signRaw = useSigner();
   const schema = object({
     value: string().required("Reuqired")
   });
 
   const submit = async (signMessage: SignMessage) => {
     const { value } = signMessage;
+    const signature = await signRaw(value);
+    setResult(signature);
   };
 
   return (
