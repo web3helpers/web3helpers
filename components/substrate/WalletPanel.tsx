@@ -7,13 +7,17 @@ import { useAccounts } from "@web3helpers/substrate-wallet";
 
 const WalletPanel = () => {
   const connectors = getWallets();
-  const { connect, loading, address } = useAccounts();
+  const { connect, loading, address, disconnect } = useAccounts();
   const walletConnect = connectors.map((connector) => (
     <button
       key={connector.title}
       className="mx-auto group flex items-center px-2 transition duration-300"
       onClick={() => {
-        connect(connector);
+        if (connector.installed) {
+          connect(connector);
+        } else {
+          window.open(connector.installUrl, "_blank");
+        }
       }}
     >
       <img src={connector.logo.src} alt={connector.logo.alt} className="w-8 h-8" />
@@ -33,7 +37,12 @@ const WalletPanel = () => {
           <div>
             <span className="h-[40] font-mono text-lg text-black">{shortAddress(address)}</span>
           </div>
-          <button onClick={() => {}} className="ml-2">
+          <button
+            onClick={() => {
+              disconnect();
+            }}
+            className="ml-2"
+          >
             <XCircle color="black"></XCircle>
           </button>
         </>

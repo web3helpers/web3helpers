@@ -2927,10 +2927,10 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
-"@web3helpers/substrate-wallet@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@web3helpers/substrate-wallet/-/substrate-wallet-0.1.0.tgz#fbe10ab50174e7678f9645ca7e5cb9455d196cd6"
-  integrity sha512-eOXwvFj/3vdCV+sE99vq/pganAaXWRY4Dc72JmoPJ23EQ3zJZ0ulln01qrn1B3/MsEGlXU2Y2iRaLIOo1a8/iQ==
+"@web3helpers/substrate-wallet@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@web3helpers/substrate-wallet/-/substrate-wallet-0.1.1.tgz#eb8de6ba86a5728166da03ec2c8a48a263f1b396"
+  integrity sha512-xFfYWrt+Ngek/00Pj/HqTvd4txWUm71Nj7nQm716eiyGMMe9FQkVWwHD+ZPNMFdHehi1jX5K16cisRtxERLhhg==
   dependencies:
     "@talismn/connect-wallets" "^1.2.1"
     "@types/react" "^18.0.20"

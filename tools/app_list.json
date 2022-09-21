@@ -1,6 +1,6 @@
 [
   {
-    "name": "New ethereum address",
+    "name": "New Address",
     "id": 1,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
     "path": "/apps/evm/new-address"
@@ -9,7 +9,7 @@
     "name": "Sign ethereum message",
     "id": 2,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
-    "path": "/apps/evm/sign-ethereum-message"
+    "path": "/apps/evm/sign-message"
   },
   {
     "name": "Decode raw transaction",
