@@ -6,7 +6,7 @@ import AppTitle from "blocks/apps/AppTitle";
 import { SolanaAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { name,id  } from "./manifest.json";
+import { name, id } from "./manifest.json";
 
 const Index: NextPage = () => {
   const meta = {};

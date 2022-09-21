@@ -83,7 +83,7 @@ const Index: NextPage = () => {
     try {
       const url = networks.find((n) => n.id == network)?.url;
       console.log(url);
-      
+
       const provider = new ethers.providers.JsonRpcProvider(url);
       const result = await provider.send(method, JSON.parse(data));
       setResult(result);

@@ -13,7 +13,7 @@ const Layout = ({ children, meta }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>{meta?.title ?? 'Web3.0 Helpers'}</title>
+        <title>{meta?.title ?? "Web3.0 Helpers"}</title>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="theme-color" content="#00501e" />

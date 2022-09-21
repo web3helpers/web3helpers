@@ -28,13 +28,13 @@ export const networks = [
   {
     id: 0x38,
     name: "BNB Smart Chain",
-    url: 'https://bsc-dataseed.binance.org/'
+    url: "https://bsc-dataseed.binance.org/"
   },
   {
     id: 0x61,
     name: "BNB Smart Chain Testnet",
-    url: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
-  },
+    url: "https://data-seed-prebsc-1-s1.binance.org:8545/"
+  }
 ];
 
 const NetworkSelecotr = (props: any) => {

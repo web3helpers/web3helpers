@@ -64,5 +64,11 @@
     "id": 11,
     "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
     "path": "/apps/substrate/sign-message"
+  },
+  {
+    "name": "Sign Message",
+    "id": 288780,
+    "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
+    "path": "/apps/solana/sign-message"
   }
 ]

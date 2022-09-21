@@ -1,3 +1,1 @@
-export function getNftsWithAddress(address: string) {
-    
-}
+export function getNftsWithAddress(address: string) {}
