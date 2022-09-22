@@ -7,7 +7,7 @@ const NavBar = () => {
       <Link href="/">
         <a className="text-2xl px-4 md:px-0 md:text-4xl font-medium flex items-center">
           Web3.0{" "}
-          <span className="border-4 ml-2 px-2 rounded-lg border-black text-2xl">Helpers</span>
+          <span className="border-2 ml-2 px-2 rounded-lg border-black text-2xl">Helpers</span>
         </a>
       </Link>
       <WalletPanel></WalletPanel>

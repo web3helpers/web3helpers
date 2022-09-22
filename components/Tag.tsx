@@ -12,13 +12,12 @@ interface TagProps {
 const Tag = ({ name, className = "", icons, color, withEllipsis = false }: TagProps) => {
   const customClassName = css`
     color: ${color};
-    border-color: ${color};
     &:hover {
       background: ${color};
     }
   `;
   const basicClassName =
-    "transition-ease px-4 flex justify-between items-center w-full gap-2 hover:text-black hover:border-black py-2 text-xl font-bold text-center border-4 rounded-md";
+    "transition-ease px-4 flex justify-between items-center w-full gap-2 hover:text-black py-2 text-xl font-bold text-center rounded-md outline-black";
   return (
     <div
       className={classNames(basicClassName, customClassName, className)}

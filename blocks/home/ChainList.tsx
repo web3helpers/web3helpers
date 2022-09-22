@@ -27,7 +27,6 @@ const ChainList = ({ onChange }: ChainListProps) => {
               div {
                 color: #000;
                 border-radius: 0.375rem;
-                border: 4px solid #000;
               }
             }
           `;
