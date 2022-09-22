@@ -35,7 +35,7 @@ const Index: NextPage = () => {
         <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
           {({ isSubmitting }) => (
             <Form className="flex flex-col gap-4">
-              <AppStep step={1} className="bg-evm">
+              <AppStep step={1} className="bg-filecoin">
                 <label>
                   <span className="block text-lg mb-4">Address Type</span>
                   <Field as="select" name="type" className="select">
@@ -47,13 +47,13 @@ const Index: NextPage = () => {
                   </ErrorMessage>
                 </label>
               </AppStep>
-              <AppStep step={2} className="bg-evm">
+              <AppStep step={2} className="bg-filecoin">
                 <div>
                   <Button
                     type="submit"
                     loading={isSubmitting}
                     disabled={isSubmitting}
-                    className="bg-evm border-evm mb-4"
+                    className="bg-filecoin border-filecoin mb-4"
                   >
                     Generate
                   </Button>

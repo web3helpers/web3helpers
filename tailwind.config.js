@@ -22,6 +22,7 @@ module.exports = {
         filecoin: "#008BF7",
         solana: "#933FFD",
         bitcoin: "#F7A300",
+        substrate: "#24CC85",
         error: colors.red[700]
       }
     }

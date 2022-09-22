@@ -44,7 +44,7 @@ const Index: NextPage = () => {
         <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
           {({ isSubmitting }) => (
             <Form className="flex flex-col gap-4">
-              <AppStep step={1} className="bg-evm">
+              <AppStep step={1} className="bg-substrate">
                 <label>
                   <span className="block text-lg mb-4">Address Type</span>
                   <Field as="select" name="type" className="select">
@@ -54,7 +54,7 @@ const Index: NextPage = () => {
                   </Field>
                 </label>
               </AppStep>
-              <AppStep step={2} className="bg-evm">
+              <AppStep step={2} className="bg-substrate">
                 <label>
                   <span className="block text-lg mb-4">Format</span>
                   <Field as="select" name="format" className="select">
@@ -63,9 +63,9 @@ const Index: NextPage = () => {
                   </Field>
                 </label>
               </AppStep>
-              <AppStep step={3} className="bg-evm">
+              <AppStep step={3} className="bg-substrate">
                 <div>
-                  <Button type="submit" disabled={isSubmitting} className="bg-evm border-evm mb-4">
+                  <Button type="submit" disabled={isSubmitting} className="bg-substrate border-substrate mb-4">
                     Generate
                   </Button>
                   {address && <AppResult data={address}></AppResult>}

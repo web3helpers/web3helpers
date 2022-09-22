@@ -36,13 +36,13 @@ const Index: NextPage = () => {
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
           <AppTitle name={name} id={id}></AppTitle>
-          <AppStep step={1} className="bg-evm">
+          <AppStep step={1} className="bg-substrate">
             <WalletPanel></WalletPanel>
           </AppStep>
           <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
             {({ isSubmitting }) => (
               <Form className="flex flex-col gap-4">
-                <AppStep step={2} className="bg-evm">
+                <AppStep step={2} className="bg-substrate">
                   <label className="w-full">
                     <span className="block text-lg mb-4">Unsigned Message</span>
                     <Field className="textarea" as="textarea" rows="10" type="value" name="value" />
@@ -51,12 +51,12 @@ const Index: NextPage = () => {
                     </ErrorMessage>
                   </label>
                 </AppStep>
-                <AppStep step={3} className="bg-evm">
+                <AppStep step={3} className="bg-substrate">
                   <div>
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-evm border-evm mb-4"
+                      className="bg-substrate border-substrate mb-4"
                     >
                       Submit
                     </Button>

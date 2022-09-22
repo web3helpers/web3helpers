@@ -1,6 +1,6 @@
 [
   {
-    "name": "New Address",
+    "name": "New Ethereum Address",
     "id": 1,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
     "path": "/apps/evm/new-address"
