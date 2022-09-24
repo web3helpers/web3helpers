@@ -37,7 +37,7 @@ const Index: NextPage = () => {
             <Form className="flex flex-col gap-4">
               <AppStep step={1} className="bg-filecoin">
                 <label>
-                  <span className="block text-lg mb-4">Address Type</span>
+                  <span className="block text-2xl mb-4">Address Type</span>
                   <Field as="select" name="type" className="select">
                     <option value="bls">bls</option>
                     <option value="ecdsa">ecdsa</option>

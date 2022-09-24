@@ -9,22 +9,28 @@ import { name, id } from "./manifest.json";
 import { object, string } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import WalletPanel from "components/solana/WalletPanel";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { bytesToHexString, stringToBytes } from "utils";
 
 type FormModel = {
   input: string;
 };
 const Index: NextPage = () => {
   const meta = {};
-  const [result, setResult] = useState(undefined);
+  const [result, setResult] = useState<string | undefined>(undefined);
   const initialValues: FormModel = {
     input: ""
   };
+  const { signMessage } = useWallet();
   const schema = object({
-    type: string().required()
+    input: string().required("Required")
   });
 
   const submit = async ({ input }: FormModel) => {
-    setResult(undefined);
+    console.log(signMessage);
+    if (!signMessage) return;
+    const signature = await signMessage(stringToBytes(input));
+    setResult(bytesToHexString(signature));
   };
 
   return (
@@ -37,16 +43,16 @@ const Index: NextPage = () => {
         <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submit}>
           {({ isSubmitting }) => (
             <Form className="flex flex-col gap-4">
-              <AppStep step={1} className="bg-solana">
-                <label>
-                  <span className="block text-2lg mb-4">Input</span>
-                  <Field as="input" name="input" className="input"></Field>
+              <AppStep step={2} className="bg-solana">
+                <label className="w-full">
+                  <span className="block text-2xl mb-4">Input</span>
+                  <Field as="textarea" name="input" rows="4" className="textarea"></Field>
                   <ErrorMessage name="input">
                     {(msg) => <div className="text-error">{msg}</div>}
                   </ErrorMessage>
                 </label>
               </AppStep>
-              <AppStep step={2} className="bg-solana">
+              <AppStep step={3} className="bg-solana">
                 <div>
                   <Button
                     type="submit"
@@ -54,7 +60,7 @@ const Index: NextPage = () => {
                     disabled={isSubmitting}
                     className="bg-solana border-solana mb-4"
                   >
-                    Generate
+                    Sign
                   </Button>
                   {result && <AppResult data={result}></AppResult>}
                 </div>

@@ -26,8 +26,7 @@ const Tag = ({ name, className = "", icons, color, withEllipsis = false }: TagPr
     >
       <span>{name}</span>
       <span className="flex gap-2 items-center">
-        {icons && icons.map((i) => <SvgIcon className="w-5 h-5" key={i} name={i} />)}
-        {withEllipsis && "..."}
+        {icons && <SvgIcon className="w-5 h-5" name={icons[0]} />}
       </span>
     </div>
   );

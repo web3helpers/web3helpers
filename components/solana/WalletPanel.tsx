@@ -31,15 +31,13 @@ const WalletPanel = () => {
   return (
     <div className="p-2 text-center rounded-full flex  gap-4 border-black border-2">
       {address ? (
-        <>
+        <div className="flex items-center gap-4">
           <img
             src={getAvatar(address)}
             alt="avatar"
             className="w-8 h-8 rounded-full object-cover"
           />
-          <div>
-            <span className="h-[40] font-mono text-lg text-black">{shortAddress(address)}</span>
-          </div>
+          <span className="font-mono text-lg align-middle text-black">{shortAddress(address)}</span>
           <button
             onClick={() => {
               disconnect();
@@ -48,7 +46,7 @@ const WalletPanel = () => {
           >
             <XCircle color="black"></XCircle>
           </button>
-        </>
+        </div>
       ) : (
         walletConnect
       )}

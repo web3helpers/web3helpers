@@ -56,7 +56,7 @@ const Index: NextPage = () => {
               </AppStep>
               <AppStep step={2} className="bg-substrate">
                 <label>
-                  <span className="block text-lg mb-4">Format</span>
+                  <span className="block text-2xl mb-4">Format</span>
                   <Field as="select" name="format" className="select">
                     <option value={2}>Polkadot</option>
                     <option value={0}>Kusama</option>
