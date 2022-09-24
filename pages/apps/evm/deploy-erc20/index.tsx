@@ -56,7 +56,7 @@ const Index: NextPage = () => {
           </AppStep>
           <AppStep step={2} className="bg-evm">
             <label>
-              <span className="block text-xl mb-4">Network</span>
+              <span className="label">Network</span>
               <NetworkSelector className="select" />
             </label>
           </AppStep>
@@ -65,7 +65,7 @@ const Index: NextPage = () => {
               <Form className="flex flex-col gap-4">
                 <AppStep step={3} className="bg-evm">
                   <label>
-                    <span className="block text-lg mb-4">Token name</span>
+                    <span className="label">Token name</span>
                     <Field as="input" name="name" className="select"></Field>
                     <ErrorMessage name="name">
                       {(msg) => <div className="text-error">{msg}</div>}
@@ -74,7 +74,7 @@ const Index: NextPage = () => {
                 </AppStep>
                 <AppStep step={4} className="bg-evm">
                   <label>
-                    <span className="block text-lg mb-4">Token symbol</span>
+                    <span className="label">Token symbol</span>
                     <Field as="input" name="symbol" className="select"></Field>
                     <ErrorMessage name="symbol">
                       {(msg) => <div className="text-error">{msg}</div>}
@@ -83,7 +83,7 @@ const Index: NextPage = () => {
                 </AppStep>
                 <AppStep step={5} className="bg-evm">
                   <label>
-                    <span className="block text-lg mb-4">Mint amount</span>
+                    <span className="label">Mint amount</span>
                     <Field as="input" type="number" name="amount" className="select"></Field>
                     <ErrorMessage name="amount">
                       {(msg) => <div className="text-error">{msg}</div>}

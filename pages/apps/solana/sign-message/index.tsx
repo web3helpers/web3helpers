@@ -45,7 +45,7 @@ const Index: NextPage = () => {
             <Form className="flex flex-col gap-4">
               <AppStep step={2} className="bg-solana">
                 <label className="w-full">
-                  <span className="block text-2xl mb-4">Input</span>
+                  <span className="block text-2xl mb-4">Message</span>
                   <Field as="textarea" name="input" rows="4" className="textarea"></Field>
                   <ErrorMessage name="input">
                     {(msg) => <div className="text-error">{msg}</div>}
