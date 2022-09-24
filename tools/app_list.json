@@ -66,7 +66,7 @@
     "path": "/apps/substrate/sign-message"
   },
   {
-    "name": "Sign Message",
+    "name": "Sign message",
     "id": 288780,
     "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
     "path": "/apps/solana/sign-message"

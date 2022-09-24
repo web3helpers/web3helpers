@@ -1,5 +1,5 @@
 import { Keypair } from "@solana/web3.js";
-import { toHexString } from "utils";
+import { bytesToHexString } from "utils";
 
 export type SolanaAddress = {
   address: string;
@@ -11,7 +11,7 @@ export function generateAddress(): SolanaAddress {
   const newAddress = Keypair.generate();
   return {
     address: newAddress.publicKey.toBase58(),
-    publicKey: toHexString(newAddress.publicKey.toBuffer()),
-    secretKey: toHexString(newAddress.secretKey)
+    publicKey: bytesToHexString(newAddress.publicKey.toBuffer()),
+    secretKey: bytesToHexString(newAddress.secretKey)
   };
 }
