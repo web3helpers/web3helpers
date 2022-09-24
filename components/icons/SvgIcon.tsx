@@ -9,6 +9,7 @@ import Solana from "assets/solana.svg";
 import Filecoin from "assets/filecoin.svg";
 import Polygin from "assets/polygon.svg";
 import Polkadot from "assets/polkadot.svg";
+import BNB from 'assets/bnb.svg'
 
 const SvgIcon = ({ name, className }: { name: string; className?: string }) => {
   switch (name) {
@@ -34,6 +35,8 @@ const SvgIcon = ({ name, className }: { name: string; className?: string }) => {
       return <Filecoin className={className} />;
     case "Polkadot":
       return <Polkadot className={className} />;
+    case "BNB":
+      return <BNB className={className} />;
     default:
       return null;
   }

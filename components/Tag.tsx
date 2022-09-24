@@ -1,15 +1,16 @@
 import SvgIcon from "./icons/SvgIcon";
 import classNames from "classnames";
 import { css, cx } from "@emotion/css";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import TooltipContent from "components/TooltipContent";
 
 interface TagProps {
   name: string;
   className?: string;
   icons?: string[];
   color: string;
-  withEllipsis?: boolean;
 }
-const Tag = ({ name, className = "", icons, color, withEllipsis = false }: TagProps) => {
+const Tag = ({ name, className = "", icons, color }: TagProps) => {
   const customClassName = css`
     color: ${color};
     &:hover {
@@ -17,7 +18,7 @@ const Tag = ({ name, className = "", icons, color, withEllipsis = false }: TagPr
     }
   `;
   const basicClassName =
-    "transition-ease px-4 flex justify-between items-center w-full gap-2 hover:text-black py-2 text-xl font-bold text-center rounded-md outline-black";
+    "transition-ease pr-4 hover:pl-4 flex justify-between items-center w-full gap-2 hover:text-black py-2 text-xl font-bold text-center rounded-md outline-black";
   return (
     <div
       className={classNames(basicClassName, customClassName, className)}
@@ -25,9 +26,22 @@ const Tag = ({ name, className = "", icons, color, withEllipsis = false }: TagPr
       aria-label={name}
     >
       <span>{name}</span>
-      <span className="flex gap-2 items-center">
-        {icons && <SvgIcon className="w-5 h-5" name={icons[0]} />}
-      </span>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>
+          <span className="flex gap-2 items-center">
+            {icons && <SvgIcon className="w-5 h-5" name={icons[0]} />}
+          </span>
+        </Tooltip.Trigger>
+        {icons && icons.length > 1 && (
+          <TooltipContent>
+            <div className="grid grid-cols-3 gap-2 py-1">
+              {icons.map((i) => (
+                <SvgIcon className="w-5 h-5" key={i} name={i} />
+              ))}
+            </div>
+          </TooltipContent>
+        )}
+      </Tooltip.Root>
     </div>
   );
 };

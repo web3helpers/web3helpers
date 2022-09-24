@@ -19,6 +19,7 @@
     "@radix-ui/react-dialog": "1.0.0",
     "@radix-ui/react-toast": "1.0.0",
     "@radix-ui/react-toggle-group": "1.0.0",
+    "@radix-ui/react-tooltip": "^1.0.0",
     "@react-spring/web": "9.5.4",
     "@solana/wallet-adapter-base": "^0.9.17",
     "@solana/wallet-adapter-glow": "^0.1.12",

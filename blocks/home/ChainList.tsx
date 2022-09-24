@@ -27,6 +27,7 @@ const ChainList = ({ onChange }: ChainListProps) => {
               div {
                 color: #000;
                 border-radius: 0.375rem;
+                padding-left: 1rem;
               }
             }
           `;
@@ -43,7 +44,6 @@ const ChainList = ({ onChange }: ChainListProps) => {
                 icons={c.icons}
                 color={c.color}
                 key={c.name}
-                withEllipsis={c.name === "Evm"}
                 className="w-full"
               ></Tag>
             </ToggleGroup.Item>

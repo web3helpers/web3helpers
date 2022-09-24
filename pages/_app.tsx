@@ -13,6 +13,7 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { useMemo } from "react";
 import { clusterApiUrl } from "@solana/web3.js";
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
 const solanaNetwork = WalletAdapterNetwork.Devnet;
@@ -38,15 +39,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider attribute="class">
-      <WalletConfig config={{ dappName: "WebHelpers" }}>
-        <WagmiConfig client={client}>
-          <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={wallets} autoConnect>
-              <Component {...pageProps} />
-            </WalletProvider>
-          </ConnectionProvider>
-        </WagmiConfig>
-      </WalletConfig>
+      <Tooltip.Provider>
+        <WalletConfig config={{ dappName: "WebHelpers" }}>
+          <WagmiConfig client={client}>
+            <ConnectionProvider endpoint={endpoint}>
+              <WalletProvider wallets={wallets} autoConnect>
+                <Component {...pageProps} />
+              </WalletProvider>
+            </ConnectionProvider>
+          </WagmiConfig>
+        </WalletConfig>
+      </Tooltip.Provider>
     </ThemeProvider>
   );
 }
