@@ -1,37 +1,43 @@
 import AppTitle from "blocks/apps/AppTitle";
 import Layout from "blocks/layout";
-import AppResult from "components/apps/AppResult";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
-import NetworkSelector from "components/evm/NetworkSelector";
+import NetworkSelector, { networks } from "components/evm/NetworkSelector";
 import { Formik, Form, ErrorMessage, Field } from "formik";
+import { OwnedNft, Nft, Network } from "alchemy-sdk";
 import { NextPage } from "next";
 import { name, id } from "./manifest.json";
 import { Meta } from "types";
 import { useState } from "react";
 import { object, string, number } from "yup";
 import { ethAddressRegex } from "utils/regex";
+import { getNftsWithAddress } from "./api";
+import Grid from "./grid";
 
 type NftQueryModel = {
   address: string;
   type: "address" | "conrtact";
-  network: number;
+  network: Network;
 };
+
 const Index: NextPage = () => {
   const meta: Meta = {};
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState<Nft[]>([]);
 
   const initialValues: NftQueryModel = {
     address: "",
     type: "address",
-    network: 0x1
+    network: Network.ETH_MAINNET
   };
   const schema = object({
     address: string().required("Required").matches(ethAddressRegex, "Invalid address"),
-    type: string().required("Required"),
-    network: number().required("Required")
+    type: string().required("Required")
+    // network: string().required("Required")
   });
-  const submit = () => {};
+  const submit = async ({ address, network, type }: NftQueryModel) => {
+    const result = await getNftsWithAddress(address, network, type);
+    setResult("ownedNfts" in result ? result.ownedNfts : result.nfts);
+  };
   return (
     <Layout meta={meta}>
       <div className="flex flex-col gap-4">
@@ -48,7 +54,12 @@ const Index: NextPage = () => {
               <AppStep step={1} className="bg-evm">
                 <label>
                   <span className="block text-2xl mb-4">Network</span>
-                  <NetworkSelector name="network" className="select" />
+                  <Field as="select" type="network" className="select">
+                    <option value={Network.ETH_MAINNET}>Ethereum</option>
+                    <option value={Network.ETH_GOERLI}>Görli</option>
+                    <option value={Network.MATIC_MAINNET}>Polygon</option>
+                    <option value={Network.MATIC_MUMBAI}>Mumbai</option>
+                  </Field>
                   <ErrorMessage name="network">
                     {(msg) => <div className="text-error">{msg}</div>}
                   </ErrorMessage>
@@ -81,9 +92,15 @@ const Index: NextPage = () => {
               </AppStep>
               <AppStep step={4} className="bg-evm">
                 <div className="w-full">
-                  <Button type="submit" disabled={isSubmitting} className="bg-evm border-evm mb-4">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    loading={isSubmitting}
+                    className="bg-evm border-evm mb-4"
+                  >
                     Post
                   </Button>
+                  {result && <Grid nfts={result} />}
                 </div>
               </AppStep>
             </Form>

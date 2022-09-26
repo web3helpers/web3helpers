@@ -65,7 +65,11 @@ const Index: NextPage = () => {
               </AppStep>
               <AppStep step={3} className="bg-substrate">
                 <div>
-                  <Button type="submit" disabled={isSubmitting} className="bg-substrate border-substrate mb-4">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-substrate border-substrate mb-4"
+                  >
                     Generate
                   </Button>
                   {address && <AppResult data={address}></AppResult>}
