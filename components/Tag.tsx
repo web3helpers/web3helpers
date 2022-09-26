@@ -18,7 +18,7 @@ const Tag = ({ name, className = "", icons, color }: TagProps) => {
     }
   `;
   const basicClassName =
-    "transition-ease pr-4 hover:pl-4 flex justify-between items-center w-full gap-2 hover:text-black py-2 text-xl font-bold text-center rounded-md outline-black";
+    "transition-ease pr-4 group hover:pl-4 flex justify-between items-center w-full gap-2 hover:text-black py-2 text-xl font-bold text-center rounded-md outline-black";
   return (
     <div
       className={classNames(basicClassName, customClassName, className)}
@@ -28,7 +28,7 @@ const Tag = ({ name, className = "", icons, color }: TagProps) => {
       <span>{name}</span>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <span className="flex gap-2 items-center">
+          <span className="transition-ease flex group-hover:scale-125 gap-2 items-center icon">
             {icons && <SvgIcon className="w-5 h-5" name={icons[0]} />}
           </span>
         </Tooltip.Trigger>

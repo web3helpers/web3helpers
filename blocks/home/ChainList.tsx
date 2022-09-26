@@ -28,6 +28,9 @@ const ChainList = ({ onChange }: ChainListProps) => {
                 color: #000;
                 border-radius: 0.375rem;
                 padding-left: 1rem;
+                .icon {
+                  transform: scale(1.15);
+                }
               }
             }
           `;
