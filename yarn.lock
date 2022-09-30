@@ -1265,9 +1265,9 @@
   dependencies:
     "@ethersproject/bignumber" "^5.7.0"
 
-"@ethersproject/contracts@5.7.0":
+"@ethersproject/contracts@5.7.0", "@ethersproject/contracts@^5.7.0":
   version "5.7.0"
-  resolved "https://registry.npmjs.org/@ethersproject/contracts/-/contracts-5.7.0.tgz"
+  resolved "https://registry.yarnpkg.com/@ethersproject/contracts/-/contracts-5.7.0.tgz#c305e775abd07e48aa590e1a877ed5c316f8bd1e"
   integrity sha512-5GJbzEU3X+d33CdfPhcyS+z8MzsTrBGk/sc+G+59+tPa9yFkl6HQ9D6L0QMgNTA9q8dT0XKxxkyp883XsQvbbg==
   dependencies:
     "@ethersproject/abi" "^5.7.0"
@@ -3971,14 +3971,15 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alchemy-sdk@^2.0.5-rc1:
-  version "2.0.5-rc1"
-  resolved "https://registry.yarnpkg.com/alchemy-sdk/-/alchemy-sdk-2.0.5-rc1.tgz#113fc5c486d1aa01231602134ad16cc919a69cef"
-  integrity sha512-d1aCWZxzFAdRlniM94IccbYfp6FmMMa6ffZpxFvcKwohMPP/Tvd2QUAPZNlUM+dXJxBAZdSUmSolhm9WBcszTw==
+alchemy-sdk@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/alchemy-sdk/-/alchemy-sdk-2.1.0.tgz#93faa263a8659346e220bde62070eb84e977b983"
+  integrity sha512-6GxIq5JLu4DPTCd1fzaLhPzOEYQa0cTlnyjKAfRnDR1GnPrud7k1Hv0+ZdUFPn9vIRL3taZJLCkSp+RxIbhbag==
   dependencies:
     "@ethersproject/abstract-provider" "^5.7.0"
     "@ethersproject/bignumber" "^5.7.0"
     "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/contracts" "^5.7.0"
     "@ethersproject/hash" "^5.7.0"
     "@ethersproject/networks" "^5.7.0"
     "@ethersproject/providers" "^5.7.0"

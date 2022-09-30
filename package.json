@@ -31,7 +31,7 @@
     "@talismn/connect-wallets": "1.2.1",
     "@web3helpers/substrate-wallet": "0.1.1",
     "@zondax/filecoin-signing-tools": "1.1.2",
-    "alchemy-sdk": "^2.0.5-rc1",
+    "alchemy-sdk": "^2.1.0",
     "bls-eth-wasm": "1.0.5",
     "classnames": "2.3.2",
     "copy-to-clipboard": "3.3.2",
