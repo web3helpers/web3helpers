@@ -1,26 +1,26 @@
 [
   {
-    "name": "New Ethereum Address",
+    "name": "New ethereum address",
     "id": 1,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/new-address"
   },
   {
     "name": "Sign ethereum message",
     "id": 2,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/sign-message"
   },
   {
     "name": "Decode raw transaction",
     "id": 3,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/decode-raw-transaction"
   },
   {
     "name": "Jsonrpc fetcher",
     "id": 4,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/jsonrpc-fetch"
   },
   {
@@ -32,7 +32,7 @@
   {
     "name": "Deploy erc20 contract",
     "id": 6,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/deploy-erc20"
   },
   {
@@ -44,7 +44,7 @@
   {
     "name": "Deploy erc721 contract",
     "id": 8,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/deploy-erc721"
   },
   {
@@ -56,7 +56,7 @@
   {
     "name": "NFT query",
     "id": 10,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon"] },
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/nft-query"
   },
   {
@@ -66,9 +66,21 @@
     "path": "/apps/substrate/sign-message"
   },
   {
+    "name": "Jsonrpc fetcher",
+    "id": 121221,
+    "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
+    "path": "/apps/solana/jsonrpc-fetch"
+  },
+  {
     "name": "Sign message",
     "id": 288780,
     "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
     "path": "/apps/solana/sign-message"
+  },
+  {
+    "name": "Verify Signature",
+    "id": 864931,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "path": "/apps/evm/verify-signature"
   }
 ]

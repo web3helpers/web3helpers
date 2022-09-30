@@ -1,0 +1,6 @@
+{
+  "name": "Verify Signature",
+  "description": "Verify message signature",
+  "chain": "evm",
+  "id": 864931
+}

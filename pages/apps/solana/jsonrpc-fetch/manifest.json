@@ -1,0 +1,6 @@
+{
+  "id": 121221,
+  "name": "Jsonrpc fetcher",
+  "chain": "Solana",
+  "description": "Solana jsonrpc fetcher"
+}

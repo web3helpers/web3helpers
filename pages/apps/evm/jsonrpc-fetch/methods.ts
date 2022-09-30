@@ -1,20 +1,98 @@
 export const methods = [
   {
-    method: "eth_getBalance",
-    params: ["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],
+    method: "web3_clientVersion",
+    docs: "Returns the current client version.",
+    params: [],
+    type: "string"
+  },
+  {
+    method: "web3_sha3",
+    docs: "Returns Keccak-256 (not the standardized SHA3-256) of the given data.",
+    params: ["0x68656c6c6f20776f726c64"],
+    type: "string"
+  },
+  {
+    method: "net_version",
+    docs: "Returns the current network id.",
+    params: [],
+    type: "number"
+  },
+  {
+    method: "net_listening",
+    docs: "Boolean - true when listening, otherwise false.",
+    params: [],
+    type: "boolean"
+  },
+  {
+    method: "net_peerCount",
+    docs: "Returns number of peers currently connected to the client.",
+    params: [],
+
+    type: "boolean"
+  },
+  {
+    method: "eth_protocolVersion",
+    docs: "Returns the current Ethereum protocol version.",
+    params: [],
+    type: "string"
+  },
+  {
+    method: "eth_syncing",
+    docs: "Returns an object with data about the sync status or false.",
+    params: [],
+    type: "object"
+  },
+  {
+    method: "eth_coinbase",
+    docs: "Returns the client coinbase address.",
+    params: [],
+    type: "hex"
+  },
+  {
+    method: "eth_mining",
+    docs: "Returns true if client is actively mining new blocks.",
+    params: [],
+    type: "boolean"
+  },
+  {
+    method: "eth_hashrate",
+    docs: "Returns the number of hashes per second that the node is mining with.",
+    params: [],
+    type: "hex"
+  },
+  {
+    method: "eth_gasPrice",
+    docs: "Returns the current price per gas in wei.",
+    params: [],
     type: "wei"
   },
   {
+    method: "eth_accounts",
+    docs: "Returns a list of addresses owned by client.",
+    params: [],
+    type: "array"
+  },
+  {
+    method: "eth_blockNumber",
+    docs: "Returns the number of most recent block.",
+    params: [],
+    type: "hex"
+  },
+  {
+    method: "eth_getBalance",
+    docs: "Returns the balance of the account of given address.",
+    params: ["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],
+    type: "hex"
+  },
+  {
     method: "eth_getStorageAt",
-    params: [
-      "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
-      "0x0", // storage position at 0
-      "0x2" // state at block number 2
-    ],
+    docs: "Returns the value from a storage position at a given address.",
+    params: ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],
     type: "hex"
   },
   {
     method: "eth_getTransactionCount",
+    docs: "",
     params: [
       "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
       "latest" // state at the latest block
@@ -22,20 +100,199 @@ export const methods = [
     type: "hex"
   },
   {
-    method: "eth_getBlockTransactionCountByHash",
-    params: ["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],
+    method: "eth_getBlockTransactionCountByNumber",
+    docs: "Returns the number of transactions in a block matching the given block number.",
+    params: ["0xe8"],
     type: "hex"
   },
   {
-    method: "eth_getBlockTransactionCountByNumber",
+    method: "eth_getCode",
+    docs: "Returns code at a given address.",
     params: [
-      "0xe8" // 232
+      "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+      "0x2" // 2
     ],
     type: "hex"
   },
   {
-    method: "eth_blockNumber",
+    method: "eth_sendTransaction",
+    docs: "Creates new message call transaction or a contract creation, if the data field contains code.",
+    params: [
+      {
+        from: "0xb60e8dd61c5d32be8058bb8eb970870f07233155",
+        to: "0xd46e8dd67c5d32be8058bb8eb970870f07244567",
+        gas: "0x76c0", // 30400
+        gasPrice: "0x9184e72a000", // 10000000000000
+        value: "0x9184e72a", // 2441406250
+        data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"
+      }
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_sendRawTransaction",
+    docs: "Creates new message call transaction or a contract creation for signed transactions.",
+    params: [
+      "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_estimateGas",
+    docs: "",
+    params: [
+      "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_getBlockByHash",
+    docs: "Returns information about a block by hash.",
+    params: ["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae", false],
+    type: "hex"
+  },
+  {
+    method: "eth_getBlockByNumber",
+    docs: "Returns information about a block by block number.",
+    params: [
+      "0x1b4", // 436
+      true
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_getTransactionByHash",
+    docs: "Returns the information about a transaction requested by transaction hash.",
+    params: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+    type: "hex"
+  },
+  {
+    method: "eth_getTransactionByBlockHashAndIndex",
+    docs: "Returns information about a transaction by block hash and transaction index position.",
+    params: [
+      "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
+      "0x0" // 0
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_getTransactionReceipt",
+    docs: "Returns the receipt of a transaction by transaction hash.",
+    params: ["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],
+    type: "hex"
+  },
+  {
+    method: "eth_getUncleByBlockHashAndIndex",
+    docs: "Returns information about a uncle of a block by hash and uncle index position.",
+    params: [
+      "0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b",
+      "0x0" // 0
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_getCompilers",
+    docs: "Returns a list of available compilers in the client.",
+    params: ["contract test { function multiply(uint a) returns(uint d) {   return a * 7;   } }"],
+    type: "object"
+  },
+  {
+    method: "eth_compileLLL",
+    docs: "Returns compiled LLL code.",
+    params: ["(returnlll (suicide (caller)))"],
+    type: "hex"
+  },
+  {
+    method: "eth_compileSerpent",
+    docs: "Returns compiled serpent code.",
+    params: ["/* some serpent */"],
+    type: "hex"
+  },
+  {
+    method: "eth_newFilter",
+    docs: "Creates a filter object, based on filter options, to notify when the state changes (logs). To check if the state has changed, call eth_getFilterChanges.",
+    params: [
+      {
+        fromBlock: "0x1",
+        toBlock: "0x2",
+        address: "0x8888f1f195afa192cfee860698584c030f4c9db1",
+        topics: [
+          "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+          null,
+          [
+            "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+            "0x0000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc"
+          ]
+        ]
+      }
+    ],
+    type: "hex"
+  },
+  {
+    method: "eth_newBlockFilter",
+    docs: "Creates a filter in the node, to notify when a new block arrives. To check if the state has changed, call eth_getFilterChanges.",
     params: [],
     type: "hex"
-  }
+  },
+  {
+    method: "eth_newPendingTransactionFilter",
+    docs: "Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call eth_getFilterChanges.",
+    params: [],
+    type: "hex"
+  },
+  {
+    method: "eth_uninstallFilter",
+    docs: "Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally Filters timeout when they aren't requested with eth_getFilterChanges for a period of time.",
+    params: ['0xb'],
+    type: "boolean"
+  },
+  {
+    method: "eth_getFilterChanges",
+    docs: "Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally Filters timeout when they aren't requested with eth_getFilterChanges for a period of time.",
+    params: ['0xb'],
+    type: "boolean"
+  },
+  {
+    method: "eth_getFilterLogs",
+    docs: "Returns an array of all logs matching filter with given id.",
+    params: ['0x16'],
+    type: "boolean"
+  },
+  {
+    method: "eth_getLogs",
+    docs: "Returns an array of all logs matching a given filter object.",
+    params: [
+      {
+        topics: [
+          "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+        ],
+      },
+    ],
+    type: "boolean"
+  },
+  {
+    method: "eth_getWork",
+    docs: "Returns the hash of the current block, the seedHash, and the boundary condition to be met (target)",
+    params: [],
+    type: "array"
+  },
+  {
+    method: "eth_submitWork",
+    docs: "Used for submitting a proof-of-work solution.",
+    params: [
+      "0x0000000000000001",
+      "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "0xD1FE5700000000000000000000000000D1FE5700000000000000000000000000",
+    ],
+    type: "boolean"
+  },
+  {
+    method: "eth_submitHashrate",
+    docs: "Used for submitting mining hashrate.",
+    params: [
+      "0x0000000000000000000000000000000000000000000000000000000000500000",
+      "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c",
+    ],    
+    type: "boolean"
+  },
 ];

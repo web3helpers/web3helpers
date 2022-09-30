@@ -3,7 +3,6 @@ import Layout from "blocks/layout";
 import AppResult from "components/apps/AppResult";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
-import { ethers } from "ethers";
 import { ErrorMessage, Field, Form, Formik, useField, useFormikContext } from "formik";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
@@ -12,7 +11,9 @@ import { object, string } from "yup";
 import { name, id } from "./manifest.json";
 import { methods } from "./methods";
 import beautify from "json-beautify-fix";
-import { networks } from "components/evm/NetworkSelector";
+import { Cluster, clusterApiUrl, Connection } from "@solana/web3.js";
+import { networks } from "components/solana/NetworkSelector";
+import { rpcRequest } from "./utils";
 
 const NetworkSelector = (props: any) => {
   const [field, meta] = useField(props);
@@ -64,12 +65,11 @@ const Index: NextPage = () => {
   const [result, setResult] = useState<string | undefined>();
   const schema = object({
     network: string().required("Required"),
-    method: string().required("Required"),
-    data: string().required("Required")
+    method: string().required("Required")
   });
   const initialValues = {
     network: 0x1,
-    method: "eth_blockNumber",
+    method: "getSlot",
     data: "[]"
   };
   const submit = async ({
@@ -82,10 +82,10 @@ const Index: NextPage = () => {
     network: number;
   }) => {
     try {
-      console.log(network);
       const url = networks.find((n) => n.id == network)?.url;
-      const provider = new ethers.providers.JsonRpcProvider(url);
-      const result = await provider.send(method, JSON.parse(data));
+      if (!url || !data) return;
+      setResult("");
+      const result = await rpcRequest(url, method, JSON.parse(data));
       setResult(result);
     } catch (error) {
       console.log(error);
