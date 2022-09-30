@@ -24,22 +24,10 @@
     "path": "/apps/evm/jsonrpc-fetch"
   },
   {
-    "name": "New solana address",
-    "id": 5,
-    "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
-    "path": "/apps/solana/new-address"
-  },
-  {
     "name": "Deploy erc20 contract",
     "id": 6,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/deploy-erc20"
-  },
-  {
-    "name": "New substrate address",
-    "id": 7,
-    "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
-    "path": "/apps/substrate/new-address"
   },
   {
     "name": "Deploy erc721 contract",
@@ -48,22 +36,28 @@
     "path": "/apps/evm/deploy-erc721"
   },
   {
-    "name": "New filecoin address",
-    "id": 9,
-    "chain": { "name": "Filecoin", "color": "#008BF7", "icons": ["Filecoin"] },
-    "path": "/apps/filecoin/new-address"
-  },
-  {
     "name": "NFT query",
     "id": 10,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/nft-query"
   },
   {
-    "name": "Sign substrate message",
-    "id": 11,
-    "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
-    "path": "/apps/substrate/sign-message"
+    "name": "Verify Signature",
+    "id": 864931,
+    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "path": "/apps/evm/verify-signature"
+  },
+  {
+    "name": "New filecoin address",
+    "id": 9,
+    "chain": { "name": "Filecoin", "color": "#008BF7", "icons": ["Filecoin"] },
+    "path": "/apps/filecoin/new-address"
+  },
+  {
+    "name": "New solana address",
+    "id": 5,
+    "chain": { "name": "Solana", "color": "#933FFD", "icons": ["Solana"] },
+    "path": "/apps/solana/new-address"
   },
   {
     "name": "Jsonrpc fetcher",
@@ -78,9 +72,15 @@
     "path": "/apps/solana/sign-message"
   },
   {
-    "name": "Verify Signature",
-    "id": 864931,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
-    "path": "/apps/evm/verify-signature"
+    "name": "New substrate address",
+    "id": 7,
+    "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
+    "path": "/apps/substrate/new-address"
+  },
+  {
+    "name": "Sign substrate message",
+    "id": 11,
+    "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
+    "path": "/apps/substrate/sign-message"
   }
 ]

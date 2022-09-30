@@ -9,7 +9,24 @@ import { red } from "kolorist";
 
 const sourceDirPath = path.join(__dirname, "../pages/apps/");
 const targetPath = path.join(__dirname, "./app_list.json");
+const mdTargetPath = path.join(__dirname, "./app_index.md");
 let appList: Web3ToolsApp[] = [];
+
+function _sortByName(items: any[]) {
+  return items.sort((a, b) => {
+    const nameA = a.chain.name.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.chain.name.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+  
+    // names must be equal
+    return 0;
+  });
+}
 
 const readApps = async () => {
   const files = await fs.promises.readdir(sourceDirPath);
@@ -39,9 +56,16 @@ const readApps = async () => {
   }
   const config = path.join(__dirname, "../.prettierrc");
   const text = fs.readFileSync(config, "utf8");
+  let appIndex = "# Helpers Index \n |Chain|Name|Link|Source code|\n |--|--|--|--|";
+  _sortByName(appList).forEach(
+    (app) =>
+      (appIndex += `\n|${app.chain.name}|${app.name}|[Use](https://web3tools-nu.vercel.app/${app.path})|[Code](pages/${app.path})|`)
+  );
   prettier.resolveConfig(text).then((options) => {
     const formatted = prettier.format(JSON.stringify(appList), { ...options, parser: "json" });
     fs.writeFile(targetPath, formatted, () => {});
+    const formattedIndex = prettier.format(appIndex, { ...options, parser: "markdown" });
+    fs.writeFile(mdTargetPath, formattedIndex, () => {});
   });
 };
 
