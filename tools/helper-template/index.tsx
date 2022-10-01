@@ -38,7 +38,7 @@ const Index: NextPage = () => {
             <Form className="flex flex-col gap-4">
               <AppStep step={1} className="bg-evm">
                 <label>
-                  <span className="block text-2lg mb-4">Input</span>
+                  <span className="label">Input</span>
                   <Field as="input" name="input" className="input"></Field>
                   <ErrorMessage name="input">
                     {(msg) => <div className="text-error">{msg}</div>}
@@ -46,7 +46,7 @@ const Index: NextPage = () => {
                 </label>
               </AppStep>
               <AppStep step={2} className="bg-evm">
-                <div>
+                <div className="w-full">
                   <Button
                     type="submit"
                     loading={isSubmitting}
