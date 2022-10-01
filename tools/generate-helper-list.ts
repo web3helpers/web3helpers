@@ -59,7 +59,7 @@ const readApps = async () => {
   let appIndex = "# Helpers Index \n |Chain|Name|Link|Source code|\n |--|--|--|--|";
   _sortByName(appList).forEach(
     (app) =>
-      (appIndex += `\n|${app.chain.name}|${app.name}|[Use](https://web3tools-nu.vercel.app/${app.path})|[Code](pages/${app.path})|`)
+      (appIndex += `\n|${app.chain.name}|${app.name}|[Use](https://web3helpers.xyz${app.path})|[Code](pages${app.path})|`)
   );
   prettier.resolveConfig(text).then((options) => {
     const formatted = prettier.format(JSON.stringify(appList), { ...options, parser: "json" });
