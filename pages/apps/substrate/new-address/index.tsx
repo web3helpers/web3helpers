@@ -6,16 +6,20 @@ import AppTitle from "blocks/apps/AppTitle";
 import { SubstrateAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { name, id } from "./manifest.json";
+import { name, id, description } from "./manifest.json";
 import { object, string, number } from "yup";
 import { Formik, Form, Field, FormikHelpers } from "formik";
+import { Meta } from "types";
 
 type GenerateAddressType = {
   type: "sr25519" | "ed25519" | "ecdsa";
   format: 0 | 2;
 };
 const Index: NextPage = () => {
-  const meta = {};
+  const meta: Meta = {
+    title: name,
+    description
+  };
   const [address, setAddresss] = useState<SubstrateAddress | undefined>(undefined);
   const initialValues: GenerateAddressType = {
     type: "sr25519",

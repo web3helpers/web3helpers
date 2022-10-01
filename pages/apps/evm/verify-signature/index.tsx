@@ -5,7 +5,7 @@ import Button from "components/buttons/Button";
 import AppTitle from "blocks/apps/AppTitle";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { name, id } from "./manifest.json";
+import { name, id, description } from "./manifest.json";
 import { object, string } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 
@@ -13,7 +13,10 @@ type FormModel = {
   input: string;
 };
 const Index: NextPage = () => {
-  const meta = {};
+  const meta = {
+    title: name,
+    description
+  };
   const [result, setResult] = useState(undefined);
   const initialValues: FormModel = {
     input: ""

@@ -10,37 +10,40 @@ export interface LayoutProps {
 }
 
 const Layout = ({ children, meta }: LayoutProps) => {
+  const favicon = "https://web3helpers.xyz/favicon.png";
+  const title = "Web3.0 Helpers"
+  const description = "Web3.0 helpers for everyone, free and opensource.";
   return (
     <>
       <Head>
-        <title>{meta?.title ?? "Web3.0 Helpers"}</title>
+        <title>{meta?.title ?? title}</title>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="theme-color" content="#00501e" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={meta?.description} />
+        <meta name="description" content={meta?.description ?? description} />
 
-        <link rel="shortcut icon" type="image/x-icon" href={meta?.logo} />
-        <link rel="apple-touch-icon" sizes="180x180" href={meta?.logo} />
+        <link rel="shortcut icon" type="image/x-icon" href={meta?.logo ?? favicon} />
+        <link rel="apple-touch-icon" sizes="180x180" href={meta?.logo ?? favicon} />
       </Head>
       <NextSeo
-        title={meta.title}
-        description={meta?.description}
+        title={meta.title ?? title}
+        description={meta?.description ?? description}
         openGraph={{
           url: meta.ogUrl,
-          title: meta.title,
-          description: meta.description,
+          title: meta.title ?? title,
+          description: meta.description ?? description,
           images: [
             {
-              url: meta.ogImage ?? "",
+              url: meta.ogImage ?? favicon,
               alt: "Web3.0 Helpers",
               type: "image/jpeg"
             }
           ],
-          site_name: "Web3.0 Helperss"
+          site_name: "Web3.0 Helpers"
         }}
         twitter={{
-          handle: "@_lens.ink",
+          handle: "",
           site: meta.twitter,
           cardType: "summary_large_image"
         }}

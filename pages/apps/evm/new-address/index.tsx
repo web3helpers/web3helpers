@@ -6,10 +6,13 @@ import AppTitle from "blocks/apps/AppTitle";
 import { EvmAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { name, id } from "./manifest.json";
+import { name, id, description} from "./manifest.json";
 
 const Index: NextPage = () => {
-  const meta = {};
+  const meta = {
+    title: name,
+    description
+  };
   const [address, setAddresss] = useState<EvmAddress | undefined>(undefined);
 
   return (

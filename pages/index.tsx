@@ -17,7 +17,12 @@ function reducer(state: Condition, action: { type: "search" | "chain"; value: st
   }
 }
 const Home: NextPage = () => {
-  const meta: Meta = {};
+  const meta: Meta = {
+    description: 'Web3.0 helpers for everyone, free and opensource.',
+    logo: 'https://web3helpers.xyz/favicon.png',
+    ogUrl: "http://web3helpers.xyz",
+    title: "Web 3.0 helpers"
+  };
   const [state, dispatch] = useReducer(reducer, {});
 
   return (

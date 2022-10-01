@@ -2,7 +2,7 @@ import AppTitle from "blocks/apps/AppTitle";
 import AppStep from "components/apps/AppStep";
 import Layout from "blocks/layout";
 import { NextPage } from "next";
-import { name } from "./manifest.json";
+import { name, description } from "./manifest.json";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Button from "components/buttons/Button";
 import WalletPanel from "components/evm/WalletPanel";
@@ -20,7 +20,10 @@ const Index: NextPage = () => {
   const { signTypedDataAsync } = useSignTypedData();
   const { signMessageAsync } = useSignMessage();
   const [result, setResult] = useState<string | undefined>();
-  const meta = {};
+  const meta = {
+    title: name,
+    description
+  };
   const initialValues: SignMessage = {
     type: "message",
     value: ""

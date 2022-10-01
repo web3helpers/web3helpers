@@ -2,5 +2,5 @@
   "id": 6,
   "name": "Deploy erc20 contract",
   "chain": "evm",
-  "decription": "Deploy erc20 contract"
+  "description": "Deploy erc20 contract"
 }

@@ -5,7 +5,7 @@ import Layout from "blocks/layout";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { NextPage } from "next";
 import { Meta } from "types";
-import { name, id } from "./manifest.json";
+import { name, id, description } from "./manifest.json";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { createToast } from "vercel-toast-center";
@@ -13,7 +13,10 @@ import { decode } from "./utils";
 import { object, string } from "yup";
 
 const Index: NextPage = () => {
-  const meta: Meta = {};
+  const meta: Meta = {
+    title: name,
+    description
+  };
   const [result, setResult] = useState<any>(null);
   const initialValues = {
     rawTransaction: ""

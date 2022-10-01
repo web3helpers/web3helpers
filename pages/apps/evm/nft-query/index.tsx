@@ -6,7 +6,7 @@ import NetworkSelector, { networks } from "components/evm/NetworkSelector";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { OwnedNft, Nft, Network } from "alchemy-sdk";
 import { NextPage } from "next";
-import { name, id } from "./manifest.json";
+import { name, id, description } from "./manifest.json";
 import { Meta } from "types";
 import { useState } from "react";
 import { object, string, number } from "yup";
@@ -21,7 +21,10 @@ type NftQueryModel = {
 };
 
 const Index: NextPage = () => {
-  const meta: Meta = {};
+  const meta: Meta = {
+    title: name,
+    description
+  };
   const [result, setResult] = useState<Nft[]>([]);
 
   const initialValues: NftQueryModel = {

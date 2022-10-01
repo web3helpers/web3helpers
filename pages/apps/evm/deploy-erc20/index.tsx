@@ -10,7 +10,7 @@ import { Meta } from "types";
 import { object, string, number } from "yup";
 import { useState } from "react";
 import NetworkSelector from "components/evm/NetworkSelector";
-import { name, id } from "./manifest.json";
+import { name, id, description } from "./manifest.json";
 import { ContractFactory } from "ethers";
 import { useAccount, useSigner } from "wagmi";
 import { abi, bytecode } from "./abi.json";
@@ -20,7 +20,10 @@ const Index: NextPage = () => {
   const { data: signer } = useSigner();
 
   const [result, setResult] = useState<{ address: string; hash: string } | undefined>(undefined);
-  const meta: Meta = {};
+  const meta: Meta = {
+    title: name,
+    description
+  };
   const initialValues = {
     symbol: "W3H",
     name: "Web3helpers",

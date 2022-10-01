@@ -8,10 +8,9 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { Meta } from "types";
 import { object, string } from "yup";
-import { name, id } from "./manifest.json";
+import { name, id, description } from "./manifest.json";
 import { methods } from "./methods";
 import beautify from "json-beautify-fix";
-import { Cluster, clusterApiUrl, Connection } from "@solana/web3.js";
 import { networks } from "components/solana/NetworkSelector";
 import { rpcRequest } from "./utils";
 
@@ -61,7 +60,10 @@ const DataField = (props: any) => {
 };
 
 const Index: NextPage = () => {
-  const meta: Meta = {};
+  const meta: Meta = {
+    title: name,
+    description
+  };
   const [result, setResult] = useState<string | undefined>();
   const schema = object({
     network: string().required("Required"),
