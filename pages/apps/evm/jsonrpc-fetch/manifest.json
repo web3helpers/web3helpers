@@ -1,6 +1,6 @@
 {
   "id": 4,
-  "name": "Jsonrpc fetcher",
+  "name": "Jsonrpc fetch",
   "chain": "Evm",
   "description": "Evm jsonrpc fetcher"
 }

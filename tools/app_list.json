@@ -18,7 +18,7 @@
     "path": "/apps/evm/decode-raw-transaction"
   },
   {
-    "name": "Jsonrpc fetcher",
+    "name": "Jsonrpc fetch",
     "id": 4,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/jsonrpc-fetch"
