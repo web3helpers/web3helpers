@@ -60,7 +60,7 @@
     "autoprefixer": "10.4.12",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
-    "jsdom": "20.0.0",
+    "jsdom": "20.0.1",
     "kolorist": "1.6.0",
     "postcss": "8.4.16",
     "prettier": "2.7.1",
