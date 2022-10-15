@@ -15,6 +15,9 @@ const Home: NextPage = () => {
   };
   const router = useRouter();
 
+  function changeChain(value: string | undefined) {
+    router.push({ query: { chain: value } });
+  }
   return (
     <>
       <Layout meta={meta}>
