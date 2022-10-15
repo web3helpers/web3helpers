@@ -2,18 +2,21 @@ import { css } from "@emotion/css";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import classNames from "classnames";
 import Tag from "components/Tag";
+import { useRouter } from "next/router";
 import { chains } from "utils/";
 
 interface ChainListProps {
   onChange(chain: string): void;
 }
 const ChainList = ({ onChange }: ChainListProps) => {
+  const router = useRouter();
   return (
     <>
       <ToggleGroup.Root
         type="single"
         defaultValue="evm"
         aria-label="Chain"
+        value={router.query.chain as string | undefined}
         onValueChange={(chain) => onChange(chain)}
         className="grid grid-cols-2 md:grid-cols-1 gap-4 w-full"
       >

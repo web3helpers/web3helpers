@@ -23,6 +23,7 @@ module.exports = {
         solana: "#933FFD",
         bitcoin: "#F7A300",
         substrate: "#24CC85",
+        aptos: "#2ed8a7",
         error: colors.red[700]
       }
     }
