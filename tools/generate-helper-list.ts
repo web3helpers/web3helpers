@@ -22,7 +22,7 @@ function _sortByName(items: any[]) {
     if (nameA > nameB) {
       return 1;
     }
-  
+
     // names must be equal
     return 0;
   });

@@ -3875,6 +3875,17 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
+"@web3helpers/aptos-wallet@0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@web3helpers/aptos-wallet/-/aptos-wallet-0.1.10.tgz#042af6303a1ebbd8dd0698e4f8a942543d7e7b22"
+  integrity sha512-u1PuwAGz4eBFi8K4O2PGBX33lpOnRKA85uY9wL7EXVIrTiK8fKP26fUnST1GO56Eucj0+8nY6qlHnrE0l+/GgQ==
+  dependencies:
+    "@types/react" "^18.0.20"
+    aptos "^1.3.15"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    zustand "^4.1.1"
+
 "@web3helpers/substrate-wallet@0.1.1":
   version "0.1.1"
   resolved "https://registry.npmjs.org/@web3helpers/substrate-wallet/-/substrate-wallet-0.1.1.tgz"

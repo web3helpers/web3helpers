@@ -1,5 +1,23 @@
 [
   {
+    "name": "Sign aptos message",
+    "id": 121311,
+    "chain": { "name": "Aptos", "color": "#2ed8a7", "icons": ["Aptos"] },
+    "path": "/apps/aptos/sign-message"
+  },
+  {
+    "name": "New Token Collection",
+    "id": 349537,
+    "chain": { "name": "Aptos", "color": "#2ed8a7", "icons": ["Aptos"] },
+    "path": "/apps/aptos/new-collection"
+  },
+  {
+    "name": "New Token",
+    "id": 349538,
+    "chain": { "name": "Aptos", "color": "#2ed8a7", "icons": ["Aptos"] },
+    "path": "/apps/aptos/new-token"
+  },
+  {
     "name": "New ethereum address",
     "id": 1,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },

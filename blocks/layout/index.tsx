@@ -11,7 +11,7 @@ export interface LayoutProps {
 
 const Layout = ({ children, meta }: LayoutProps) => {
   const favicon = "https://web3helpers.xyz/favicon.png";
-  const title = "Web3.0 Helpers"
+  const title = "Web3.0 Helpers";
   const description = "Web3.0 helpers for everyone, free and opensource.";
   return (
     <>

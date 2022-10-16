@@ -34,7 +34,7 @@ const Index: NextPage = () => {
   });
 
   const submit = async ({ message, address, signature }: FormModel) => {
-    setResult(undefined)
+    setResult(undefined);
     const verifyAddress = utils.verifyMessage(message, signature);
     setResult(address === verifyAddress ? "TRUE" : "FALSE");
   };

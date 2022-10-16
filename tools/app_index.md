@@ -2,6 +2,9 @@
 
 | Chain     | Name                   | Link                                                           | Source code                                   |
 | --------- | ---------------------- | -------------------------------------------------------------- | --------------------------------------------- |
+| Aptos     | Sign aptos message     | [Use](https://web3helpers.xyz/apps/aptos/sign-message)         | [Code](pages/apps/aptos/sign-message)         |
+| Aptos     | New Token Collection   | [Use](https://web3helpers.xyz/apps/aptos/new-collection)       | [Code](pages/apps/aptos/new-collection)       |
+| Aptos     | New Token              | [Use](https://web3helpers.xyz/apps/aptos/new-token)            | [Code](pages/apps/aptos/new-token)            |
 | Evm       | New ethereum address   | [Use](https://web3helpers.xyz/apps/evm/new-address)            | [Code](pages/apps/evm/new-address)            |
 | Evm       | Sign ethereum message  | [Use](https://web3helpers.xyz/apps/evm/sign-message)           | [Code](pages/apps/evm/sign-message)           |
 | Evm       | Decode raw transaction | [Use](https://web3helpers.xyz/apps/evm/decode-raw-transaction) | [Code](pages/apps/evm/decode-raw-transaction) |

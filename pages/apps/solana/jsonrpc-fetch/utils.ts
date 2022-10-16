@@ -1,6 +1,6 @@
 export async function rpcRequest(url: string, method: string, params: any[]) {
   const response = await fetch(url, {
-    body: JSON.stringify({jsonrpc: '2.0', id: 1,method, params}),
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"

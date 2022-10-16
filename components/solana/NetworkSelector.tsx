@@ -7,13 +7,13 @@ export const networks = [
   {
     id: 0x2,
     name: "testnet",
-    url:"https://api.testnet.solana.com"
+    url: "https://api.testnet.solana.com"
   },
   {
     id: 0x3,
     name: "devnet",
-    url:"https://api.devnet.solana.com"
-  },
+    url: "https://api.devnet.solana.com"
+  }
 ];
 
 // const NetworkSelecotr = (props: any) => {

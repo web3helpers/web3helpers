@@ -5,7 +5,8 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { configureChains, createClient, defaultChains, WagmiConfig } from "wagmi";
 import { ThemeProvider } from "next-themes";
-import { WalletConfig } from "@web3helpers/substrate-wallet";
+import { WalletConfig as SubstrateWalletConfig } from "@web3helpers/substrate-wallet";
+import { WalletConfig as AptosWalletConfig } from "@web3helpers/aptos-wallet";
 import { SpotWalletAdapter } from "@solana/wallet-adapter-spot";
 import { GlowWalletAdapter } from "@solana/wallet-adapter-glow";
 import type { AppProps } from "next/app";
@@ -40,15 +41,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <Tooltip.Provider>
-        <WalletConfig config={{ dappName: "WebHelpers" }}>
-          <WagmiConfig client={client}>
-            <ConnectionProvider endpoint={endpoint}>
-              <WalletProvider wallets={wallets} autoConnect>
-                <Component {...pageProps} />
-              </WalletProvider>
-            </ConnectionProvider>
-          </WagmiConfig>
-        </WalletConfig>
+        <SubstrateWalletConfig config={{ dappName: "WebHelpers" }}>
+          <AptosWalletConfig>
+            <WagmiConfig client={client}>
+              <ConnectionProvider endpoint={endpoint}>
+                <WalletProvider wallets={wallets} autoConnect>
+                  <Component {...pageProps} />
+                </WalletProvider>
+              </ConnectionProvider>
+            </WagmiConfig>
+          </AptosWalletConfig>
+        </SubstrateWalletConfig>
       </Tooltip.Provider>
     </ThemeProvider>
   );

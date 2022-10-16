@@ -15,20 +15,17 @@ const Home: NextPage = () => {
   };
   const router = useRouter();
 
-  function changeChain(value: string | undefined) {
-    router.push({ query: { chain: value } });
-  }
   return (
     <>
       <Layout meta={meta}>
         <div className="grid grid-cols-1 md:grid-cols-[12rem_1fr] gap-12">
           <section className="hidden md:block">
-            <TagList onChange={(value) => changeChain(value)}></TagList>
+            <TagList></TagList>
           </section>
           <section className="flex flex-col gap-12">
             <SearchBar></SearchBar>
             <section className="block md:hidden">
-              <TagList onChange={(value) =>changeChain(value)}></TagList>
+              <TagList></TagList>
             </section>
             <AppList condition={{ chain: router.query.chain as string | undefined }}></AppList>
           </section>
