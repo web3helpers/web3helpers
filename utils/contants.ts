@@ -20,5 +20,10 @@ export const chains: Chain[] = [
     name: "Substrate",
     color: "#24CC85",
     icons: ["Polkadot"]
+  },
+  {
+    name: "Aptos",
+    color: "#2ed8a7",
+    icons: ["Aptos"]
   }
 ];

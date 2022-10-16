@@ -243,19 +243,19 @@ export const methods = [
   {
     method: "eth_uninstallFilter",
     docs: "Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally Filters timeout when they aren't requested with eth_getFilterChanges for a period of time.",
-    params: ['0xb'],
+    params: ["0xb"],
     type: "boolean"
   },
   {
     method: "eth_getFilterChanges",
     docs: "Uninstalls a filter with given id. Should always be called when watch is no longer needed. Additionally Filters timeout when they aren't requested with eth_getFilterChanges for a period of time.",
-    params: ['0xb'],
+    params: ["0xb"],
     type: "boolean"
   },
   {
     method: "eth_getFilterLogs",
     docs: "Returns an array of all logs matching filter with given id.",
-    params: ['0x16'],
+    params: ["0x16"],
     type: "boolean"
   },
   {
@@ -263,10 +263,8 @@ export const methods = [
     docs: "Returns an array of all logs matching a given filter object.",
     params: [
       {
-        topics: [
-          "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-        ],
-      },
+        topics: ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
+      }
     ],
     type: "boolean"
   },
@@ -282,7 +280,7 @@ export const methods = [
     params: [
       "0x0000000000000001",
       "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-      "0xD1FE5700000000000000000000000000D1FE5700000000000000000000000000",
+      "0xD1FE5700000000000000000000000000D1FE5700000000000000000000000000"
     ],
     type: "boolean"
   },
@@ -291,8 +289,8 @@ export const methods = [
     docs: "Used for submitting mining hashrate.",
     params: [
       "0x0000000000000000000000000000000000000000000000000000000000500000",
-      "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c",
-    ],    
+      "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c"
+    ],
     type: "boolean"
-  },
+  }
 ];

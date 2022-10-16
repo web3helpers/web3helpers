@@ -2,7 +2,7 @@ import path from "node:path";
 import fs from "node:fs";
 import prompts from "prompts";
 import prettier from "prettier";
-import { red, green, yellow, blue, magenta } from "kolorist";
+import { red, green, yellow, blue, magenta, lightGreen } from "kolorist";
 
 async function init() {
   let targetDir = path.join(__dirname, "../pages/apps");
@@ -31,6 +31,10 @@ async function init() {
             {
               title: green("Substrate"),
               value: "subtrate"
+            },
+            {
+              title: lightGreen("Aptos"),
+              value: "aptos"
             }
           ]
         },
