@@ -10,11 +10,12 @@ import TooltipContent from "components/TooltipContent";
 interface AppResultProps {
   type?: string;
   className?: string;
+  jsonOnly?: boolean;
   data?: { [key: string]: string } | string;
 }
 
-const AppResult = ({ data }: AppResultProps) => {
-  const [jsonFormat, setJsonFormat] = useState<boolean>(false);
+const AppResult = ({ data, jsonOnly = false }: AppResultProps) => {
+  const [jsonFormat, setJsonFormat] = useState<boolean>(jsonOnly);
   const [copied, setCopied] = useState(false);
   const style = useSpring({
     from: { opacity: 0, y: -20 },
@@ -33,7 +34,7 @@ const AppResult = ({ data }: AppResultProps) => {
 
   if (!data) return null;
   const isObject = typeof data === "object";
-  const _data = Object.entries(data).map(([key, value]) => ({ key, value }));
+  const _data = jsonOnly ? [] : Object.entries(data).map(([key, value]) => ({ key, value }));
   const formatData = beautify(data, null, 2, 40);
 
   return (
@@ -63,15 +64,17 @@ const AppResult = ({ data }: AppResultProps) => {
         </ul>
       )}
       <div className="absolute right-2 top-2 flex gap-2">
-        <button
-          className="bg-pink-300 w-8 h-8 px-2 py-1 rounded-lg hover:bg-pink-500 transition-all ease-in-out delay-150"
-          onClick={(e) => {
-            e.preventDefault();
-            setJsonFormat(!jsonFormat);
-          }}
-        >
-          {jsonFormat ? <StretchHorizontal size={16} /> : <Code size={16} />}
-        </button>
+        {!jsonOnly && (
+          <button
+            className="bg-pink-300 w-8 h-8 px-2 py-1 rounded-lg hover:bg-pink-500 transition-all ease-in-out delay-150"
+            onClick={(e) => {
+              e.preventDefault();
+              setJsonFormat(!jsonFormat);
+            }}
+          >
+            {jsonFormat ? <StretchHorizontal size={16} /> : <Code size={16} />}
+          </button>
+        )}
         <Tooltip.Root delayDuration={200} open={copied}>
           <Tooltip.Trigger asChild>
             <button

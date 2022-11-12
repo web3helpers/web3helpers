@@ -27,6 +27,7 @@ const Index: NextPage = () => {
       .required("Required")
   });
   const submit = (values: { rawTransaction: string }, { setSubmitting }) => {
+    setResult(() => undefined);
     try {
       setSubmitting(true);
       const decoded = decode(values.rawTransaction);

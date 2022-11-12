@@ -91,7 +91,7 @@ const Index: NextPage = () => {
       const result = await provider.send(method, JSON.parse(data));
       setResult(result);
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) setResult(error.message);
     }
   };
   return (

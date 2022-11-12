@@ -100,5 +100,17 @@
     "id": 11,
     "chain": { "name": "Substrate", "color": "#24CC85", "icons": ["Polkadot"] },
     "path": "/apps/substrate/sign-message"
+  },
+  {
+    "name": "Sui New Address",
+    "id": 479608,
+    "chain": { "name": "Sui", "color": "#6fbcf0", "icons": ["Sui"] },
+    "path": "/apps/sui/sui-new-address"
+  },
+  {
+    "name": "Sui Rpc Fetcher",
+    "id": 921848,
+    "chain": { "name": "Sui", "color": "#6fbcf0", "icons": ["Sui"] },
+    "path": "/apps/sui/sui-rpc-fetcher"
   }
 ]
