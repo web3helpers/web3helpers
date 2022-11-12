@@ -1,5 +1,4 @@
 import { Code2 } from "lucide-react";
-import Link from "next/link";
 import appList from "tools/app_list.json";
 
 interface AppTitleProps {
@@ -9,7 +8,7 @@ interface AppTitleProps {
 }
 const AppTitle = ({ name, description, id }: AppTitleProps) => {
   const app = appList.find((a) => a.id === id);
-  const sourceLink = "https://github.com/stonega/web3helpers/pages/" + app?.path ?? "";
+  const sourceLink = "https://github.com/web3helpers/web3helpers/tree/main/pages/" + app?.path ?? "";
   return (
     <>
       <div className="flex items-end gap-4">

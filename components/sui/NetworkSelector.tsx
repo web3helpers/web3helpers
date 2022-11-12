@@ -5,7 +5,7 @@ export const networks = [
     url: "https://fullnode.devnet.sui.io:443"
   },
   {
-    id: 0x1,
+    id: 0x2,
     name: "testnet",
     url: "https://fullnode.testnet.sui.io"
   },
