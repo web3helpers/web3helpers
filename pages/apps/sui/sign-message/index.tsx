@@ -5,14 +5,14 @@ import { NextPage } from "next";
 import { name, id, description } from "./manifest.json";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Button from "components/buttons/Button";
-import WalletPanel from "components/aptos/WalletPanel";
+import WalletPanel from "components/sui/WalletPanel";
 import { object, string } from "yup";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
-import { useSigner } from "@web3helpers/aptos-wallet";
+import { ethos } from "ethos-connect";
+import { createToast } from "vercel-toast-center";
 
 type SignMessage = {
-  nonce: string;
   value: string;
 };
 const Index: NextPage = () => {
@@ -21,22 +21,25 @@ const Index: NextPage = () => {
     description
   };
   const initialValues: SignMessage = {
-    nonce: "",
     value: ""
   };
   const [result, setResult] = useState<string | undefined>();
-  const signRaw = useSigner();
+  const { wallet } = ethos.useWallet();
   const schema = object({
-    value: string().required("Reuqired")
+    value: string().required("Required")
   });
 
   const submit = async (signMessage: SignMessage) => {
-    const { value, nonce } = signMessage;
-    const signature = await signRaw({
-      nonce,
-      message: value
-    });
-    setResult(signature);
+    setResult(undefined);
+    const { value } = signMessage;
+    if (!wallet) {
+      createToast("Wallet not connected", {
+        timeout: 4000,
+        type: "warning"
+      });
+    }
+    const { signature } = await wallet?.sign({ message: value });
+    setResult("0x" + Buffer.from(signature.data).toString("hex"));
   };
 
   return (
@@ -59,16 +62,8 @@ const Index: NextPage = () => {
                     </ErrorMessage>
                   </label>
                 </AppStep>
+                <span className="ml-14">Only Ethos wallet supported.</span>
                 <AppStep step={3} className="bg-aptos">
-                  <label>
-                    <span className="label">Nonce</span>
-                    <Field as="input" name="nonce" className="input"></Field>
-                    <ErrorMessage name="nonce">
-                      {(msg) => <div className="text-error">{msg}</div>}
-                    </ErrorMessage>
-                  </label>
-                </AppStep>
-                <AppStep step={4} className="bg-aptos">
                   <div>
                     <Button
                       type="submit"

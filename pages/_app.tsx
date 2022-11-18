@@ -7,6 +7,7 @@ import { configureChains, createClient, defaultChains, WagmiConfig } from "wagmi
 import { ThemeProvider } from "next-themes";
 import { WalletConfig as SubstrateWalletConfig } from "@web3helpers/substrate-wallet";
 import { WalletConfig as AptosWalletConfig } from "@web3helpers/aptos-wallet";
+import { WalletConfig as SuiWalletConfig } from "@web3helpers/sui-wallet";
 import { SpotWalletAdapter } from "@solana/wallet-adapter-spot";
 import { GlowWalletAdapter } from "@solana/wallet-adapter-glow";
 import type { AppProps } from "next/app";
@@ -15,6 +16,7 @@ import { useMemo } from "react";
 import { clusterApiUrl } from "@solana/web3.js";
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { EthosConnectProvider } from "ethos-connect";
 
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
 const solanaNetwork = WalletAdapterNetwork.Devnet;
@@ -43,13 +45,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Tooltip.Provider>
         <SubstrateWalletConfig config={{ dappName: "WebHelpers" }}>
           <AptosWalletConfig>
-            <WagmiConfig client={client}>
-              <ConnectionProvider endpoint={endpoint}>
-                <WalletProvider wallets={wallets} autoConnect>
-                  <Component {...pageProps} />
-                </WalletProvider>
-              </ConnectionProvider>
-            </WagmiConfig>
+            <EthosConnectProvider>
+              <WagmiConfig client={client}>
+                <ConnectionProvider endpoint={endpoint}>
+                  <WalletProvider wallets={wallets} autoConnect>
+                    <Component {...pageProps} />
+                  </WalletProvider>
+                </ConnectionProvider>
+              </WagmiConfig>
+            </EthosConnectProvider>
           </AptosWalletConfig>
         </SubstrateWalletConfig>
       </Tooltip.Provider>

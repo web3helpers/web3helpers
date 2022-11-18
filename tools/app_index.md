@@ -19,5 +19,6 @@
 | Solana    | Sign message           | [Use](https://web3helpers.xyz/apps/solana/sign-message)        | [Code](pages/apps/solana/sign-message)        |
 | Substrate | New substrate address  | [Use](https://web3helpers.xyz/apps/substrate/new-address)      | [Code](pages/apps/substrate/new-address)      |
 | Substrate | Sign substrate message | [Use](https://web3helpers.xyz/apps/substrate/sign-message)     | [Code](pages/apps/substrate/sign-message)     |
+| Sui       | Sign sui message       | [Use](https://web3helpers.xyz/apps/sui/sign-message)           | [Code](pages/apps/sui/sign-message)           |
 | Sui       | Sui New Address        | [Use](https://web3helpers.xyz/apps/sui/sui-new-address)        | [Code](pages/apps/sui/sui-new-address)        |
 | Sui       | Sui Rpc Fetcher        | [Use](https://web3helpers.xyz/apps/sui/sui-rpc-fetcher)        | [Code](pages/apps/sui/sui-rpc-fetcher)        |
