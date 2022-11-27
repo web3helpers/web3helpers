@@ -2,6 +2,7 @@
 
 | Chain     | Name                   | Link                                                           | Source code                                   |
 | --------- | ---------------------- | -------------------------------------------------------------- | --------------------------------------------- |
+| Aleo      | New Address            | [Use](https://web3helpers.xyz/apps/aleo/new-address)           | [Code](pages/apps/aleo/new-address)           |
 | Aptos     | Sign aptos message     | [Use](https://web3helpers.xyz/apps/aptos/sign-message)         | [Code](pages/apps/aptos/sign-message)         |
 | Aptos     | New Token Collection   | [Use](https://web3helpers.xyz/apps/aptos/new-collection)       | [Code](pages/apps/aptos/new-collection)       |
 | Aptos     | New Token              | [Use](https://web3helpers.xyz/apps/aptos/new-token)            | [Code](pages/apps/aptos/new-token)            |

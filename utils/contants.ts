@@ -30,5 +30,10 @@ export const chains: Chain[] = [
     name: "Sui",
     color: "#6fbcf0",
     icons: ["Sui"]
+  },
+  {
+    name: "Aleo",
+    color: "#00C0F9",
+    icons: ["Aleo"]
   }
 ];

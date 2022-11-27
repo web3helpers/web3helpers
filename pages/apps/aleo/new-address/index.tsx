@@ -6,7 +6,7 @@ import AppTitle from "blocks/apps/AppTitle";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { name, id, description } from "./manifest.json";
-import { object, string, number } from "yup";
+import { object, number } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import { generateAddress } from "./utils";
 
@@ -23,12 +23,11 @@ const Index: NextPage = () => {
     amount: 1
   };
   const schema = object({
-    // type: string().required(),
     amount: number().required().min(1)
   });
 
   const submit = async ({ amount }: FormModel) => {
-    const result = Array(Number(amount)).fill(JSON.stringify(generateAddress()));
+    const result = Array(Number(amount)).fill(JSON.stringify(await generateAddress()));
     setResult({ ...result });
   };
 

@@ -39,6 +39,10 @@ async function init() {
             {
               title: lightBlue("Sui"),
               value: "sui"
+            },
+            {
+              title: blue("Aleo"),
+              value: "aleo"
             }
           ]
         },

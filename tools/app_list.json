@@ -1,5 +1,11 @@
 [
   {
+    "name": "New Address",
+    "id": 971399,
+    "chain": { "name": "Aleo", "color": "#00C0F9", "icons": ["Aleo"] },
+    "path": "/apps/aleo/new-address"
+  },
+  {
     "name": "Sign aptos message",
     "id": 121311,
     "chain": { "name": "Aptos", "color": "#2ed8a7", "icons": ["Aptos"] },

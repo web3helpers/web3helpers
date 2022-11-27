@@ -12,6 +12,7 @@ import Polkadot from "assets/polkadot.svg";
 import BNB from "assets/bnb.svg";
 import Aptos from "assets/aptos.svg";
 import Sui from "assets/sui.svg";
+import Aleo from 'assets/aleo.svg'
 
 const SvgIcon = ({ name, className }: { name: string; className?: string }) => {
   switch (name) {
@@ -43,6 +44,8 @@ const SvgIcon = ({ name, className }: { name: string; className?: string }) => {
       return <Aptos className={className} />;
     case "Sui":
       return <Sui className={className} />;
+    case "Aleo":
+      return <Aleo className={className} />;
     default:
       return null;
   }
