@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col justify-center">
       <div className="flex gap-4 mb-2">
-        <a href="" className="bg-[#1da1f2] text-white rounded-md p-3">
+        <a href="https://twitter.com/shimenmen" target="_blank" className="bg-[#1da1f2] text-white rounded-md p-3" rel="noreferrer">
           <SvgIcon name="TwitterFill" className="inline w-4 h-4 fill-white mr-2" />
           Twitter
         </a>
