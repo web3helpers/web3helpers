@@ -4,8 +4,8 @@
 	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
 <style type="text/css">
 	.st0{filter:url(#Adobe_OpacityMaskFilter);}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st2{mask:url(#b-logo_1_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#0090FF;}
+	.st1{fill-rule:evenodd;clipRule:evenodd;fill:#FFFFFF;}
+	.st2{mask:url(#b-logo_1_1_);fill-rule:evenodd;clipRule:evenodd;fill:#0090FF;}
 </style>
 <defs>
 	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">

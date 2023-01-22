@@ -34,7 +34,7 @@ const WalletPanel = () => {
   );
 
   return (
-    <div className="p-2 text-center rounded-full flex flex-row items-center gap-4 border-black border-2">
+    <div className="p-2 text-center rounded-full flex flex-row items-center gap-4 border-black dark:border-white border-2">
       {address ? (
         <>
           <img

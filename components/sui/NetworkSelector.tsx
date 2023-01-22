@@ -8,8 +8,7 @@ export const networks = [
     id: 0x2,
     name: "testnet",
     url: "https://fullnode.testnet.sui.io"
-  },
-
+  }
 ];
 
 // const NetworkSelecotr = (props: any) => {

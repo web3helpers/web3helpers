@@ -8,7 +8,8 @@ interface AppTitleProps {
 }
 const AppTitle = ({ name, description, id }: AppTitleProps) => {
   const app = appList.find((a) => a.id === id);
-  const sourceLink = "https://github.com/web3helpers/web3helpers/tree/main/pages/" + app?.path ?? "";
+  const sourceLink =
+    "https://github.com/web3helpers/web3helpers/tree/main/pages/" + app?.path ?? "";
   return (
     <>
       <div className="flex items-end gap-4">

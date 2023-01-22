@@ -26,13 +26,13 @@ const SearchDialog = ({ children }: SearchDialogProps) => {
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-white/30 fixed inset-0 backdrop-blur-xl">
-          <Dialog.Content className="bg-white w-1/2 h-1/2 fixed top-[25%] left-[25%] py-14 px-10 rounded-lg shadow-lg">
+          <Dialog.Content className="bg-white dark:bg-black w-1/2 h-1/2 fixed top-[25%] left-[25%] py-14 px-10 rounded-lg shadow-lg">
             <div className="relative rounded-md">
               <input
                 type="text"
                 placeholder="Search helpers"
                 onChange={handleChange}
-                className="w-full px-4 py-6 rounded-lg text-2xl border-0 focus-visible:!border-b-4 focus-visible:!border-t-0 border-black"
+                className="w-full px-4 py-6 rounded-lg text-2xl border-0 focus-visible:!border-b-4 focus-visible:!border-t-0 border-black dark:border-white"
               />
               <Search size={30} className="absolute right-2 top-[calc(50%-15px)]"></Search>
             </div>

@@ -25,7 +25,7 @@ module.exports = {
         substrate: "#24CC85",
         aptos: "#2ed8a7",
         sui: "#6fbcf0",
-        aleo: '#00C0F9',
+        aleo: "#00C0F9",
         error: colors.red[700]
       }
     }
