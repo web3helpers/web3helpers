@@ -1583,10 +1583,10 @@
     "@floating-ui/dom" "^0.5.3"
     use-isomorphic-layout-effect "^1.1.1"
 
-"@glif/filecoin-address@2.0.20":
-  version "2.0.20"
-  resolved "https://registry.yarnpkg.com/@glif/filecoin-address/-/filecoin-address-2.0.20.tgz#47e198ccf01bd1e39a9d9325eed70afe381b5a50"
-  integrity sha512-XsGdQ+2I+XuN7wfd4Mfqtg9uoYuzqzf2O++XDStoGRpLlnxhwEH+bQuoKz1nd5Gg70RQ5fDEuKFUSnMg2ixYfw==
+"@glif/filecoin-address@2.0.37":
+  version "2.0.37"
+  resolved "https://registry.yarnpkg.com/@glif/filecoin-address/-/filecoin-address-2.0.37.tgz#7c12aa5f78da87e423b6ea51602667e300c62c9e"
+  integrity sha512-U7e2fwUI/RVuI/nY/os16BoaUk9vky/PyfEmk4BHTf6v5pXD5pKMecMVmmELfUZYRq0qDQ8t1y4eAKr9a4Mrbw==
   dependencies:
     blakejs "1.1.0"
     borc "3.0.0"
