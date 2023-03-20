@@ -17,7 +17,7 @@
     "@glif/filecoin-address": "2.0.37",
     "@mysten/sui.js": "^0.13.0",
     "@polkadot/keyring": "10.1.8",
-    "@radix-ui/react-dialog": "1.0.2",
+    "@radix-ui/react-dialog": "1.0.3",
     "@radix-ui/react-toast": "1.0.0",
     "@radix-ui/react-toggle-group": "1.0.2",
     "@radix-ui/react-tooltip": "1.0.3",
