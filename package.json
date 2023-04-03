@@ -19,7 +19,7 @@
     "@polkadot/keyring": "10.1.8",
     "@radix-ui/react-dialog": "1.0.3",
     "@radix-ui/react-toast": "1.0.0",
-    "@radix-ui/react-toggle-group": "1.0.2",
+    "@radix-ui/react-toggle-group": "1.0.3",
     "@radix-ui/react-tooltip": "1.0.3",
     "@react-spring/web": "9.5.4",
     "@scure/bip39": "^1.1.0",
