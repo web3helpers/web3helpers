@@ -29,8 +29,9 @@ const client = createClient({
     new WalletConnectConnector({
       chains,
       options: {
-        projectId: "1dab147d6c2fb386399ecbb3e5a7a79d"
-      },
+        // projectId: "1dab147d6c2fb386399ecbb3e5a7a79d"
+        qrcode: true
+      }
     })
   ],
   provider,

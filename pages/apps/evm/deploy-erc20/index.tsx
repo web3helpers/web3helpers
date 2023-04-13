@@ -13,7 +13,7 @@ import NetworkSelector from "components/evm/NetworkSelector";
 import { name, id, description } from "./manifest.json";
 import { ContractFactory } from "ethers";
 import { useAccount, useSigner } from "wagmi";
-import { abi, bytecode } from "./abi.json";
+import * as contract from "./abi.json";
 import { parseUnits } from "ethers/lib/utils.js";
 
 const Index: NextPage = () => {
@@ -40,7 +40,7 @@ const Index: NextPage = () => {
   });
   const submit = async ({ symbol, name, amount }: typeof initialValues) => {
     if (!address) return;
-    const erc20ContractFactory = new ContractFactory(abi, bytecode, signer!);
+    const erc20ContractFactory = new ContractFactory(contract.abi, contract.bytecode, signer!);
     const erc20Contract = await erc20ContractFactory.deploy(
       [{ holder: address, amount: parseUnits(amount.toString()) }],
       name,
