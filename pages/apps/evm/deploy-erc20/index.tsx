@@ -10,10 +10,10 @@ import { Meta } from "types";
 import { object, string, number } from "yup";
 import { useState } from "react";
 import NetworkSelector from "components/evm/NetworkSelector";
-import { name, id, description } from "./manifest.json";
+import manifest from "./manifest.json";
 import { ContractFactory } from "ethers";
 import { useAccount, useSigner } from "wagmi";
-import * as contract from "./abi.json";
+import contract from "./abi.json";
 import { parseUnits } from "ethers/lib/utils.js";
 
 const Index: NextPage = () => {
@@ -22,8 +22,8 @@ const Index: NextPage = () => {
 
   const [result, setResult] = useState<{ address: string; hash: string } | undefined>(undefined);
   const meta: Meta = {
-    title: name,
-    description
+    title: manifest.name,
+    description: manifest.description
   };
   const initialValues = {
     symbol: "W3H",
@@ -54,7 +54,7 @@ const Index: NextPage = () => {
     <>
       <Layout meta={meta}>
         <div className="flex flex-col gap-4">
-          <AppTitle name={name} id={id}></AppTitle>
+          <AppTitle name={manifest.name} id={manifest.id}></AppTitle>
           <AppStep step={1} className="bg-evm">
             <WalletPanel></WalletPanel>
           </AppStep>
