@@ -2,7 +2,6 @@ import AppTitle from "blocks/apps/AppTitle";
 import Layout from "blocks/layout";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
-import NetworkSelector, { networks } from "components/evm/NetworkSelector";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { OwnedNft, Nft, Network } from "alchemy-sdk";
 import { NextPage } from "next";
