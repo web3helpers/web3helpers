@@ -12,7 +12,7 @@ import { object, string } from "yup";
 import { name, id, description } from "./manifest.json";
 import { methods } from "./methods";
 import beautify from "json-beautify-fix";
-import { networks } from "components/evm/NetworkSelector";
+import { evmNetworks as networks } from "utils";
 
 const NetworkSelector = (props: any) => {
   const [field, meta] = useField(props);
@@ -86,7 +86,7 @@ const Index: NextPage = () => {
   }) => {
     try {
       console.log(network);
-      const url = networks.find((n) => n.id == network)?.url;
+      const url = networks.find((n) => n.id == network)?.rpcUrls.default.http[0];
       const provider = new ethers.providers.JsonRpcProvider(url);
       const result = await provider.send(method, JSON.parse(data));
       setResult(result);
