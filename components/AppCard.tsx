@@ -22,7 +22,7 @@ const AppCard = ({ app }: AppCardProps) => {
   return (
     <>
       <Link href={app.path}>
-        <a className={classNames(basicClassName, customClassName)}>{app.name}</a>
+        <div className={classNames(basicClassName, customClassName)}>{app.name}</div>
       </Link>
     </>
   );

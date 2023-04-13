@@ -3,7 +3,7 @@ import "vercel-toast-center/css";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import { configureChains, createClient, defaultChains, WagmiConfig } from "wagmi";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { ThemeProvider } from "next-themes";
 import { WalletConfig as SubstrateWalletConfig } from "@web3helpers/substrate-wallet";
 import { WalletConfig as AptosWalletConfig } from "@web3helpers/aptos-wallet";
@@ -17,8 +17,9 @@ import { clusterApiUrl } from "@solana/web3.js";
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { EthosConnectProvider } from "ethos-connect";
+import { evmNetworks } from "utils";
 
-const { chains, provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
+const { chains, provider, webSocketProvider } = configureChains(evmNetworks, [publicProvider()]);
 const solanaNetwork = WalletAdapterNetwork.Devnet;
 
 const client = createClient({
@@ -28,7 +29,7 @@ const client = createClient({
     new WalletConnectConnector({
       chains,
       options: {
-        qrcode: true
+        projectId: "1dab147d6c2fb386399ecbb3e5a7a79d"
       }
     })
   ],

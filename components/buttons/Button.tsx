@@ -43,9 +43,9 @@ const Button = forwardRef(function Button(
   if (href)
     return (
       <Link href={href}>
-        <a {...props} className={classNames(basicClassName, sizeClassName, className)}>
+        <div {...props} className={classNames(basicClassName, sizeClassName, className)}>
           {children}
-        </a>
+        </div>
       </Link>
     );
   return (
