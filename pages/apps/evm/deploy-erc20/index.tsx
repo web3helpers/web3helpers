@@ -14,6 +14,7 @@ import { name, id, description } from "./manifest.json";
 import { ContractFactory } from "ethers";
 import { useAccount, useSigner } from "wagmi";
 import { abi, bytecode } from "./abi.json";
+import { parseUnits } from "ethers/lib/utils.js";
 
 const Index: NextPage = () => {
   const { address } = useAccount();
@@ -41,7 +42,7 @@ const Index: NextPage = () => {
     if (!address) return;
     const erc20ContractFactory = new ContractFactory(abi, bytecode, signer!);
     const erc20Contract = await erc20ContractFactory.deploy(
-      [{ holder: address, amount }],
+      [{ holder: address, amount: parseUnits(amount.toString()) }],
       name,
       symbol
     );
