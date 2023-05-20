@@ -25,7 +25,7 @@ const Index: NextPage = () => {
   const [verify, setVerify] = useState<boolean>(false);
   const recaptchaRef = React.createRef<any>();
   const initialValues: FormModel = {
-    ticker: "gitt",
+    ticker: "bool",
     address: ""
   };
   const schema = object({
@@ -65,9 +65,9 @@ const Index: NextPage = () => {
                 <label>
                   <span className="label">Ticker</span>
                   <Field as="select" name="ticker" className="input">
-                    <option value="gitt">gitt</option>
-                    <option value="giee">giee</option>
                     <option value="bool">bool</option>
+                    <option value="gitt">gitt</option>
+                    <option value="gibb">gibb</option>
                   </Field>
                   <ErrorMessage name="ticker">
                     {(msg) => <div className="text-error">{msg}</div>}
