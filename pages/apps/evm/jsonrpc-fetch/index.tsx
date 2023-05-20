@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { Meta } from "types";
 import { object, string } from "yup";
 import { name, id, description } from "./manifest.json";
-import { methods } from "./methods";
+import methods from "./methods.json";
 import beautify from "json-beautify-fix";
 import { evmNetworks as networks } from "utils";
 

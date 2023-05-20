@@ -3,13 +3,32 @@ import { NextPage } from "next";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import AppTitle from "blocks/apps/AppTitle";
-import { SubstrateAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { name, id, description } from "./manifest.json";
 import { object, string, number } from "yup";
 import { Formik, Form, Field, FormikHelpers } from "formik";
 import { Meta } from "types";
+import { Keyring } from "@polkadot/keyring";
+import { mnemonicGenerate } from "@polkadot/util-crypto";
+
+export type SubstrateAddress = {
+  address: string;
+  mnemonic: string;
+};
+export function generateAddress(
+  type: "sr25519" | "ed25519" | "ecdsa",
+  ss58Format: 0 | 2
+): SubstrateAddress {
+  const keyring = new Keyring({ type, ss58Format });
+  const mnemonic = mnemonicGenerate();
+  const pair = keyring.addFromUri(mnemonic, { name: "web3helpers" });
+
+  return {
+    address: pair.address,
+    mnemonic: mnemonic
+  };
+}
 
 type GenerateAddressType = {
   type: "sr25519" | "ed25519" | "ecdsa";

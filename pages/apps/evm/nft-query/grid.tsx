@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Nft } from "alchemy-sdk";
-import { formatImageSrc } from "./utils";
 
+export function formatImageSrc(image: string) {
+  return image.replace("ipfs://", "https://ipfs.io/ipfs/");
+}
 interface GridProps {
   nfts?: Nft[];
 }

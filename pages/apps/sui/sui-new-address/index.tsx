@@ -8,7 +8,24 @@ import AppResult from "components/apps/AppResult";
 import { name, id, description } from "./manifest.json";
 import { object, string, number } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
-import { generateAddress } from "./utils";
+import { Ed25519Keypair } from "@mysten/sui.js";
+import * as bip39 from "@scure/bip39";
+import { wordlist } from "@scure/bip39/wordlists/english";
+
+export type SuiAddress = {
+  address: string;
+  mnemonic: string;
+};
+
+export function generateAddress() {
+  const mnemonic = bip39.generateMnemonic(wordlist);
+  const keypair = Ed25519Keypair.deriveKeypair(mnemonic);
+  const address = keypair.getPublicKey().toSuiAddress();
+  return {
+    address,
+    mnemonic
+  };
+}
 
 type FormModel = {
   amount: number;

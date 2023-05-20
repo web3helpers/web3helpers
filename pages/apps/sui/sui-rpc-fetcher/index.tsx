@@ -2,7 +2,7 @@ import Layout from "blocks/layout";
 import { NextPage } from "next";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
-import { methods } from "./methods";
+import methods from "./methods.json";
 import AppTitle from "blocks/apps/AppTitle";
 import { useEffect, useState } from "react";
 import AppResult from "components/apps/AppResult";

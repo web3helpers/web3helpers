@@ -9,8 +9,19 @@ import { name, id, description } from "./manifest.json";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { createToast } from "vercel-toast-center";
-import { decode } from "./utils";
 import { object, string } from "yup";
+import * as ethers from "ethers";
+
+export function decode(rawTransaction: string) {
+  const transaction = ethers.utils.parseTransaction(rawTransaction);
+  const types = ["legacy", "eip2930", "eip1559"];
+  const BN = ethers.BigNumber;
+  Object.keys(transaction).forEach((value) => {
+    if (BN.isBigNumber(transaction[value])) transaction[value] = transaction[value].toHexString();
+  });
+  return { ...transaction, type: types[transaction.type ?? 0] };
+}
+
 
 const Index: NextPage = () => {
   const meta: Meta = {

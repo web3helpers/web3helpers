@@ -3,10 +3,24 @@ import { NextPage } from "next";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import AppTitle from "blocks/apps/AppTitle";
-import { EvmAddress, generateAddress } from "./utils";
 import { useState } from "react";
 import AppResult from "components/apps/AppResult";
 import { name, id, description } from "./manifest.json";
+import * as ethers from "ethers";
+
+export type EvmAddress = {
+  address: string;
+  privateKey: string;
+  mnemonic: string;
+};
+export function generateAddress(): EvmAddress {
+  const wallet = ethers.Wallet.createRandom();
+  return {
+    address: wallet.address,
+    privateKey: wallet.privateKey,
+    mnemonic: wallet.mnemonic.phrase
+  };
+}
 
 const Index: NextPage = () => {
   const meta = {

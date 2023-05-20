@@ -3,15 +3,30 @@ import Layout from "blocks/layout";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import { Formik, Form, ErrorMessage, Field } from "formik";
-import { OwnedNft, Nft, Network } from "alchemy-sdk";
+import { OwnedNft, Nft } from "alchemy-sdk";
 import { NextPage } from "next";
 import { name, id, description } from "./manifest.json";
 import { Meta } from "types";
 import { useState } from "react";
 import { object, string, number } from "yup";
 import { ethAddressRegex } from "utils/regex";
-import { getNftsWithAddress } from "./api";
+import { Network, Alchemy } from "alchemy-sdk";
 import Grid from "./grid";
+
+export async function getNftsWithAddress(
+  address: string,
+  network: Network,
+  type: "address" | "conrtact"
+) {
+  const settings = {
+    apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API, // Replace with your Alchemy API Key.
+    network: network // Replace with your network.
+  };
+
+  const alchemy = new Alchemy(settings);
+  if (type === "address") return alchemy.nft.getNftsForOwner(address, { omitMetadata: false });
+  return alchemy.nft.getNftsForContract(address, { omitMetadata: false });
+}
 
 type NftQueryModel = {
   address: string;

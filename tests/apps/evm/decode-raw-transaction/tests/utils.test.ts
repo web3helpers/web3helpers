@@ -1,4 +1,4 @@
-import { decode } from "../utils";
+import { decode } from "pages/apps/evm/decode-raw-transaction/utils";
 import { expect, test } from "vitest";
 
 test("decode raw transaction", () => {

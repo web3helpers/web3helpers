@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { generateAddress } from "../utils";
+import { generateAddress } from "../../../../pages/apps/filecoin/new-address/utils";
 
 test("generate address", async () => {
   const { address } = await generateAddress("ecdsa");

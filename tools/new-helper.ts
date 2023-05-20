@@ -100,6 +100,9 @@ async function init() {
       const formatted = prettier.format(JSON.stringify(manifest), { ...options, parser: "json" });
       fs.writeFile(manifestPath, formatted, () => {});
     });
+    const testDir = path.join(__dirname, "../test/apps");
+    const terstTargetDir = path.join(targetDir, `/${chain}/${helperName}`);
+    fs.mkdirSync(terstTargetDir, { recursive: true });
     console.log(green("🎉 Successfully\n") + `New helper at ${targetDir}`);
   } catch (error) {
     if (error instanceof Error) {

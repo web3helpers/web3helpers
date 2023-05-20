@@ -8,11 +8,17 @@ import AppResult from "components/apps/AppResult";
 import { name, id, description } from "./manifest.json";
 import { object, number } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
-import { generateAddress } from "./utils";
+import { AleoSdk } from "aleppo-sdk";
 
 type FormModel = {
   amount: number;
 };
+
+async function generateAddress() {
+  const sdk = await AleoSdk.initialize();
+  const address = sdk.newAddress();
+  return address;
+}
 const Index: NextPage = () => {
   const meta = {
     title: name,
