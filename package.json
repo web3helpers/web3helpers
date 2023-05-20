@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && cp node_modules/tiny-secp256k1/lib/secp256k1.wasm /var/task/node_modules/tiny-secp256k1/lib/secp256k1.was",
     "start": "next start",
     "lint": "next lint && yarn pretty",
     "pretty": "prettier --write --list-different .",

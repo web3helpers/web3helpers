@@ -66,7 +66,7 @@ const Index: NextPage = () => {
               <AppStep step={2} className="bg-bitcoin">
                 <label>
                   <span className="label">Address</span>
-                  <Field as="input" name="address" className="input"></Field>
+                  <Field as="input" name="address" className="input" placeholder="tb1..."></Field>
                   <ErrorMessage name="address">
                     {(msg) => <div className="text-error">{msg}</div>}
                   </ErrorMessage>
