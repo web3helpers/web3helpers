@@ -1,5 +1,6 @@
 import Layout from "blocks/layout";
 import { NextPage } from "next";
+import ReCAPTCHA from "react-google-recaptcha";
 import AppStep from "components/apps/AppStep";
 import Button from "components/buttons/Button";
 import AppTitle from "blocks/apps/AppTitle";
@@ -8,6 +9,7 @@ import { name, id, description } from "./manifest.json";
 import { object, string } from "yup";
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import { REG_BTC } from "utils/regex";
+import React from "react";
 
 type FormModel = {
   ticker: string;
@@ -20,6 +22,7 @@ const Index: NextPage = () => {
   };
   const [result, setResult] = useState<string | undefined>(undefined);
   const [error, setError] = useState<string | undefined>(undefined);
+  const recaptchaRef = React.createRef();
   const initialValues: FormModel = {
     ticker: "gitt",
     address: ""
@@ -29,6 +32,7 @@ const Index: NextPage = () => {
     address: string().required().matches(REG_BTC, "Invalid address")
   });
 
+  function onReCAPTCHAChange() {}
   const submit = async ({ ticker, address }: FormModel) => {
     setError(undefined);
     setResult(undefined);
@@ -72,6 +76,12 @@ const Index: NextPage = () => {
                   </ErrorMessage>
                 </label>
               </AppStep>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                size="invisible"
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={onReCAPTCHAChange}
+              />
               <AppStep step={3} className="bg-bitcoin">
                 <div className="w-full">
                   <Button
@@ -80,7 +90,7 @@ const Index: NextPage = () => {
                     disabled={isSubmitting}
                     className="bg-bitcoin border-bitcoin mb-4"
                   >
-                    Generate
+                    Request
                   </Button>
                   {result && (
                     <div>
