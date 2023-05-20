@@ -5221,10 +5221,10 @@ blakejs@^1.1.0, blakejs@^1.1.1:
   resolved "https://registry.npmjs.org/blakejs/-/blakejs-1.2.1.tgz"
   integrity sha512-QXUSXI3QVc/gJME0dBpXrag1kbzOqCjCX8/b54ntNyW6sjtoqxqRk3LTmXzaJoh71zMsDCjM+47jS7XiwN/+fQ==
 
-bls-eth-wasm@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/bls-eth-wasm/-/bls-eth-wasm-1.0.5.tgz"
-  integrity sha512-7sXXcTlzVKCzeAmek94ZXGmzGUBtXbinobYJoENZfaxyesugAD4h96oJu1RR0HFsp8qDvXROnNaR3jdWGH5Llg==
+bls-eth-wasm@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/bls-eth-wasm/-/bls-eth-wasm-1.0.6.tgz#a7378bebb7bbdeb3b645426a7f1604aa156b3160"
+  integrity sha512-XDXNaxd6CGHLLprfhbr2Yb1ctylIalDvfO28Tepk+Fa/cTEYqNAJq51hdV55PY34u9R1UX/f4RHQJAj/CPG3NA==
 
 bn.js@4.11.8:
   version "4.11.8"
