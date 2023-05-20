@@ -41,7 +41,7 @@
     "bitcoinjs-lib": "^6.1.0",
     "bls-eth-wasm": "1.0.5",
     "classnames": "2.3.2",
-    "copy-to-clipboard": "3.3.2",
+    "copy-to-clipboard": "3.3.3",
     "ecpair": "^2.1.0",
     "ethers": "5.7.1",
     "ethos-connect": "^0.0.31",
