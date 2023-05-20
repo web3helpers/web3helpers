@@ -35,11 +35,11 @@ const Index: NextPage = () => {
 
   function onReCAPTCHAChange(code) {
     setVerify(!!code)
-    recaptchaRef.current.reset();
   }
   const submit = async ({ ticker, address }: FormModel) => {
     if(!verify) { return }
     recaptchaRef.current.execute();
+    recaptchaRef.current.reset();
     setError(undefined);
     setResult(undefined);
     setVerify(false)
