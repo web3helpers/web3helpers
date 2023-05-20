@@ -7,6 +7,11 @@ export const chains: Chain[] = [
     icons: ["Ethereum", "Polygon", "BNB"]
   },
   {
+    name: "Bitcoin",
+    color: "#F7A300",
+    icons: ["Bitcoin"]
+  },
+  {
     name: "Solana",
     color: "#933FFD",
     icons: ["Solana"]

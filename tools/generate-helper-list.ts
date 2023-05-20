@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import prettier from "prettier";
 import { Web3ToolsApp } from "types";
-import { chains } from "../utils";
+import { chains } from "../utils/contants";
 import { red } from "kolorist";
 
 const sourceDirPath = path.join(__dirname, "../pages/apps/");

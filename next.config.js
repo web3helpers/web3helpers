@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  pageExtensions: ["tsx", "api.ts"],
+  // pageExtensions: ["tsx", "api.ts"],
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));
     fileLoaderRule.exclude = /\.svg$/;
-    config.experiments = { asyncWebAssembly: true };
+    config.experiments = { asyncWebAssembly: true, layers: true };
     config.module.rules.push({
       test: /\.svg$/,
       loader: require.resolve("@svgr/webpack")

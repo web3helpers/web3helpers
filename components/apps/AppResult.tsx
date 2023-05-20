@@ -11,6 +11,7 @@ interface AppResultProps {
   type?: string;
   className?: string;
   jsonOnly?: boolean;
+  children?: React.ReactNode;
   data?: { [key: string]: string } | string;
 }
 

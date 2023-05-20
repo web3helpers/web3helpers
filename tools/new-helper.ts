@@ -2,7 +2,7 @@ import path from "node:path";
 import fs from "node:fs";
 import prompts from "prompts";
 import prettier from "prettier";
-import { red, green, yellow, blue, magenta, lightGreen, lightBlue } from "kolorist";
+import { red, green, yellow, blue, magenta, lightGreen, lightBlue, lightYellow } from "kolorist";
 
 async function init() {
   let targetDir = path.join(__dirname, "../pages/apps");
@@ -19,6 +19,10 @@ async function init() {
             {
               title: yellow("Evm based chain"),
               value: "evm"
+            },
+            {
+              title: lightYellow("Bitcoin"),
+              value: "bitcoin"
             },
             {
               title: blue("Filecoin"),

@@ -24,6 +24,12 @@
     "path": "/apps/aptos/new-token"
   },
   {
+    "name": "Brc20 Faucet",
+    "id": 777315,
+    "chain": { "name": "Bitcoin", "color": "#F7A300", "icons": ["Bitcoin"] },
+    "path": "/apps/bitcoin/brc20-faucet"
+  },
+  {
     "name": "New ethereum address",
     "id": 1,
     "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
