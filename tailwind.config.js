@@ -18,7 +18,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         primary: "#4A68A1",
-        evm: "#F7A300",
+        evm: "#D1B0FB",
         filecoin: "#008BF7",
         solana: "#933FFD",
         bitcoin: "#F7A300",

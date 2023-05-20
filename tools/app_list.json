@@ -24,7 +24,7 @@
     "path": "/apps/aptos/new-token"
   },
   {
-    "name": "Brc20 Faucet",
+    "name": "BRC20 Faucet",
     "id": 777315,
     "chain": { "name": "Bitcoin", "color": "#F7A300", "icons": ["Bitcoin"] },
     "path": "/apps/bitcoin/brc20-faucet"
@@ -32,49 +32,49 @@
   {
     "name": "New ethereum address",
     "id": 1,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/new-address"
   },
   {
     "name": "Sign ethereum message",
     "id": 2,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/sign-message"
   },
   {
     "name": "Decode raw transaction",
     "id": 3,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/decode-raw-transaction"
   },
   {
     "name": "Jsonrpc fetch",
     "id": 4,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/jsonrpc-fetch"
   },
   {
     "name": "Deploy erc20 contract",
     "id": 6,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/deploy-erc20"
   },
   {
     "name": "Deploy erc721 contract",
     "id": 8,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/deploy-erc721"
   },
   {
     "name": "NFT query",
     "id": 10,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/nft-query"
   },
   {
     "name": "Verify Signature",
     "id": 864931,
-    "chain": { "name": "Evm", "color": "#F7A300", "icons": ["Ethereum", "Polygon", "BNB"] },
+    "chain": { "name": "Evm", "color": "#D1B0FB", "icons": ["Ethereum", "Polygon", "BNB"] },
     "path": "/apps/evm/verify-signature"
   },
   {
