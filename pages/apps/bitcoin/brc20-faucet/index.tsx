@@ -22,7 +22,8 @@ const Index: NextPage = () => {
   };
   const [result, setResult] = useState<string | undefined>(undefined);
   const [error, setError] = useState<string | undefined>(undefined);
-  const recaptchaRef = React.createRef();
+  const [verify, setVerify] = useState<boolean>(false);
+  const recaptchaRef = React.createRef<any>();
   const initialValues: FormModel = {
     ticker: "gitt",
     address: ""
@@ -32,10 +33,16 @@ const Index: NextPage = () => {
     address: string().required().matches(REG_BTC, "Invalid address")
   });
 
-  function onReCAPTCHAChange() {}
+  function onReCAPTCHAChange(code) {
+    setVerify(!!code)
+    recaptchaRef.current.reset();
+  }
   const submit = async ({ ticker, address }: FormModel) => {
+    if(!verify) { return }
+    recaptchaRef.current.execute();
     setError(undefined);
     setResult(undefined);
+    setVerify(false)
     const data = await fetch(`/api/faucet?ticker=${ticker}&address=${address}`);
     const result = await data.json();
     if (result.error) {
@@ -77,8 +84,9 @@ const Index: NextPage = () => {
                 </label>
               </AppStep>
               <ReCAPTCHA
+                className="ml-14"
                 ref={recaptchaRef}
-                size="invisible"
+                size="visible"
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 onChange={onReCAPTCHAChange}
               />
