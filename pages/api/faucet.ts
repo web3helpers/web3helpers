@@ -23,12 +23,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const brc20Summary = await brc20Api.getAddressTokenSummary(wallet.address, ticker as string);
   console.log(wallet.address, toAddress, "is requesting", ticker, brc20Summary.transferableList);
   if (!brc20Summary) {
-    res.status(404).json({
+    return res.status(404).json({
       error: "Api request error, please try again later"
     });
   }
   if (brc20Summary.transferableList.length === 0) {
-    res.status(404).json({
+    return res.status(404).json({
       error: "Trsanfer inscriptions not found, please try again later"
     });
   }
