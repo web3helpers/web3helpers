@@ -38,7 +38,7 @@ const Index: NextPage = () => {
   }
   const submit = async ({ ticker, address }: FormModel) => {
     if(!verify) { return }
-    recaptchaRef.current.execute();
+    // recaptchaRef.current.execute();
     recaptchaRef.current.reset();
     setError(undefined);
     setResult(undefined);
