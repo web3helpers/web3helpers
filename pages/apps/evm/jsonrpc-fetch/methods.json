@@ -93,10 +93,7 @@
   {
     "method": "eth_getTransactionCount",
     "docs": "",
-    "params": [
-      "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
-      "latest"
-    ],
+    "params": ["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],
     "type": "hex"
   },
   {
@@ -108,10 +105,7 @@
   {
     "method": "eth_getCode",
     "docs": "Returns code at a given address.",
-    "params": [
-      "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-      "0x2"
-    ],
+    "params": ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],
     "type": "hex"
   },
   {
@@ -154,10 +148,7 @@
   {
     "method": "eth_getBlockByNumber",
     "docs": "Returns information about a block by block number.",
-    "params": [
-      "0x1b4",
-      true
-    ],
+    "params": ["0x1b4", true],
     "type": "hex"
   },
   {
@@ -169,10 +160,7 @@
   {
     "method": "eth_getTransactionByBlockHashAndIndex",
     "docs": "Returns information about a transaction by block hash and transaction index position.",
-    "params": [
-      "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
-      "0x0"
-    ],
+    "params": ["0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331", "0x0"],
     "type": "hex"
   },
   {
@@ -184,10 +172,7 @@
   {
     "method": "eth_getUncleByBlockHashAndIndex",
     "docs": "Returns information about a uncle of a block by hash and uncle index position.",
-    "params": [
-      "0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b",
-      "0x0"
-    ],
+    "params": ["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],
     "type": "hex"
   },
   {

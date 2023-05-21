@@ -3,7 +3,7 @@ export function bytesToHexString(buffer: Uint8Array | Buffer) {
   return "0x" + result;
 }
 
-export function bytesToSring(bytes: Uint8Array) {
+export function bytesToString(bytes: Uint8Array) {
   const chars: number[] = [];
   for (let i = 0, n = bytes.length; i < n; ) {
     chars.push(((bytes[i++] & 0xff) << 8) | (bytes[i++] & 0xff));

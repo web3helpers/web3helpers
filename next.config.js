@@ -5,8 +5,8 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     outputFileTracingIncludes: {
-      '/api/**/*': ['./node_modules/**/*.wasm', './node_modules/**/*.proto'],
-    },
+      "/api/**/*": ["./node_modules/**/*.wasm", "./node_modules/**/*.proto"]
+    }
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));

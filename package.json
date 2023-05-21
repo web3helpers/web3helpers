@@ -31,6 +31,7 @@
     "@solana/wallet-adapter-wallets": "0.19.16",
     "@solana/web3.js": "1.62.0",
     "@talismn/connect-wallets": "1.2.3",
+    "@vercel/analytics": "^1.0.1",
     "@web3helpers/aptos-wallet": "0.1.10",
     "@web3helpers/substrate-wallet": "0.1.1",
     "@web3helpers/sui-wallet": "^0.1.5",

@@ -7,6 +7,7 @@ import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { ThemeProvider } from "next-themes";
 import { WalletConfig as SubstrateWalletConfig } from "@web3helpers/substrate-wallet";
 import { WalletConfig as AptosWalletConfig } from "@web3helpers/aptos-wallet";
+import { Analytics } from "@vercel/analytics/react";
 import { WalletConfig as SuiWalletConfig } from "@web3helpers/sui-wallet";
 import { SpotWalletAdapter } from "@solana/wallet-adapter-spot";
 import { GlowWalletAdapter } from "@solana/wallet-adapter-glow";
@@ -43,23 +44,26 @@ function MyApp({ Component, pageProps }: AppProps) {
   const wallets = useMemo(() => [new SpotWalletAdapter(), new GlowWalletAdapter()], []);
 
   return (
-    <ThemeProvider attribute="class">
-      <Tooltip.Provider>
-        <SubstrateWalletConfig config={{ dappName: "WebHelpers" }}>
-          <AptosWalletConfig>
-            <EthosConnectProvider>
-              <WagmiConfig client={client}>
-                <ConnectionProvider endpoint={endpoint}>
-                  <WalletProvider wallets={wallets} autoConnect>
-                    <Component {...pageProps} />
-                  </WalletProvider>
-                </ConnectionProvider>
-              </WagmiConfig>
-            </EthosConnectProvider>
-          </AptosWalletConfig>
-        </SubstrateWalletConfig>
-      </Tooltip.Provider>
-    </ThemeProvider>
+    <>
+      <ThemeProvider attribute="class">
+        <Tooltip.Provider>
+          <SubstrateWalletConfig config={{ dappName: "WebHelpers" }}>
+            <AptosWalletConfig>
+              <EthosConnectProvider>
+                <WagmiConfig client={client}>
+                  <ConnectionProvider endpoint={endpoint}>
+                    <WalletProvider wallets={wallets} autoConnect>
+                      <Component {...pageProps} />
+                    </WalletProvider>
+                  </ConnectionProvider>
+                </WagmiConfig>
+              </EthosConnectProvider>
+            </AptosWalletConfig>
+          </SubstrateWalletConfig>
+        </Tooltip.Provider>
+      </ThemeProvider>
+      <Analytics />
+    </>
   );
 }
 

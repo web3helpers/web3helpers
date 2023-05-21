@@ -22,7 +22,6 @@ export function decode(rawTransaction: string) {
   return { ...transaction, type: types[transaction.type ?? 0] };
 }
 
-
 const Index: NextPage = () => {
   const meta: Meta = {
     title: name,

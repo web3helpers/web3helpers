@@ -1,7 +1,7 @@
 import { useNetwork, useSwitchNetwork } from "wagmi";
 import { evmNetworks as networks } from "utils";
 
-const NetworkSelecotr = (props: any) => {
+const NetworkSelector = (props: any) => {
   const { switchNetwork } = useSwitchNetwork();
   const { chain } = useNetwork();
   return (
@@ -23,4 +23,4 @@ const NetworkSelecotr = (props: any) => {
   );
 };
 
-export default NetworkSelecotr;
+export default NetworkSelector;

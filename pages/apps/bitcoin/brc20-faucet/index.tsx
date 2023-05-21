@@ -34,15 +34,17 @@ const Index: NextPage = () => {
   });
 
   function onReCAPTCHAChange(code) {
-    setVerify(!!code)
+    setVerify(!!code);
   }
   const submit = async ({ ticker, address }: FormModel) => {
-    if(!verify) { return }
+    if (!verify) {
+      return;
+    }
     // recaptchaRef.current.execute();
     recaptchaRef.current.reset();
     setError(undefined);
     setResult(undefined);
-    setVerify(false)
+    setVerify(false);
     const data = await fetch(`/api/faucet?ticker=${ticker}&address=${address}`);
     const result = await data.json();
     if (result.error) {

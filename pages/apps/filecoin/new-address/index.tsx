@@ -48,7 +48,6 @@ export async function generateAddress(type: "bls" | "ecdsa") {
   };
 }
 
-
 type GenerateAddressType = {
   type: "bls" | "ecdsa";
 };
