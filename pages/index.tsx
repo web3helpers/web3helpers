@@ -8,10 +8,10 @@ import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   const meta: Meta = {
-    description: "Web3.0 helpers for everyone, free and opensource.",
+    description: "Web3 helpers for everyone, free and opensource.",
     logo: "https://web3helpers.xyz/favicon.png",
     ogUrl: "http://web3helpers.xyz",
-    title: "Web 3.0 helpers"
+    title: "Web3 helpers"
   };
   const router = useRouter();
 
