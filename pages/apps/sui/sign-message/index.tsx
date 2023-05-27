@@ -37,8 +37,9 @@ const Index: NextPage = () => {
         timeout: 4000,
         type: "warning"
       });
+      return
     }
-    const { signature } = await wallet?.sign({ message: value });
+    const { signature } = await wallet?.signMessage({ message: value });
     setResult("0x" + Buffer.from(signature.data).toString("hex"));
   };
 
