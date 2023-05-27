@@ -40,7 +40,7 @@ const Index: NextPage = () => {
       return
     }
     const { signature } = await wallet?.signMessage({ message: value });
-    setResult("0x" + Buffer.from(signature.data).toString("hex"));
+    setResult("0x" + Buffer.from(signature).toString("hex"));
   };
 
   return (
