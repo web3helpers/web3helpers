@@ -25,7 +25,7 @@
     "@scure/bip39": "^1.1.0",
     "@solana/wallet-adapter-base": "0.9.22",
     "@solana/wallet-adapter-glow": "0.1.17",
-    "@solana/wallet-adapter-react": "0.15.32",
+    "@solana/wallet-adapter-react": "0.15.33",
     "@solana/wallet-adapter-spot": "0.1.14",
     "@solana/wallet-adapter-walletconnect": "0.1.15",
     "@solana/wallet-adapter-wallets": "0.19.18",
