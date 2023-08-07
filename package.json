@@ -73,7 +73,7 @@
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.4",
     "jsdom": "20.0.3",
-    "kolorist": "1.6.0",
+    "kolorist": "1.8.0",
     "postcss": "8.4.27",
     "prettier": "2.7.1",
     "prompts": "2.4.2",
