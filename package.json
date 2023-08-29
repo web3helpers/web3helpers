@@ -23,7 +23,7 @@
     "@radix-ui/react-tooltip": "1.0.6",
     "@react-spring/web": "9.7.3",
     "@scure/bip39": "^1.1.0",
-    "@solana/wallet-adapter-base": "0.9.22",
+    "@solana/wallet-adapter-base": "0.9.23",
     "@solana/wallet-adapter-glow": "0.1.17",
     "@solana/wallet-adapter-react": "0.15.33",
     "@solana/wallet-adapter-spot": "0.1.14",
