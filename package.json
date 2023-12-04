@@ -28,7 +28,7 @@
     "@solana/wallet-adapter-react": "0.15.35",
     "@solana/wallet-adapter-spot": "0.1.15",
     "@solana/wallet-adapter-walletconnect": "0.1.16",
-    "@solana/wallet-adapter-wallets": "0.19.19",
+    "@solana/wallet-adapter-wallets": "0.19.23",
     "@solana/web3.js": "1.62.0",
     "@talismn/connect-wallets": "1.2.3",
     "@vercel/analytics": "^1.0.1",
