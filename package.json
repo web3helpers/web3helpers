@@ -45,7 +45,7 @@
     "copy-to-clipboard": "3.3.3",
     "ecpair": "^2.1.0",
     "ethers": "5.7.2",
-    "ethos-connect": "^0.0.180",
+    "ethos-connect": "^0.0.194",
     "formik": "2.2.9",
     "json-beautify-fix": "1.1.3",
     "lucide-react": "0.89.0",
