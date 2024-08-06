@@ -3535,10 +3535,31 @@
     "@wallet-standard/app" "^1.0.1"
     "@wallet-standard/base" "^1.0.1"
 
-"@solana/web3.js@1.62.0", "@solana/web3.js@^1.44.3":
-  version "1.62.0"
-  resolved "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.62.0.tgz"
-  integrity sha512-rHnqJR5ECooUp8egurP9Qi1SKI1Q3pbF2ZkaHbEmFsSjBsyEe+Qqxa5h+7ueylqApYyk0zawnxz83y4kdrlNIA==
+"@solana/web3.js@1.76.1":
+  version "1.76.1"
+  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.76.1.tgz#ad5b9abdcf671633cb85fb0eb63bc2e7eb05122f"
+  integrity sha512-MPn8BZmOvMHDHHOJeJd/kv/jaGyzrgTSS4yRTq536h7qSLSXBdDO8+nmcajjW+3hRYBLKK4YBYwchTWssxQ16Q==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@noble/curves" "^1.0.0"
+    "@noble/hashes" "^1.3.0"
+    "@solana/buffer-layout" "^4.0.0"
+    agentkeepalive "^4.2.1"
+    bigint-buffer "^1.1.5"
+    bn.js "^5.0.0"
+    borsh "^0.7.0"
+    bs58 "^4.0.1"
+    buffer "6.0.3"
+    fast-stable-stringify "^1.0.0"
+    jayson "^3.4.4"
+    node-fetch "^2.6.7"
+    rpc-websockets "^7.5.1"
+    superstruct "^0.14.2"
+
+"@solana/web3.js@^1.36.0":
+  version "1.62.1"
+  resolved "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.62.1.tgz"
+  integrity sha512-ylkYM7u3dmTrBDQ1rkHF9kQTkKO+C7TqUvTJ0CfAFKUkQhDLsK2JUARdhkhERmJRqou0kSNmPd1x78IMg+FdTw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@noble/ed25519" "^1.7.0"
@@ -3556,10 +3577,10 @@
     rpc-websockets "^7.5.0"
     superstruct "^0.14.2"
 
-"@solana/web3.js@^1.36.0":
-  version "1.62.1"
-  resolved "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.62.1.tgz"
-  integrity sha512-ylkYM7u3dmTrBDQ1rkHF9kQTkKO+C7TqUvTJ0CfAFKUkQhDLsK2JUARdhkhERmJRqou0kSNmPd1x78IMg+FdTw==
+"@solana/web3.js@^1.44.3":
+  version "1.62.0"
+  resolved "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.62.0.tgz"
+  integrity sha512-rHnqJR5ECooUp8egurP9Qi1SKI1Q3pbF2ZkaHbEmFsSjBsyEe+Qqxa5h+7ueylqApYyk0zawnxz83y4kdrlNIA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@noble/ed25519" "^1.7.0"
